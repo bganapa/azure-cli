@@ -35,7 +35,7 @@ from azure.cli.main import main as cli_main
 
 from azure.cli.core import __version__ as core_version
 import azure.cli.core._debug as _debug
-from azure.cli.core._profile import Profile
+from azure.cli.core._profile import Profile, CLOUD
 from azure.cli.core._util import CLIError
 
 LIVE_TEST_CONTROL_ENV = 'AZURE_CLI_TEST_RUN_LIVE'
@@ -64,12 +64,13 @@ def _mock_get_mgmt_service_client(client_type, subscription_bound=True, subscrip
     # version of _get_mgmt_service_client to use when recording or playing tests
     profile = Profile()
     cred, subscription_id, _ = profile.get_login_credentials(subscription_id=subscription_id)
+    client_kwargs = {'base_url': CLOUD.endpoints.resource_manager}
+    if api_version:
+        client_kwargs['api_version'] = api_version
     if subscription_bound:
-        client = client_type(cred, subscription_id, api_version=api_version) \
-            if api_version else client_type(cred, subscription_id)
+        client = client_type(cred, subscription_id, **client_kwargs)
     else:
-        client = client_type(cred, api_version=api_version) \
-            if api_version else client_type(cred)
+        client = client_type(cred, **client_kwargs) 
 
     client = _debug.allow_debug_connection(client)
 
@@ -484,7 +485,7 @@ class ResourceGroupVCRTestBase(VCRTestBase):
             self.location, self.resource_group))
 
     def tear_down(self):
-        self.cmd('group delete --name {} --no-wait --force'.format(self.resource_group))
+        self.cmd('group delete --name {} --no-wait --yes'.format(self.resource_group))
 
 
 class StorageAccountVCRTestBase(VCRTestBase):
@@ -511,6 +512,6 @@ class StorageAccountVCRTestBase(VCRTestBase):
             self.account, self.resource_group))
 
     def tear_down(self):
-        self.cmd('storage account delete -g {} -n {} --force'.format(
+        self.cmd('storage account delete -g {} -n {} --yes'.format(
             self.resource_group, self.account))
-        self.cmd('group delete --name {} --no-wait --force'.format(self.resource_group))
+        self.cmd('group delete --name {} --no-wait --yes'.format(self.resource_group))

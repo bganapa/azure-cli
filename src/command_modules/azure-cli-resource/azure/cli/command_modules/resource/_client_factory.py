@@ -6,7 +6,7 @@
 def _resource_client_factory(**_):
     from azure.cli.core.commands.client_factory import get_mgmt_service_client
     from azure.mgmt.resource.resources import ResourceManagementClient
-    return get_mgmt_service_client(ResourceManagementClient)
+    return get_mgmt_service_client(ResourceManagementClient,api_version="2016-06-01")
 
 def _resource_feature_client_factory(**_):
     from azure.cli.core.commands.client_factory import get_mgmt_service_client
