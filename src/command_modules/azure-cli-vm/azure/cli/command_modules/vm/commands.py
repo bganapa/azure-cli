@@ -106,7 +106,7 @@ cli_generic_update_command(__name__, 'vm update',
                            cf_vm,
                            no_wait_param='raw')
 cli_generic_wait_command(__name__, 'vm wait', 'azure.cli.command_modules.vm.custom#get_instance_view')
-cli_command(__name__, 'vm convert', mgmt_path.format(op_var, op_class, 'convert_to_managed_disks'), cf_vm)
+### cli_command(__name__, 'vm convert', mgmt_path.format(op_var, op_class, 'convert_to_managed_disks'), cf_vm)
 
 # VM NIC
 cli_command(__name__, 'vm nic add', custom_path.format('vm_add_nics'))
@@ -171,8 +171,8 @@ def transform_acs_list(result):
     return transformed
 
 
-op_var = 'container_services_operations'
-op_class = 'ContainerServicesOperations'
+### op_var = 'container_services_operations'
+### op_class = 'ContainerServicesOperations'
 cli_command(__name__, 'acs show', mgmt_path.format(op_var, op_class, 'get'), cf_acs, table_transformer=transform_acs)
 cli_command(__name__, 'acs list', custom_path.format('list_container_services'), cf_acs, table_transformer=transform_acs_list)
 cli_command(__name__, 'acs delete', mgmt_path.format(op_var, op_class, 'delete'), cf_acs)
@@ -263,19 +263,20 @@ cli_command(__name__, 'vmss list_instance_connection_info', custom_path.format('
 cli_command(__name__, 'vm list-sizes', mgmt_path.format('virtual_machine_sizes_operations', 'VirtualMachineSizesOperations', 'list'), cf_vm_sizes)
 
 # VM Disk
-op_var = 'disks_operations'
-op_class = 'DisksOperations'
-cli_command(__name__, 'disk create', custom_path.format('create_managed_disk'))
-cli_command(__name__, 'disk list', custom_path.format('list_managed_disks'))
-cli_command(__name__, 'disk show', mgmt_path.format(op_var, op_class, 'get'), cf_disks)
-cli_command(__name__, 'disk delete', mgmt_path.format(op_var, op_class, 'delete'), cf_disks)
-cli_command(__name__, 'disk grant-access', custom_path.format('grant_disk_access'))
-cli_command(__name__, 'disk revoke-access', mgmt_path.format(op_var, op_class, 'revoke_access'), cf_disks)
-cli_generic_update_command(__name__, 'disk update', 'azure.mgmt.compute.operations.{}#{}.get'.format(op_var, op_class),
-                           'azure.mgmt.compute.operations.{}#{}.create_or_update'.format(op_var, op_class),
-                           custom_function_op=custom_path.format('update_managed_disk'),
-                           setter_arg_name='disk', factory=cf_disks)
+### op_var = 'disks_operations'
+### op_class = 'DisksOperations'
+### cli_command(__name__, 'disk create', custom_path.format('create_managed_disk'))
+### cli_command(__name__, 'disk list', custom_path.format('list_managed_disks'))
+### cli_command(__name__, 'disk show', mgmt_path.format(op_var, op_class, 'get'), cf_disks)
+### cli_command(__name__, 'disk delete', mgmt_path.format(op_var, op_class, 'delete'), cf_disks)
+### cli_command(__name__, 'disk grant-access', custom_path.format('grant_disk_access'))
+### cli_command(__name__, 'disk revoke-access', mgmt_path.format(op_var, op_class, 'revoke_access'), cf_disks)
+### cli_generic_update_command(__name__, 'disk update', 'azure.mgmt.compute.operations.{}#{}.get'.format(op_var, op_class),
+###                            'azure.mgmt.compute.operations.{}#{}.create_or_update'.format(op_var, op_class),
+###                            custom_function_op=custom_path.format('update_managed_disk'),
+###                            setter_arg_name='disk', factory=cf_disks)
 
+'''
 op_var = 'snapshots_operations'
 op_class = 'SnapshotsOperations'
 cli_command(__name__, 'snapshot create', custom_path.format('create_snapshot'))
@@ -288,10 +289,12 @@ cli_generic_update_command(__name__, 'snapshot update', 'azure.mgmt.compute.oper
                            'azure.mgmt.compute.operations.{}#{}.create_or_update'.format(op_var, op_class),
                            custom_function_op=custom_path.format('update_snapshot'),
                            setter_arg_name='snapshot', factory=cf_snapshots)
-
+'''
+'''
 op_var = 'images_operations'
 op_class = 'ImagesOperations'
 cli_command(__name__, 'image create', custom_path.format('create_image'))
 cli_command(__name__, 'image list', custom_path.format('list_images'))
 cli_command(__name__, 'image show', mgmt_path.format(op_var, op_class, 'get'), cf_images)
 cli_command(__name__, 'image delete', mgmt_path.format(op_var, op_class, 'delete'), cf_images)
+'''

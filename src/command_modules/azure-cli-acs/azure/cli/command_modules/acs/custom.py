@@ -34,7 +34,7 @@ from azure.cli.core._util import CLIError
 from azure.cli.core._profile import Profile
 from azure.cli.core.commands.client_factory import get_mgmt_service_client
 from azure.mgmt.compute import ComputeManagementClient
-from azure.mgmt.compute.models import ContainerServiceOchestratorTypes
+# from azure.mgmt.compute.models import ContainerServiceOchestratorTypes
 from azure.cli.core._environment import get_config_dir
 
 logger = azlogging.get_az_logger(__name__)
@@ -110,12 +110,12 @@ def acs_browse(resource_group, name, disable_browser=False,
 def _acs_browse_internal(acs_info, resource_group, name, disable_browser, ssh_key_file):
     orchestrator_type = acs_info.orchestrator_profile.orchestrator_type # pylint: disable=no-member
 
-    if  orchestrator_type == 'kubernetes' or orchestrator_type == ContainerServiceOchestratorTypes.kubernetes or (acs_info.custom_profile and acs_info.custom_profile.orchestrator == 'kubernetes'): # pylint: disable=no-member
-        return k8s_browse(name, resource_group, disable_browser, ssh_key_file=ssh_key_file)
-    elif orchestrator_type == 'dcos' or orchestrator_type == ContainerServiceOchestratorTypes.dcos:
-        return _dcos_browse_internal(acs_info, disable_browser, ssh_key_file)
-    else:
-        raise CLIError('Unsupported orchestrator type {} for browse'.format(orchestrator_type))
+#    if  orchestrator_type == 'kubernetes' or orchestrator_type == ContainerServiceOchestratorTypes.kubernetes or (acs_info.custom_profile and acs_info.custom_profile.orchestrator == 'kubernetes'): # pylint: disable=no-member
+#        return k8s_browse(name, resource_group, disable_browser, ssh_key_file=ssh_key_file)
+#    elif orchestrator_type == 'dcos' or orchestrator_type == ContainerServiceOchestratorTypes.dcos:
+#        return _dcos_browse_internal(acs_info, disable_browser, ssh_key_file)
+#    else:
+#        raise CLIError('Unsupported orchestrator type {} for browse'.format(orchestrator_type))
 
 def k8s_browse(name, resource_group, disable_browser=False,
                ssh_key_file=os.path.join(os.path.expanduser('~'), '.ssh', 'id_rsa')):
