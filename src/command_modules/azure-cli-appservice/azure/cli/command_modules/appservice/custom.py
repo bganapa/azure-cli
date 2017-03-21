@@ -545,7 +545,7 @@ def _get_sku_name(tier):
         raise CLIError("Invalid sku(pricing tier), please refer to command help for valid values")
 
 def _get_location_from_resource_group(resource_group_name):
-    from azure.mgmt.resource.resources import ResourceManagementClient
+    from azure.mgmt.resource import ResourceManagementClient
     client = get_mgmt_service_client(ResourceManagementClient)
     group = client.resource_groups.get(resource_group_name)
     return group.location

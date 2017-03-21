@@ -5,13 +5,14 @@
 
 
 def _compute_client_factory(**_):
-    from azure.mgmt.compute import ComputeManagementClient
+    from azure.cli.core.profiles.shared import ResourceType
     from azure.cli.core.commands.client_factory import get_mgmt_service_client
-    return get_mgmt_service_client(ComputeManagementClient)
+    return get_mgmt_service_client(ResourceType.MGMT_COMPUTE)
 
 
 def _subscription_client_factory(**_):
-    from azure.mgmt.resource.subscriptions import SubscriptionClient
+    # TODO Check usages of SubscriptionClient as they may need to be versioned.
+    from azure.mgmt.resource import SubscriptionClient
     from azure.cli.core.commands.client_factory import get_subscription_service_client
     return get_subscription_service_client(SubscriptionClient)
 
@@ -22,6 +23,7 @@ def cf_ni(_):
     # TODO: Remove hard coded api-version once
     # https://github.com/Azure/azure-rest-api-specs/issues/570
     # is fixed.
+    # TODO Need to fix this as with the new SDK, this won't work
     return get_mgmt_service_client(NetworkManagementClient, api_version='2016-03-30').network_interfaces  # pylint: disable=line-too-long
 
 

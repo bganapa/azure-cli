@@ -25,7 +25,7 @@ def load_json(string_or_file_path):
 
 
 def _resolve_api_version(provider_namespace, resource_type, parent_path):
-    from azure.mgmt.resource.resources import ResourceManagementClient
+    from azure.mgmt.resource import ResourceManagementClient
     from azure.cli.core.commands.client_factory import get_mgmt_service_client
     client = get_mgmt_service_client(ResourceManagementClient)
     provider = client.providers.get(provider_namespace)
@@ -59,7 +59,7 @@ def log_pprint_template(template):
 def check_existence(value, resource_group, provider_namespace, resource_type,
                     parent_name=None, parent_type=None):
     # check for name or ID and set the type flags
-    from azure.mgmt.resource.resources import ResourceManagementClient
+    from azure.mgmt.resource import ResourceManagementClient
     from azure.cli.core.commands.client_factory import get_mgmt_service_client
     from msrestazure.azure_exceptions import CloudError
     resource_client = get_mgmt_service_client(ResourceManagementClient).resources

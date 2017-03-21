@@ -1020,7 +1020,7 @@ def create_vpn_connection(client, resource_group_name, connection_name, vnet_gat
     :param bool no_wait: Do not wait for the long running operation to finish.
     :param bool validate: Display and validate the ARM template but do not create any resources.
     """
-    from azure.mgmt.resource.resources import ResourceManagementClient
+    from azure.mgmt.resource import ResourceManagementClient
     from azure.mgmt.resource.resources.models import DeploymentProperties, TemplateLink
     from azure.cli.core._util import random_string
     from azure.cli.command_modules.network._template_builder import \
