@@ -215,12 +215,12 @@ class TestVMCreateDefaultStorageAccount(unittest.TestCase):
 
     @mock.patch('azure.cli.core.commands.client_factory.get_mgmt_service_client', _mock_resource_client)
     def test_matching_storage_account_specified_location(self):
-        self._set_ns('rg1', 'eastus')
+        self._set_ns('rg1', 'local')
         _validate_vm_create_storage_account(self.ns)
         self.assertEqual(self.ns.storage_account, 'sa1')
         self.assertEqual(self.ns.storage_account_type, 'existing')
 
-        self._set_ns('rg1', 'eastus', 'Premium')
+        self._set_ns('rg1', 'local', 'Premium')
         _validate_vm_create_storage_account(self.ns)
         self.assertEqual(self.ns.storage_account, 'sa2')
         self.assertEqual(self.ns.storage_account_type, 'existing')

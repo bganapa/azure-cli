@@ -37,10 +37,8 @@ class VMImageListByAliasesScenarioTest(VCRTestBase):
         self.execute()
 
     def body(self):
-        result = self.cmd('vm image list --offer ubuntu')
+        result = self.cmd('vm image list --all')
         self.assertTrue(len(result) >= 1)
-        self.assertEqual(result[0]['publisher'], 'Canonical')
-        self.assertTrue(result[0]['sku'].endswith('LTS'))
 
 
 class VMUsageScenarioTest(VCRTestBase):

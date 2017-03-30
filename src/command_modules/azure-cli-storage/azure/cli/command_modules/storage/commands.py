@@ -164,7 +164,9 @@ cli_storage_data_plane_command('storage file copy start-batch', 'azure.cli.comma
 # table commands
 factory = table_data_service_factory
 cli_storage_data_plane_command('storage table generate-sas', table_path + 'generate_table_shared_access_signature', factory)
-cli_storage_data_plane_command('storage table stats', table_path + 'get_table_service_stats', factory)
+
+###cli_storage_data_plane_command('storage table stats', table_path + 'get_table_service_stats', factory)
+
 cli_storage_data_plane_command('storage table list', table_path + 'list_tables', factory, transform=transform_storage_list_output)
 cli_storage_data_plane_command('storage table create', table_path + 'create_table', factory, transform=create_boolean_result_output_transformer('created'), table_transformer=transform_boolean_for_table)
 cli_storage_data_plane_command('storage table exists', table_path + 'exists', factory, transform=create_boolean_result_output_transformer('exists'))

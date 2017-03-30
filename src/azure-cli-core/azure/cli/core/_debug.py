@@ -18,6 +18,7 @@ def allow_debug_connection(client):
         logger.warning("Connection verification disabled by environment variable %s",
                        DISABLE_VERIFY_VARIABLE_NAME)
         os.environ[ADAL_PYTHON_SSL_NO_VERIFY] = '1'
+        os.environ["REQUESTS_CA_BUNDLE"] = "d:\certs\ca.cer"
         client.config.connection.verify = False
     return client
 
