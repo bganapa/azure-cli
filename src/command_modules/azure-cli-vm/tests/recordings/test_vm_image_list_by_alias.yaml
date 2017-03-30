@@ -2,71 +2,125 @@ interactions:
 - request:
     body: null
     headers:
-      Connection: [close]
-      Host: [raw.githubusercontent.com]
-      User-Agent: [Python-urllib/3.5]
+      Accept: [application/json]
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Type: [application/json; charset=utf-8]
+      User-Agent: [python/3.5.2 (Windows-10-10.0.14393-SP0) requests/2.9.1 msrest/0.4.6
+          msrest_azure/0.4.7 subscriptionclient/0.40.0 Azure-SDK-For-Python AZURECLI/TEST/2.0.1+dev]
+      accept-language: [en-US]
+      x-ms-client-request-id: [cf3e9814-1351-11e7-be03-9457a5ed9bc9]
     method: GET
-    uri: https://raw.githubusercontent.com/Azure/azure-rest-api-specs/master/arm-compute/quickstart-templates/aliases.json
+    uri: https://adminmanagement.local.azurestack.external/subscriptions/00000000-0000-0000-0000-000000000000/locations?api-version=2016-06-01
   response:
-    body: {string: "{\n  \"$schema\":\"http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json\"\
-        ,\n  \"contentVersion\":\"1.0.0.0\",\n  \"parameters\":{},\n  \"variables\"\
-        :{},\n  \"resources\":[],\n\n  \"outputs\":{\n    \"aliases\":{\n      \"\
-        type\":\"object\",\n      \"value\":{\n\n        \"Linux\":{\n          \"\
-        CentOS\":{\n            \"publisher\":\"OpenLogic\",\n            \"offer\"\
-        :\"CentOS\",\n            \"sku\":\"7.3\",\n            \"version\":\"latest\"\
-        \n          },\n          \"CoreOS\":{\n            \"publisher\":\"CoreOS\"\
-        ,\n            \"offer\":\"CoreOS\",\n            \"sku\":\"Stable\",\n  \
-        \          \"version\":\"latest\"\n          },\n          \"Debian\":{\n\
-        \            \"publisher\":\"credativ\",\n            \"offer\":\"Debian\"\
-        ,\n            \"sku\":\"8\",\n            \"version\":\"latest\"\n      \
-        \    },\n          \"openSUSE-Leap\": {\n            \"publisher\":\"SUSE\"\
-        ,\n            \"offer\":\"openSUSE-Leap\",\n            \"sku\":\"42.2\"\
-        ,\n            \"version\": \"latest\"\n          },\n          \"RHEL\":{\n\
-        \            \"publisher\":\"RedHat\",\n            \"offer\":\"RHEL\",\n\
-        \            \"sku\":\"7.3\",\n            \"version\":\"latest\"\n      \
-        \    },\n          \"SLES\":{\n            \"publisher\":\"SUSE\",\n     \
-        \       \"offer\":\"SLES\",\n            \"sku\":\"12-SP2\",\n           \
-        \ \"version\":\"latest\"\n          },\n          \"UbuntuLTS\":{\n      \
-        \      \"publisher\":\"Canonical\",\n            \"offer\":\"UbuntuServer\"\
-        ,\n            \"sku\":\"16.04-LTS\",\n            \"version\":\"latest\"\n\
-        \          }\n        },\n\n        \"Windows\":{\n          \"Win2016Datacenter\"\
-        :{\n            \"publisher\":\"MicrosoftWindowsServer\",\n            \"\
-        offer\":\"WindowsServer\",\n            \"sku\":\"2016-Datacenter\",\n   \
-        \         \"version\":\"latest\"\n          },\n          \"Win2012R2Datacenter\"\
-        :{\n            \"publisher\":\"MicrosoftWindowsServer\",\n            \"\
-        offer\":\"WindowsServer\",\n            \"sku\":\"2012-R2-Datacenter\",\n\
-        \            \"version\":\"latest\"\n          },\n          \"Win2012Datacenter\"\
-        :{\n            \"publisher\":\"MicrosoftWindowsServer\",\n            \"\
-        offer\":\"WindowsServer\",\n            \"sku\":\"2012-Datacenter\",\n   \
-        \         \"version\":\"latest\"\n          },\n          \"Win2008R2SP1\"\
-        :{\n            \"publisher\":\"MicrosoftWindowsServer\",\n            \"\
-        offer\":\"WindowsServer\",\n            \"sku\":\"2008-R2-SP1\",\n       \
-        \     \"version\":\"latest\"\n          }\n        }\n      }\n    }\n  }\n\
-        }\n"}
+    body: {string: '{"value":[{"id":"/subscriptions/00000000-0000-0000-0000-000000000000/locations/local","name":"local","displayName":"local","longitude":"","latitude":""}]}'}
     headers:
-      Accept-Ranges: [bytes]
-      Access-Control-Allow-Origin: ['*']
-      Cache-Control: [max-age=300]
-      Connection: [close]
-      Content-Length: ['2235']
-      Content-Security-Policy: [default-src 'none'; style-src 'unsafe-inline']
-      Content-Type: [text/plain; charset=utf-8]
-      Date: ['Thu, 09 Mar 2017 20:28:54 GMT']
-      ETag: ['"d6824855d13e27c5258a680eb60f635d088fd05e"']
-      Expires: ['Thu, 09 Mar 2017 20:33:54 GMT']
-      Source-Age: ['89']
-      Strict-Transport-Security: [max-age=31536000]
-      Vary: ['Authorization,Accept-Encoding']
-      Via: [1.1 varnish]
-      X-Cache: [HIT]
-      X-Cache-Hits: ['1']
-      X-Content-Type-Options: [nosniff]
-      X-Fastly-Request-ID: [2f7088714e1f52d8c33ac5b67429da9131956e8f]
-      X-Frame-Options: [deny]
-      X-Geo-Block-List: ['']
-      X-GitHub-Request-Id: ['E274:6DC5:415AD:43611:58C1BAAC']
-      X-Served-By: [cache-sea1031-SEA]
-      X-Timer: ['S1489091334.147916,VS0,VE0']
-      X-XSS-Protection: [1; mode=block]
+      Cache-Control: [no-cache]
+      Content-Length: ['154']
+      Content-Type: [application/json; charset=utf-8]
+      Date: ['Tue, 28 Mar 2017 00:59:35 GMT']
+      Expires: ['-1']
+      Pragma: [no-cache]
+      Strict-Transport-Security: [max-age=31536000; includeSubDomains]
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Accept: [application/json]
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Type: [application/json; charset=utf-8]
+      User-Agent: [python/3.5.2 (Windows-10-10.0.14393-SP0) requests/2.9.1 msrest/0.4.6
+          msrest_azure/0.4.7 computemanagementclient/0.40.0 Azure-SDK-For-Python AZURECLI/TEST/2.0.1+dev]
+      accept-language: [en-US]
+      x-ms-client-request-id: [cfa2d7cc-1351-11e7-837f-9457a5ed9bc9]
+    method: GET
+    uri: https://adminmanagement.local.azurestack.external/subscriptions/00000000-0000-0000-0000-000000000000/providers/Microsoft.Compute/locations/local/publishers?api-version=2015-06-15
+  response:
+    body: {string: '[{"id":"/Subscriptions/2c966402-b31d-4a3e-a3dc-397286c0c609/Providers/Microsoft.Compute/Locations/local/Publishers/Canonical","location":"local","name":"Canonical"},{"id":"/Subscriptions/2c966402-b31d-4a3e-a3dc-397286c0c609/Providers/Microsoft.Compute/Locations/local/Publishers/MicrosoftWindowsServer","location":"local","name":"MicrosoftWindowsServer"},{"id":"/Subscriptions/2c966402-b31d-4a3e-a3dc-397286c0c609/Providers/Microsoft.Compute/Locations/local/Publishers/Microsoft.WindowsAzure.Compute","location":"local","name":"Microsoft.WindowsAzure.Compute"},{"id":"/Subscriptions/2c966402-b31d-4a3e-a3dc-397286c0c609/Providers/Microsoft.Compute/Locations/local/Publishers/Microsoft.Compute","location":"local","name":"Microsoft.Compute"},{"id":"/Subscriptions/2c966402-b31d-4a3e-a3dc-397286c0c609/Providers/Microsoft.Compute/Locations/local/Publishers/Microsoft.OSTCExtensions","location":"local","name":"Microsoft.OSTCExtensions"},{"id":"/Subscriptions/2c966402-b31d-4a3e-a3dc-397286c0c609/Providers/Microsoft.Compute/Locations/local/Publishers/Microsoft.Azure.Extensions","location":"local","name":"Microsoft.Azure.Extensions"},{"id":"/Subscriptions/2c966402-b31d-4a3e-a3dc-397286c0c609/Providers/Microsoft.Compute/Locations/local/Publishers/Microsoft.Powershell","location":"local","name":"Microsoft.Powershell"},{"id":"/Subscriptions/2c966402-b31d-4a3e-a3dc-397286c0c609/Providers/Microsoft.Compute/Locations/local/Publishers/Microsoft.Azure.Security","location":"local","name":"Microsoft.Azure.Security"},{"id":"/Subscriptions/2c966402-b31d-4a3e-a3dc-397286c0c609/Providers/Microsoft.Compute/Locations/local/Publishers/Microsoft.Azure.Diagnostics","location":"local","name":"Microsoft.Azure.Diagnostics"},{"id":"/Subscriptions/2c966402-b31d-4a3e-a3dc-397286c0c609/Providers/Microsoft.Compute/Locations/local/Publishers/Microsoft.EnterpriseCloud.Monitoring","location":"local","name":"Microsoft.EnterpriseCloud.Monitoring"},{"id":"/Subscriptions/2c966402-b31d-4a3e-a3dc-397286c0c609/Providers/Microsoft.Compute/Locations/local/Publishers/Microsoft.SqlServer.Management","location":"local","name":"Microsoft.SqlServer.Management"}]'}
+    headers:
+      Cache-Control: [no-cache]
+      Content-Length: ['2137']
+      Content-Type: [application/json; charset=utf-8]
+      Date: ['Tue, 28 Mar 2017 00:59:35 GMT']
+      Expires: ['-1']
+      Pragma: [no-cache]
+      Server: [Microsoft-HTTPAPI/2.0, Microsoft-HTTPAPI/2.0]
+      Strict-Transport-Security: [max-age=31536000; includeSubDomains]
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Accept: [application/json]
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Type: [application/json; charset=utf-8]
+      User-Agent: [python/3.5.2 (Windows-10-10.0.14393-SP0) requests/2.9.1 msrest/0.4.6
+          msrest_azure/0.4.7 computemanagementclient/0.40.0 Azure-SDK-For-Python AZURECLI/TEST/2.0.1+dev]
+      accept-language: [en-US]
+      x-ms-client-request-id: [cfbc5324-1351-11e7-948b-9457a5ed9bc9]
+    method: GET
+    uri: https://adminmanagement.local.azurestack.external/subscriptions/00000000-0000-0000-0000-000000000000/providers/Microsoft.Compute/locations/local/publishers/MicrosoftWindowsServer/artifacttypes/vmimage/offers?api-version=2015-06-15
+  response:
+    body: {string: '[{"id":"/Subscriptions/2c966402-b31d-4a3e-a3dc-397286c0c609/Providers/Microsoft.Compute/Locations/local/Publishers/MicrosoftWindowsServer/ArtifactTypes/VMImage/Offers/WindowsServer","location":"local","name":"WindowsServer"}]'}
+    headers:
+      Cache-Control: [no-cache]
+      Content-Length: ['225']
+      Content-Type: [application/json; charset=utf-8]
+      Date: ['Tue, 28 Mar 2017 00:59:35 GMT']
+      Expires: ['-1']
+      Pragma: [no-cache]
+      Server: [Microsoft-HTTPAPI/2.0, Microsoft-HTTPAPI/2.0]
+      Strict-Transport-Security: [max-age=31536000; includeSubDomains]
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Accept: [application/json]
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Type: [application/json; charset=utf-8]
+      User-Agent: [python/3.5.2 (Windows-10-10.0.14393-SP0) requests/2.9.1 msrest/0.4.6
+          msrest_azure/0.4.7 computemanagementclient/0.40.0 Azure-SDK-For-Python AZURECLI/TEST/2.0.1+dev]
+      accept-language: [en-US]
+      x-ms-client-request-id: [cff84a82-1351-11e7-85f9-9457a5ed9bc9]
+    method: GET
+    uri: https://adminmanagement.local.azurestack.external/subscriptions/00000000-0000-0000-0000-000000000000/providers/Microsoft.Compute/locations/local/publishers/MicrosoftWindowsServer/artifacttypes/vmimage/offers/WindowsServer/skus?api-version=2015-06-15
+  response:
+    body: {string: '[{"id":"/Subscriptions/2c966402-b31d-4a3e-a3dc-397286c0c609/Providers/Microsoft.Compute/Locations/local/Publishers/MicrosoftWindowsServer/ArtifactTypes/VMImage/Offers/WindowsServer/Skus/2012-R2-Datacenter","location":"local","name":"2012-R2-Datacenter"}]'}
+    headers:
+      Cache-Control: [no-cache]
+      Content-Length: ['254']
+      Content-Type: [application/json; charset=utf-8]
+      Date: ['Tue, 28 Mar 2017 00:59:35 GMT']
+      Expires: ['-1']
+      Pragma: [no-cache]
+      Server: [Microsoft-HTTPAPI/2.0, Microsoft-HTTPAPI/2.0]
+      Strict-Transport-Security: [max-age=31536000; includeSubDomains]
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Accept: [application/json]
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Type: [application/json; charset=utf-8]
+      User-Agent: [python/3.5.2 (Windows-10-10.0.14393-SP0) requests/2.9.1 msrest/0.4.6
+          msrest_azure/0.4.7 computemanagementclient/0.40.0 Azure-SDK-For-Python AZURECLI/TEST/2.0.1+dev]
+      accept-language: [en-US]
+      x-ms-client-request-id: [d00d320a-1351-11e7-910d-9457a5ed9bc9]
+    method: GET
+    uri: https://adminmanagement.local.azurestack.external/subscriptions/00000000-0000-0000-0000-000000000000/providers/Microsoft.Compute/locations/local/publishers/MicrosoftWindowsServer/artifacttypes/vmimage/offers/WindowsServer/skus/2012-R2-Datacenter/versions?api-version=2015-06-15
+  response:
+    body: {string: '[{"id":"/Subscriptions/2c966402-b31d-4a3e-a3dc-397286c0c609/Providers/Microsoft.Compute/Locations/local/Publishers/MicrosoftWindowsServer/ArtifactTypes/VMImage/Offers/WindowsServer/Skus/2012-R2-Datacenter/Versions/1.0.0","location":"local","name":"1.0.0"}]'}
+    headers:
+      Cache-Control: [no-cache]
+      Content-Length: ['256']
+      Content-Type: [application/json; charset=utf-8]
+      Date: ['Tue, 28 Mar 2017 00:59:35 GMT']
+      Expires: ['-1']
+      Pragma: [no-cache]
+      Server: [Microsoft-HTTPAPI/2.0, Microsoft-HTTPAPI/2.0]
+      Strict-Transport-Security: [max-age=31536000; includeSubDomains]
     status: {code: 200, message: OK}
 version: 1

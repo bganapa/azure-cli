@@ -77,7 +77,7 @@ class StorageBlobScenarioTest(StorageAccountVCRTestBase):
         sas_keys = dict(pair.split('=') for pair in sas.split('&'))
         assert u'se' in sas_keys
 
-        blob_url = 'https://{}.blob.core.windows.net/{}/{}'.format(account, container, blob)
+        blob_url = 'https://{}.blob.local.azurestack.external/{}/{}'.format(account, container, blob)
         s.cmd('storage blob url -n {} -c {}'.format(blob, container), checks=StringCheck(blob_url))
 
         s.cmd('storage blob metadata update -n {} -c {} --metadata a=b c=d'.format(blob, container))
@@ -346,7 +346,7 @@ class StorageFileScenarioTest(StorageAccountVCRTestBase):
         s.cmd('storage file metadata show --share-name {} -p "{}"'.format(share, filename),
               checks=NoneCheck())
 
-        file_url = 'https://{}.file.core.windows.net/{}/{}'.format(s.account, share, filename)
+        file_url = 'https://{}.file.local.azurestack.external/{}/{}'.format(s.account, share, filename)
         s.cmd('storage file url --share-name {} -p "{}"'.format(share, filename),
               checks=StringCheck(file_url))
 

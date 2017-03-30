@@ -65,7 +65,7 @@ def _mock_get_mgmt_service_client(client_type, subscription_bound=True, subscrip
     # version of _get_mgmt_service_client to use when recording or playing tests
     profile = Profile()
     cred, subscription_id, _ = profile.get_login_credentials(subscription_id=subscription_id)
-    client_kwargs = {}
+    client_kwargs = {'base_url': CLOUD.endpoints.resource_manager}
 
     if base_url_bound:
         client_kwargs = {'base_url': CLOUD.endpoints.resource_manager}
@@ -507,7 +507,7 @@ class ResourceGroupVCRTestBase(VCRTestBase):
 
 
 class StorageAccountVCRTestBase(VCRTestBase):
-    account_location = 'westus'
+    account_location = 'local'
     account_sku = 'Standard_LRS'
 
     # pylint: disable=too-many-arguments
@@ -525,7 +525,7 @@ class StorageAccountVCRTestBase(VCRTestBase):
     def set_up(self):
         self.cmd('group create --location {} --name {} --tags use=az-test'.format(
             self.account_location, self.resource_group))
-        self.cmd('storage account create --sku {} -l {} -n {} -g {}'.format(
+        self.cmd('storage account create --account-type {} -l {} -n {} -g {}'.format(
             self.account_sku, self.account_location, self.account, self.resource_group))
 
     def tear_down(self):
