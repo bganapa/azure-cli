@@ -277,7 +277,7 @@ class VMCreateFromUnmanagedDiskTest(ResourceGroupVCRTestBase):
 
     def __init__(self, test_method):
         super(VMCreateFromUnmanagedDiskTest, self).__init__(__file__, test_method, resource_group='cli_test_vm_from_unmanaged_disk')
-        self.location = 'westus'
+        self.location = 'local'
 
     def test_vm_create_from_unmanaged_disk(self):
         self.execute()
@@ -488,7 +488,7 @@ class VMCreateAndStateModificationsScenarioTest(ResourceGroupVCRTestBase):  # py
 class VMNoWaitScenarioTest(ResourceGroupVCRTestBase):
     def __init__(self, test_method):
         super(VMNoWaitScenarioTest, self).__init__(__file__, test_method, resource_group='cli_test_vm_no_wait')
-        self.location = 'westus'
+        self.location = 'local'
         self.name = 'vmnowait2'
 
     def test_vm_create_no_wait(self):

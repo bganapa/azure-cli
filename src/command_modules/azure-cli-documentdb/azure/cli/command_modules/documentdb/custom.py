@@ -18,7 +18,6 @@ from azure.mgmt.documentdb.models import (
 )
 from azure.mgmt.documentdb.models.document_db_enums import DatabaseAccountKind
 
-
 # pylint:disable=too-many-arguments
 def cli_documentdb_create(client,
                           resource_group_name,
@@ -39,7 +38,8 @@ def cli_documentdb_create(client,
 
     from azure.mgmt.resource import ResourceManagementClient
     from azure.cli.core.commands.client_factory import get_mgmt_service_client
-    resource_client = get_mgmt_service_client(ResourceManagementClient)
+    from azure.cli.core.profiles.shared import ResourceType
+    resource_client = get_mgmt_service_client(ResourceType.MGMT_RESOURCE_RESOURCES)
     rg = resource_client.resource_groups.get(resource_group_name)
     resource_group_location = rg.location  # pylint: disable=no-member
 

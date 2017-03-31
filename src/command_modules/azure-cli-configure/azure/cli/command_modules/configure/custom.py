@@ -30,6 +30,7 @@ from azure.cli.command_modules.configure._consts import (OUTPUT_LIST, LOGIN_METH
                                                          MSG_PROMPT_FILE_LOGGING)
 from azure.cli.command_modules.configure._utils import get_default_from_config
 import azure.cli.command_modules.configure._help  # pylint: disable=unused-import
+from azure.cli.core.profiles.shared import ResourceType
 
 logger = azlogging.get_az_logger(__name__)
 
@@ -53,7 +54,7 @@ def _config_env_public_azure(_):
     from azure.cli.core._profile import Profile
     # Determine if user logged in
     try:
-        list(get_mgmt_service_client(ResourceManagementClient).resources.list())
+        list(get_mgmt_service_client(ResourceType.MGMT_RESOURCE_RESOURCES).resources.list())
     except CLIError:
         # Not logged in
         login_successful = False

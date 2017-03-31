@@ -5,6 +5,7 @@
 
 from azure.cli.core._config import az_config
 from azure.cli.core.commands.client_factory import get_mgmt_service_client
+from azure.cli.core.profiles.shared import ResourceType
 
 import azure.cli.core.azlogging as azlogging
 logger = azlogging.get_az_logger(__name__)
@@ -13,7 +14,7 @@ def get_arm_service_client():
     '''Returns the client for managing ARM resources.
     '''
     from azure.mgmt.resource import ResourceManagementClient
-    return get_mgmt_service_client(ResourceManagementClient)
+    return get_mgmt_service_client(ResourceType.MGMT_RESOURCE_RESOURCES)
 
 def get_storage_service_client():
     '''Returns the client for managing storage accounts.

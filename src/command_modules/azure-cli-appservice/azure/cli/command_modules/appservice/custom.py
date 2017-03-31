@@ -25,6 +25,8 @@ from azure.cli.core.commands.arm import parse_resource_id
 from azure.cli.core.commands import LongRunningOperation
 
 from azure.cli.core.prompting import prompt_pass, NoTTYException
+from azure.cli.core.profiles.shared import ResourceType
+
 import azure.cli.core.azlogging as azlogging
 from azure.cli.core._util import CLIError
 from ._params import web_client_factory, _generic_site_operation
@@ -546,7 +548,7 @@ def _get_sku_name(tier):
 
 def _get_location_from_resource_group(resource_group_name):
     from azure.mgmt.resource import ResourceManagementClient
-    client = get_mgmt_service_client(ResourceManagementClient)
+    client = get_mgmt_service_client(ResourceType.MGMT_RESOURCE_RESOURCES)
     group = client.resource_groups.get(resource_group_name)
     return group.location
 
