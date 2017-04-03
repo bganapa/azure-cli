@@ -63,10 +63,10 @@ class VMImageListThruServiceScenarioTest(VCRTestBase):
         self.execute()
 
     def body(self):
-        result = self.cmd('vm image list -l westus --publisher Canonical --offer Ubuntu_Snappy_Core -o tsv --all')
+        result = self.cmd('vm image list -l local --publisher Canonical --offer UbuntuServer -o tsv --all')
         assert result.index('15.04') >= 0
 
-        result = self.cmd('vm image list -p Canonical -f Ubuntu_Snappy_Core -o tsv --all')
+        result = self.cmd('vm image list -p Canonical -f UbuntuServer -o tsv --all')
         assert result.index('15.04') >= 0
 
 
@@ -164,7 +164,7 @@ class VMSizeListScenarioTest(VCRTestBase):
         self.execute()
 
     def body(self):
-        self.cmd('vm list-sizes --location westus',
+        self.cmd('vm list-sizes --location local',
                  checks=JMESPathCheck('type(@)', 'array'))
 
 
@@ -172,7 +172,7 @@ class VMImageListOffersScenarioTest(VCRTestBase):
 
     def __init__(self, test_method):
         super(VMImageListOffersScenarioTest, self).__init__(__file__, test_method)
-        self.location = 'westus'
+        self.location = 'local'
         self.publisher_name = 'Canonical'
 
     def test_vm_image_list_offers(self):
@@ -285,7 +285,7 @@ class VMCreateFromUnmanagedDiskTest(ResourceGroupVCRTestBase):
     def body(self):
         # create a vm with unmanaged os disk
         vm1 = 'vm1'
-        self.cmd('vm create -g {} -n {} --image debian --use-unmanaged-disk --admin-username ubuntu --admin-password testPassword0 --authentication-type password'.format(
+        self.cmd('vm create -g {} -n {} --image Win2012R2Datacenter --use-unmanaged-disk --admin-username ubuntu --admin-password testPassword0 --authentication-type password --size Standard_A1'.format(
             self.resource_group, vm1))
         vm1_info = self.cmd('vm show -g {} -n {}'.format(self.resource_group, vm1))
         self.cmd('vm stop -g {} -n {}'.format(self.resource_group, vm1))
@@ -307,14 +307,14 @@ class VMCreateWithSpecializedUnmanagedDiskTest(ResourceGroupVCRTestBase):
 
     def __init__(self, test_method):
         super(VMCreateWithSpecializedUnmanagedDiskTest, self).__init__(__file__, test_method, resource_group='cli_test_vm_with_specialized_unmanaged_disk')
-        self.location = 'westus'
+        self.location = 'local'
 
     def test_vm_create_with_specialized_unmanaged_disk(self):
         self.execute()
 
     def body(self):
         # create a vm with unmanaged os disk
-        self.cmd('vm create -g {} -n vm1 --image debian --use-unmanaged-disk --admin-username ubuntu --admin-password testPassword0 --authentication-type password'.format(
+        self.cmd('vm create -g {} -n vm1 --image Win2012R2Datacenter --use-unmanaged-disk --admin-username ubuntu --admin-password testPassword0 --authentication-type password --size Standard_A1'.format(
             self.resource_group))
         vm1_info = self.cmd('vm show -g {} -n vm1'.format(self.resource_group))
         disk_uri = vm1_info['storageProfile']['osDisk']['vhd']['uri']
@@ -322,7 +322,7 @@ class VMCreateWithSpecializedUnmanagedDiskTest(ResourceGroupVCRTestBase):
         self.cmd('vm delete -g {} -n vm1 -y'.format(self.resource_group))
 
         # create a vm by attaching the OS disk from the deleted VM
-        self.cmd('vm create -g {} -n vm2 --attach-os-disk {} --os-type linux --use-unmanaged-disk'.format(self.resource_group, disk_uri), checks=[
+        self.cmd('vm create -g {} -n vm2 --attach-os-disk {} --os-type windows --use-unmanaged-disk --size Standard_A1'.format(self.resource_group, disk_uri), checks=[
             JMESPathCheck('powerState', 'VM running')
         ])
 
@@ -511,7 +511,7 @@ class VMAvailSetScenarioTest(ResourceGroupVCRTestBase):
 
     def __init__(self, test_method):
         super(VMAvailSetScenarioTest, self).__init__(__file__, test_method, resource_group='cliTestRg_Availset')
-        self.location = 'westus'
+        self.location = 'local'
         self.name = 'availset-test'
 
     def test_vm_availset(self):
@@ -1367,7 +1367,7 @@ class VMSSCreateAndModify(ResourceGroupVCRTestBase):
         instance_count = 5
         new_instance_count = 4
 
-        self.cmd('vmss create --admin-password testPassword0 --name {} -g {} --admin-username myadmin --image Win2012R2Datacenter --instance-count {}'
+        self.cmd('vmss create --admin-password testPassword0 --name {} -g {} --admin-username myadmin --image Win2012R2Datacenter --instance-count {} --size Standard_A1'
                  .format(vmss_name, self.resource_group, instance_count))
 
         self.cmd('vmss show --name {} -g {}'.format(vmss_name, self.resource_group),

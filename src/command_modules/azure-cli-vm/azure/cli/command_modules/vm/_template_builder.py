@@ -377,7 +377,7 @@ def build_vm_resource(  # pylint: disable=too-many-locals
         vm_properties['osProfile'] = _build_os_profile()
 
     vm = {
-        'apiVersion': '2016-04-30-preview',
+        'apiVersion': '2016-03-30',
         'type': 'Microsoft.Compute/virtualMachines',
         'name': name,
         'location': location,
@@ -595,7 +595,7 @@ def build_vmss_resource(name, naming_prefix, location, tags, overprovision, upgr
     # Build VMSS
     vmss_properties = {
         'overprovision': overprovision,
-        'singlePlacementGroup': single_placement_group,
+###        'singlePlacementGroup': single_placement_group,
         'upgradePolicy': {
             'mode': upgrade_policy_mode
         },
@@ -618,7 +618,7 @@ def build_vmss_resource(name, naming_prefix, location, tags, overprovision, upgr
         'name': name,
         'location': location,
         'tags': tags,
-        'apiVersion': '2016-04-30-preview',
+        'apiVersion': '2016-03-30',
         'dependsOn': [],
         'sku': {
             'name': vm_sku,
@@ -637,7 +637,7 @@ def build_av_set_resource(name, location, tags,
         'name': name,
         'location': location,
         'tags': tags,
-        'apiVersion': '2016-04-30-preview',
+        'apiVersion': '2016-03-30',
         'sku': {
             'name': 'Classic' if unmanaged else 'Aligned'
         },
