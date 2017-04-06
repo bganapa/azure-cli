@@ -99,7 +99,9 @@ def show_storage_account_connection_string(
 @transfer_doc(BlockBlobService.create_blob_from_path)
 def upload_blob(  # pylint: disable=too-many-locals
         client, container_name, blob_name, file_path, blob_type=None,
-        content_settings=None, metadata=None, validate_content=False, maxsize_condition=None,
+        content_settings=None, metadata=None,
+        ###validate_content=False,
+        maxsize_condition=None,
         max_connections=2, lease_id=None, if_modified_since=None,
         if_unmodified_since=None, if_match=None, if_none_match=None, timeout=None):
     '''Upload a blob to a container.'''
@@ -120,7 +122,7 @@ def upload_blob(  # pylint: disable=too-many-locals
             blob_name=blob_name,
             file_path=file_path,
             progress_callback=_update_progress,
-            validate_content=validate_content,
+            ###validate_content=validate_content,
             maxsize_condition=maxsize_condition,
             lease_id=lease_id,
             timeout=timeout)
@@ -133,7 +135,7 @@ def upload_blob(  # pylint: disable=too-many-locals
             progress_callback=_update_progress,
             content_settings=content_settings,
             metadata=metadata,
-            validate_content=validate_content,
+            ###validate_content=validate_content,
             max_connections=max_connections,
             lease_id=lease_id,
             if_modified_since=if_modified_since,

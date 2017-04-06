@@ -129,7 +129,8 @@ def storage_blob_download_batch(client, source, destination, source_container_na
 
 def storage_blob_upload_batch(client, source, destination, pattern=None, source_files=None,
                               destination_container_name=None, blob_type=None,
-                              content_settings=None, metadata=None, validate_content=False,
+                              content_settings=None, metadata=None, 
+                              ###validate_content=False,
                               maxsize_condition=None, max_connections=2, lease_id=None,
                               if_modified_since=None, if_unmodified_since=None, if_match=None,
                               if_none_match=None, timeout=None, dryrun=False):
@@ -179,7 +180,7 @@ def storage_blob_upload_batch(client, source, destination, pattern=None, source_
             blob_name=blob_name,
             file_path=file_path,
             progress_callback=lambda c, t: None,
-            validate_content=validate_content,
+            ###validate_content=validate_content,
             maxsize_condition=maxsize_condition,
             lease_id=lease_id,
             timeout=timeout)
@@ -192,7 +193,7 @@ def storage_blob_upload_batch(client, source, destination, pattern=None, source_
             progress_callback=lambda c, t: None,
             content_settings=content_settings,
             metadata=metadata,
-            validate_content=validate_content,
+            ###validate_content=validate_content,
             max_connections=max_connections,
             lease_id=lease_id,
             if_modified_since=if_modified_since,

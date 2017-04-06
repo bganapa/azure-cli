@@ -20,7 +20,8 @@ from azure.cli.command_modules.storage.util import (filter_none, collect_blobs, 
 
 
 def storage_file_upload_batch(client, destination, source, pattern=None, dryrun=False,
-                              validate_content=False, content_settings=None, max_connections=1,
+                              ###validate_content=False,
+                              content_settings=None, max_connections=1,
                               metadata=None):
     """
     Upload local files to Azure Storage File Share in batch
@@ -63,7 +64,8 @@ def storage_file_upload_batch(client, destination, source, pattern=None, dryrun=
 
 
 def storage_file_download_batch(client, source, destination, pattern=None, dryrun=False,
-                                validate_content=False, max_connections=1):
+                                ###validate_content=False, 
+                                max_connections=1):
     """
     Download files from file share to local directory in batch
     """
@@ -95,7 +97,7 @@ def storage_file_download_batch(client, source, destination, pattern=None, dryru
                                 directory_name=pair[0],
                                 file_name=pair[1],
                                 file_path=os.path.join(destination, *pair),
-                                validate_content=validate_content,
+                                ###validate_content=validate_content,
                                 max_connections=max_connections)
         return client.make_file_url(source, *pair)
 

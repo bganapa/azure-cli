@@ -1,0 +1,1442 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept: [application/json]
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['0']
+      Content-Type: [application/json; charset=utf-8]
+      User-Agent: [python/3.5.2 (Windows-10-10.0.14393-SP0) requests/2.9.1 msrest/0.4.6
+          msrest_azure/0.4.7 storagemanagementclient/0.40.0 Azure-SDK-For-Python AZURECLI/TEST/2.0.1+dev]
+      accept-language: [en-US]
+      x-ms-client-request-id: [7878418c-1956-11e7-8218-00155db0d302]
+    method: POST
+    uri: https://adminmanagement.local.azurestack.external/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/test_blob_scenario_test/providers/Microsoft.Storage/storageAccounts/dummystorage/listKeys?api-version=2015-06-15
+  response:
+    body: {string: "{\r\n  \"key1\": \"/pdv4JTQ/6+p7M2YulKGeVSHkqHK2IjfWVm+emRcpnavKY9viJe+3g22eEh4OWb7OrxgvIBKEU58i7SLUNbsvA==\"\
+        ,\r\n  \"key2\": \"b4WnULCnDY7+Bujxpjp46adagLuB02p94jeQHwGRPg+lk7bC8gDSU0DFL42XXD22jWOBclZZCHYKqj90UZYu3g==\"\
+        \r\n}"}
+    headers:
+      Cache-Control: [no-cache]
+      Content-Length: ['209']
+      Content-Type: [application/json; charset=utf-8]
+      Date: ['Tue, 04 Apr 2017 16:48:03 GMT']
+      Expires: ['-1']
+      Pragma: [no-cache]
+      Server: [Microsoft-HTTPAPI/2.0, Microsoft-HTTPAPI/2.0]
+      Strict-Transport-Security: [max-age=31536000; includeSubDomains]
+      x-ms-ratelimit-remaining-subscription-writes: ['1196']
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Accept-Encoding: [identity]
+      Connection: [keep-alive]
+      Content-Length: ['0']
+      User-Agent: [Azure-Storage/0.30.0 (Python CPython 3.5.2; Windows 10)]
+      x-ms-date: ['Tue, 04 Apr 2017 16:48:04 GMT']
+      x-ms-version: ['2015-04-05']
+    method: PUT
+    uri: https://dummystorage.blob.local.azurestack.external/cont1?restype=container
+  response:
+    body: {string: ''}
+    headers:
+      Date: ['Tue, 04 Apr 2017 16:48:03 GMT']
+      ETag: ['"0x8D47B7A5D431345"']
+      Last-Modified: ['Tue, 04 Apr 2017 16:48:04 GMT']
+      Server: [Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0]
+      Transfer-Encoding: [chunked]
+      x-ms-version: ['2015-04-05']
+    status: {code: 201, message: Created}
+- request:
+    body: null
+    headers:
+      Accept-Encoding: [identity]
+      Connection: [keep-alive]
+      User-Agent: [Azure-Storage/0.30.0 (Python CPython 3.5.2; Windows 10)]
+      x-ms-date: ['Tue, 04 Apr 2017 16:48:05 GMT']
+      x-ms-version: ['2015-04-05']
+    method: GET
+    uri: https://dummystorage.blob.local.azurestack.external/cont1?restype=container
+  response:
+    body: {string: ''}
+    headers:
+      Date: ['Tue, 04 Apr 2017 16:48:04 GMT']
+      ETag: ['"0x8D47B7A5D431345"']
+      Last-Modified: ['Tue, 04 Apr 2017 16:48:04 GMT']
+      Server: [Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0]
+      Transfer-Encoding: [chunked]
+      x-ms-lease-state: [available]
+      x-ms-lease-status: [unlocked]
+      x-ms-version: ['2015-04-05']
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Accept-Encoding: [identity]
+      Connection: [keep-alive]
+      User-Agent: [Azure-Storage/0.30.0 (Python CPython 3.5.2; Windows 10)]
+      x-ms-date: ['Tue, 04 Apr 2017 16:48:05 GMT']
+      x-ms-version: ['2015-04-05']
+    method: GET
+    uri: https://dummystorage.blob.local.azurestack.external/cont1?restype=container&comp=acl
+  response:
+    body: {string: "\uFEFF<?xml version=\"1.0\" encoding=\"utf-8\"?><SignedIdentifiers\
+        \ />"}
+    headers:
+      Content-Type: [application/xml]
+      Date: ['Tue, 04 Apr 2017 16:48:04 GMT']
+      ETag: ['"0x8D47B7A5D431345"']
+      Last-Modified: ['Tue, 04 Apr 2017 16:48:04 GMT']
+      Server: [Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0]
+      Transfer-Encoding: [chunked]
+      x-ms-version: ['2015-04-05']
+    status: {code: 200, message: OK}
+- request:
+    body: '<?xml version=''1.0'' encoding=''utf-8''?>
+
+      <SignedIdentifiers />'
+    headers:
+      Accept-Encoding: [identity]
+      Connection: [keep-alive]
+      Content-Length: ['60']
+      User-Agent: [Azure-Storage/0.30.0 (Python CPython 3.5.2; Windows 10)]
+      x-ms-blob-public-access: [blob]
+      x-ms-date: ['Tue, 04 Apr 2017 16:48:05 GMT']
+      x-ms-version: ['2015-04-05']
+    method: PUT
+    uri: https://dummystorage.blob.local.azurestack.external/cont1?restype=container&comp=acl
+  response:
+    body: {string: ''}
+    headers:
+      Date: ['Tue, 04 Apr 2017 16:48:04 GMT']
+      ETag: ['"0x8D47B7A5DDC663A"']
+      Last-Modified: ['Tue, 04 Apr 2017 16:48:05 GMT']
+      Server: [Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0]
+      Transfer-Encoding: [chunked]
+      x-ms-version: ['2015-04-05']
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Accept-Encoding: [identity]
+      Connection: [keep-alive]
+      User-Agent: [Azure-Storage/0.30.0 (Python CPython 3.5.2; Windows 10)]
+      x-ms-date: ['Tue, 04 Apr 2017 16:48:06 GMT']
+      x-ms-version: ['2015-04-05']
+    method: GET
+    uri: https://dummystorage.blob.local.azurestack.external/cont1?restype=container&comp=acl
+  response:
+    body: {string: "\uFEFF<?xml version=\"1.0\" encoding=\"utf-8\"?><SignedIdentifiers\
+        \ />"}
+    headers:
+      Content-Type: [application/xml]
+      Date: ['Tue, 04 Apr 2017 16:48:05 GMT']
+      ETag: ['"0x8D47B7A5DDC663A"']
+      Last-Modified: ['Tue, 04 Apr 2017 16:48:05 GMT']
+      Server: [Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0]
+      Transfer-Encoding: [chunked]
+      x-ms-blob-public-access: [blob]
+      x-ms-version: ['2015-04-05']
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Accept-Encoding: [identity]
+      Connection: [keep-alive]
+      User-Agent: [Azure-Storage/0.30.0 (Python CPython 3.5.2; Windows 10)]
+      x-ms-date: ['Tue, 04 Apr 2017 16:48:06 GMT']
+      x-ms-version: ['2015-04-05']
+    method: GET
+    uri: https://dummystorage.blob.local.azurestack.external/cont1?restype=container&comp=acl
+  response:
+    body: {string: "\uFEFF<?xml version=\"1.0\" encoding=\"utf-8\"?><SignedIdentifiers\
+        \ />"}
+    headers:
+      Content-Type: [application/xml]
+      Date: ['Tue, 04 Apr 2017 16:48:05 GMT']
+      ETag: ['"0x8D47B7A5DDC663A"']
+      Last-Modified: ['Tue, 04 Apr 2017 16:48:05 GMT']
+      Server: [Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0]
+      Transfer-Encoding: [chunked]
+      x-ms-blob-public-access: [blob]
+      x-ms-version: ['2015-04-05']
+    status: {code: 200, message: OK}
+- request:
+    body: '<?xml version=''1.0'' encoding=''utf-8''?>
+
+      <SignedIdentifiers />'
+    headers:
+      Accept-Encoding: [identity]
+      Connection: [keep-alive]
+      Content-Length: ['60']
+      User-Agent: [Azure-Storage/0.30.0 (Python CPython 3.5.2; Windows 10)]
+      x-ms-date: ['Tue, 04 Apr 2017 16:48:06 GMT']
+      x-ms-version: ['2015-04-05']
+    method: PUT
+    uri: https://dummystorage.blob.local.azurestack.external/cont1?restype=container&comp=acl
+  response:
+    body: {string: ''}
+    headers:
+      Date: ['Tue, 04 Apr 2017 16:48:05 GMT']
+      ETag: ['"0x8D47B7A5E79E510"']
+      Last-Modified: ['Tue, 04 Apr 2017 16:48:06 GMT']
+      Server: [Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0]
+      Transfer-Encoding: [chunked]
+      x-ms-version: ['2015-04-05']
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Accept-Encoding: [identity]
+      Connection: [keep-alive]
+      User-Agent: [Azure-Storage/0.30.0 (Python CPython 3.5.2; Windows 10)]
+      x-ms-date: ['Tue, 04 Apr 2017 16:48:07 GMT']
+      x-ms-version: ['2015-04-05']
+    method: GET
+    uri: https://dummystorage.blob.local.azurestack.external/cont1?restype=container&comp=acl
+  response:
+    body: {string: "\uFEFF<?xml version=\"1.0\" encoding=\"utf-8\"?><SignedIdentifiers\
+        \ />"}
+    headers:
+      Content-Type: [application/xml]
+      Date: ['Tue, 04 Apr 2017 16:48:06 GMT']
+      ETag: ['"0x8D47B7A5E79E510"']
+      Last-Modified: ['Tue, 04 Apr 2017 16:48:06 GMT']
+      Server: [Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0]
+      Transfer-Encoding: [chunked]
+      x-ms-version: ['2015-04-05']
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Accept-Encoding: [identity]
+      Connection: [keep-alive]
+      User-Agent: [Azure-Storage/0.30.0 (Python CPython 3.5.2; Windows 10)]
+      x-ms-date: ['Tue, 04 Apr 2017 16:48:07 GMT']
+      x-ms-version: ['2015-04-05']
+    method: GET
+    uri: https://dummystorage.blob.local.azurestack.external/cont1?restype=container
+  response:
+    body: {string: ''}
+    headers:
+      Date: ['Tue, 04 Apr 2017 16:48:06 GMT']
+      ETag: ['"0x8D47B7A5E79E510"']
+      Last-Modified: ['Tue, 04 Apr 2017 16:48:06 GMT']
+      Server: [Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0]
+      Transfer-Encoding: [chunked]
+      x-ms-lease-state: [available]
+      x-ms-lease-status: [unlocked]
+      x-ms-version: ['2015-04-05']
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Accept-Encoding: [identity]
+      Connection: [keep-alive]
+      User-Agent: [Azure-Storage/0.30.0 (Python CPython 3.5.2; Windows 10)]
+      x-ms-date: ['Tue, 04 Apr 2017 16:48:08 GMT']
+      x-ms-version: ['2015-04-05']
+    method: GET
+    uri: https://dummystorage.blob.local.azurestack.external/?comp=list
+  response:
+    body: {string: "\uFEFF<?xml version=\"1.0\" encoding=\"utf-8\"?><EnumerationResults\
+        \ ServiceEndpoint=\"https://vcrstorage121316476055.blob.local.azurestack.external/\"\
+        ><Containers><Container><Name>cont1</Name><Properties><Last-Modified>Tue,\
+        \ 04 Apr 2017 16:48:06 GMT</Last-Modified><Etag>\"0x8D47B7A5E79E510\"</Etag><LeaseStatus>unlocked</LeaseStatus><LeaseState>available</LeaseState></Properties></Container></Containers><NextMarker\
+        \ /></EnumerationResults>"}
+    headers:
+      Content-Type: [application/xml]
+      Date: ['Tue, 04 Apr 2017 16:48:08 GMT']
+      Server: [Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0]
+      Transfer-Encoding: [chunked]
+      x-ms-version: ['2015-04-05']
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Accept-Encoding: [identity]
+      Connection: [keep-alive]
+      Content-Length: ['0']
+      User-Agent: [Azure-Storage/0.30.0 (Python CPython 3.5.2; Windows 10)]
+      x-ms-date: ['Tue, 04 Apr 2017 16:48:08 GMT']
+      x-ms-meta-foo: [bar]
+      x-ms-meta-moo: [bak]
+      x-ms-version: ['2015-04-05']
+    method: PUT
+    uri: https://dummystorage.blob.local.azurestack.external/cont1?restype=container&comp=metadata
+  response:
+    body: {string: ''}
+    headers:
+      Date: ['Tue, 04 Apr 2017 16:48:08 GMT']
+      ETag: ['"0x8D47B7A5F958873"']
+      Last-Modified: ['Tue, 04 Apr 2017 16:48:08 GMT']
+      Server: [Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0]
+      Transfer-Encoding: [chunked]
+      x-ms-version: ['2015-04-05']
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Accept-Encoding: [identity]
+      Connection: [keep-alive]
+      User-Agent: [Azure-Storage/0.30.0 (Python CPython 3.5.2; Windows 10)]
+      x-ms-date: ['Tue, 04 Apr 2017 16:48:08 GMT']
+      x-ms-version: ['2015-04-05']
+    method: GET
+    uri: https://dummystorage.blob.local.azurestack.external/cont1?restype=container&comp=metadata
+  response:
+    body: {string: ''}
+    headers:
+      Date: ['Tue, 04 Apr 2017 16:48:09 GMT']
+      ETag: ['"0x8D47B7A5F958873"']
+      Last-Modified: ['Tue, 04 Apr 2017 16:48:08 GMT']
+      Server: [Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0]
+      Transfer-Encoding: [chunked]
+      x-ms-meta-foo: [bar]
+      x-ms-meta-moo: [bak]
+      x-ms-version: ['2015-04-05']
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Accept-Encoding: [identity]
+      Connection: [keep-alive]
+      Content-Length: ['0']
+      User-Agent: [Azure-Storage/0.30.0 (Python CPython 3.5.2; Windows 10)]
+      x-ms-date: ['Tue, 04 Apr 2017 16:48:09 GMT']
+      x-ms-version: ['2015-04-05']
+    method: PUT
+    uri: https://dummystorage.blob.local.azurestack.external/cont1?restype=container&comp=metadata
+  response:
+    body: {string: ''}
+    headers:
+      Date: ['Tue, 04 Apr 2017 16:48:09 GMT']
+      ETag: ['"0x8D47B7A601D90D6"']
+      Last-Modified: ['Tue, 04 Apr 2017 16:48:09 GMT']
+      Server: [Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0]
+      Transfer-Encoding: [chunked]
+      x-ms-version: ['2015-04-05']
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Accept-Encoding: [identity]
+      Connection: [keep-alive]
+      User-Agent: [Azure-Storage/0.30.0 (Python CPython 3.5.2; Windows 10)]
+      x-ms-date: ['Tue, 04 Apr 2017 16:48:09 GMT']
+      x-ms-version: ['2015-04-05']
+    method: GET
+    uri: https://dummystorage.blob.local.azurestack.external/cont1?restype=container&comp=metadata
+  response:
+    body: {string: ''}
+    headers:
+      Date: ['Tue, 04 Apr 2017 16:48:09 GMT']
+      ETag: ['"0x8D47B7A601D90D6"']
+      Last-Modified: ['Tue, 04 Apr 2017 16:48:09 GMT']
+      Server: [Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0]
+      Transfer-Encoding: [chunked]
+      x-ms-version: ['2015-04-05']
+    status: {code: 200, message: OK}
+- request:
+    body: This is a test file for performance of automated tests. DO NOT MOVE OR DELETE!
+    headers:
+      Accept-Encoding: [identity]
+      Connection: [keep-alive]
+      Content-Length: ['78']
+      User-Agent: [Azure-Storage/0.30.0 (Python CPython 3.5.2; Windows 10)]
+      x-ms-blob-type: [BlockBlob]
+      x-ms-date: ['Tue, 04 Apr 2017 16:48:10 GMT']
+      x-ms-version: ['2015-04-05']
+    method: PUT
+    uri: https://dummystorage.blob.local.azurestack.external/cont1/testblockblob
+  response:
+    body: {string: ''}
+    headers:
+      Content-MD5: [zeGiTMG1TdAobIHawzap3A==]
+      Date: ['Tue, 04 Apr 2017 16:48:10 GMT']
+      ETag: ['"0x8D47B7A60B26E4D"']
+      Last-Modified: ['Tue, 04 Apr 2017 16:48:10 GMT']
+      Server: [Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0]
+      Transfer-Encoding: [chunked]
+      x-ms-version: ['2015-04-05']
+    status: {code: 201, message: Created}
+- request:
+    body: null
+    headers:
+      Accept-Encoding: [identity]
+      Connection: [keep-alive]
+      User-Agent: [Azure-Storage/0.30.0 (Python CPython 3.5.2; Windows 10)]
+      x-ms-date: ['Tue, 04 Apr 2017 16:48:10 GMT']
+      x-ms-version: ['2015-04-05']
+    method: HEAD
+    uri: https://dummystorage.blob.local.azurestack.external/cont1/testblockblob
+  response:
+    body: {string: ''}
+    headers:
+      Accept-Ranges: [bytes]
+      Content-Length: ['78']
+      Content-MD5: [zeGiTMG1TdAobIHawzap3A==]
+      Content-Type: [application/octet-stream]
+      Date: ['Tue, 04 Apr 2017 16:48:10 GMT']
+      ETag: ['"0x8D47B7A60B26E4D"']
+      Last-Modified: ['Tue, 04 Apr 2017 16:48:10 GMT']
+      Server: [Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0]
+      x-ms-blob-type: [BlockBlob]
+      x-ms-lease-state: [available]
+      x-ms-lease-status: [unlocked]
+      x-ms-version: ['2015-04-05']
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Accept-Encoding: [identity]
+      Connection: [keep-alive]
+      Content-Length: ['0']
+      User-Agent: [Azure-Storage/0.30.0 (Python CPython 3.5.2; Windows 10)]
+      x-ms-blob-content-length: ['512']
+      x-ms-blob-type: [PageBlob]
+      x-ms-date: ['Tue, 04 Apr 2017 16:48:11 GMT']
+      x-ms-version: ['2015-04-05']
+    method: PUT
+    uri: https://dummystorage.blob.local.azurestack.external/cont1/testpageblob
+  response:
+    body: {string: ''}
+    headers:
+      Date: ['Tue, 04 Apr 2017 16:48:11 GMT']
+      ETag: ['"0x8D47B7A6149FB2E"']
+      Last-Modified: ['Tue, 04 Apr 2017 16:48:11 GMT']
+      Server: [Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0]
+      Transfer-Encoding: [chunked]
+      x-ms-version: ['2015-04-05']
+    status: {code: 201, message: Created}
+- request:
+    body: 'This is a test file for performance of automated tests. DO NOT MOVE OR
+      DELETE!                                                                                                                                                                                                                                                                                                                                                                                                                                                  '
+    headers:
+      Accept-Encoding: [identity]
+      Connection: [keep-alive]
+      Content-Length: ['512']
+      If-Match: ['"0x8D47B7A6149FB2E"']
+      User-Agent: [Azure-Storage/0.30.0 (Python CPython 3.5.2; Windows 10)]
+      x-ms-date: ['Tue, 04 Apr 2017 16:48:11 GMT']
+      x-ms-page-write: [update]
+      x-ms-range: [bytes=0-511]
+      x-ms-version: ['2015-04-05']
+    method: PUT
+    uri: https://dummystorage.blob.local.azurestack.external/cont1/testpageblob?comp=page
+  response:
+    body: {string: ''}
+    headers:
+      Content-MD5: [JKbxCPFguN3PtJpiW3lCrQ==]
+      Date: ['Tue, 04 Apr 2017 16:48:11 GMT']
+      ETag: ['"0x8D47B7A6150E514"']
+      Last-Modified: ['Tue, 04 Apr 2017 16:48:11 GMT']
+      Server: [Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0]
+      Transfer-Encoding: [chunked]
+      x-ms-blob-sequence-number: ['0']
+      x-ms-version: ['2015-04-05']
+    status: {code: 201, message: Created}
+- request:
+    body: null
+    headers:
+      Accept-Encoding: [identity]
+      Connection: [keep-alive]
+      User-Agent: [Azure-Storage/0.30.0 (Python CPython 3.5.2; Windows 10)]
+      x-ms-date: ['Tue, 04 Apr 2017 16:48:11 GMT']
+      x-ms-version: ['2015-04-05']
+    method: HEAD
+    uri: https://dummystorage.blob.local.azurestack.external/cont1/testpageblob
+  response:
+    body: {string: ''}
+    headers:
+      Accept-Ranges: [bytes]
+      Content-Length: ['512']
+      Content-Type: [application/octet-stream]
+      Date: ['Tue, 04 Apr 2017 16:48:11 GMT']
+      ETag: ['"0x8D47B7A6150E514"']
+      Last-Modified: ['Tue, 04 Apr 2017 16:48:11 GMT']
+      Server: [Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0]
+      x-ms-blob-sequence-number: ['0']
+      x-ms-blob-type: [PageBlob]
+      x-ms-lease-state: [available]
+      x-ms-lease-status: [unlocked]
+      x-ms-version: ['2015-04-05']
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Accept-Encoding: [identity]
+      Connection: [keep-alive]
+      User-Agent: [Azure-Storage/0.30.0 (Python CPython 3.5.2; Windows 10)]
+      x-ms-date: ['Tue, 04 Apr 2017 16:48:12 GMT']
+      x-ms-version: ['2015-04-05']
+    method: HEAD
+    uri: https://dummystorage.blob.local.azurestack.external/cont1/testappendblob
+  response:
+    body: {string: ''}
+    headers:
+      Date: ['Tue, 04 Apr 2017 16:48:12 GMT']
+      Server: [Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0]
+      Transfer-Encoding: [chunked]
+      x-ms-version: ['2015-04-05']
+    status: {code: 404, message: The specified blob does not exist.}
+- request:
+    body: null
+    headers:
+      Accept-Encoding: [identity]
+      Connection: [keep-alive]
+      Content-Length: ['0']
+      User-Agent: [Azure-Storage/0.30.0 (Python CPython 3.5.2; Windows 10)]
+      x-ms-blob-type: [AppendBlob]
+      x-ms-date: ['Tue, 04 Apr 2017 16:48:12 GMT']
+      x-ms-version: ['2015-04-05']
+    method: PUT
+    uri: https://dummystorage.blob.local.azurestack.external/cont1/testappendblob
+  response:
+    body: {string: ''}
+    headers:
+      Date: ['Tue, 04 Apr 2017 16:48:12 GMT']
+      ETag: ['"0x8D47B7A61E205B5"']
+      Last-Modified: ['Tue, 04 Apr 2017 16:48:12 GMT']
+      Server: [Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0]
+      Transfer-Encoding: [chunked]
+      x-ms-version: ['2015-04-05']
+    status: {code: 201, message: Created}
+- request:
+    body: This is a test file for performance of automated tests. DO NOT MOVE OR DELETE!
+    headers:
+      Accept-Encoding: [identity]
+      Connection: [keep-alive]
+      Content-Length: ['78']
+      User-Agent: [Azure-Storage/0.30.0 (Python CPython 3.5.2; Windows 10)]
+      x-ms-date: ['Tue, 04 Apr 2017 16:48:12 GMT']
+      x-ms-version: ['2015-04-05']
+    method: PUT
+    uri: https://dummystorage.blob.local.azurestack.external/cont1/testappendblob?comp=appendblock
+  response:
+    body: {string: ''}
+    headers:
+      Content-MD5: [zeGiTMG1TdAobIHawzap3A==]
+      Date: ['Tue, 04 Apr 2017 16:48:12 GMT']
+      ETag: ['"0x8D47B7A61E5B203"']
+      Last-Modified: ['Tue, 04 Apr 2017 16:48:12 GMT']
+      Server: [Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0]
+      Transfer-Encoding: [chunked]
+      x-ms-blob-append-offset: ['0']
+      x-ms-blob-committed-block-count: ['1']
+      x-ms-version: ['2015-04-05']
+    status: {code: 201, message: Created}
+- request:
+    body: null
+    headers:
+      Accept-Encoding: [identity]
+      Connection: [keep-alive]
+      User-Agent: [Azure-Storage/0.30.0 (Python CPython 3.5.2; Windows 10)]
+      x-ms-date: ['Tue, 04 Apr 2017 16:48:12 GMT']
+      x-ms-version: ['2015-04-05']
+    method: HEAD
+    uri: https://dummystorage.blob.local.azurestack.external/cont1/testappendblob
+  response:
+    body: {string: ''}
+    headers:
+      Accept-Ranges: [bytes]
+      Content-Length: ['78']
+      Content-Type: [application/octet-stream]
+      Date: ['Tue, 04 Apr 2017 16:48:12 GMT']
+      ETag: ['"0x8D47B7A61E5B203"']
+      Last-Modified: ['Tue, 04 Apr 2017 16:48:12 GMT']
+      Server: [Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0]
+      x-ms-blob-committed-block-count: ['1']
+      x-ms-blob-type: [AppendBlob]
+      x-ms-lease-state: [available]
+      x-ms-lease-status: [unlocked]
+      x-ms-version: ['2015-04-05']
+    status: {code: 200, message: OK}
+- request:
+    body: This is a test file for performance of automated tests. DO NOT MOVE OR DELETE!
+    headers:
+      Accept-Encoding: [identity]
+      Connection: [keep-alive]
+      Content-Length: ['78']
+      User-Agent: [Azure-Storage/0.30.0 (Python CPython 3.5.2; Windows 10)]
+      x-ms-date: ['Tue, 04 Apr 2017 16:48:12 GMT']
+      x-ms-version: ['2015-04-05']
+    method: PUT
+    uri: https://dummystorage.blob.local.azurestack.external/cont1/testappendblob?comp=appendblock
+  response:
+    body: {string: ''}
+    headers:
+      Content-MD5: [zeGiTMG1TdAobIHawzap3A==]
+      Date: ['Tue, 04 Apr 2017 16:48:12 GMT']
+      ETag: ['"0x8D47B7A62306E9B"']
+      Last-Modified: ['Tue, 04 Apr 2017 16:48:12 GMT']
+      Server: [Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0]
+      Transfer-Encoding: [chunked]
+      x-ms-blob-append-offset: ['78']
+      x-ms-blob-committed-block-count: ['2']
+      x-ms-version: ['2015-04-05']
+    status: {code: 201, message: Created}
+- request:
+    body: null
+    headers:
+      Accept-Encoding: [identity]
+      Connection: [keep-alive]
+      User-Agent: [Azure-Storage/0.30.0 (Python CPython 3.5.2; Windows 10)]
+      x-ms-date: ['Tue, 04 Apr 2017 16:48:13 GMT']
+      x-ms-version: ['2015-04-05']
+    method: HEAD
+    uri: https://dummystorage.blob.local.azurestack.external/cont1/testappendblob
+  response:
+    body: {string: ''}
+    headers:
+      Accept-Ranges: [bytes]
+      Content-Length: ['156']
+      Content-Type: [application/octet-stream]
+      Date: ['Tue, 04 Apr 2017 16:48:13 GMT']
+      ETag: ['"0x8D47B7A62306E9B"']
+      Last-Modified: ['Tue, 04 Apr 2017 16:48:12 GMT']
+      Server: [Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0]
+      x-ms-blob-committed-block-count: ['2']
+      x-ms-blob-type: [AppendBlob]
+      x-ms-lease-state: [available]
+      x-ms-lease-status: [unlocked]
+      x-ms-version: ['2015-04-05']
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Accept-Encoding: [identity]
+      Connection: [keep-alive]
+      Content-Length: ['0']
+      User-Agent: [Azure-Storage/0.30.0 (Python CPython 3.5.2; Windows 10)]
+      x-ms-date: ['Tue, 04 Apr 2017 16:48:14 GMT']
+      x-ms-meta-a: [b]
+      x-ms-meta-c: [d]
+      x-ms-version: ['2015-04-05']
+    method: PUT
+    uri: https://dummystorage.blob.local.azurestack.external/cont1/testblockblob?comp=metadata
+  response:
+    body: {string: ''}
+    headers:
+      Date: ['Tue, 04 Apr 2017 16:48:14 GMT']
+      ETag: ['"0x8D47B7A63377187"']
+      Last-Modified: ['Tue, 04 Apr 2017 16:48:14 GMT']
+      Server: [Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0]
+      Transfer-Encoding: [chunked]
+      x-ms-version: ['2015-04-05']
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Accept-Encoding: [identity]
+      Connection: [keep-alive]
+      User-Agent: [Azure-Storage/0.30.0 (Python CPython 3.5.2; Windows 10)]
+      x-ms-date: ['Tue, 04 Apr 2017 16:48:15 GMT']
+      x-ms-version: ['2015-04-05']
+    method: GET
+    uri: https://dummystorage.blob.local.azurestack.external/cont1/testblockblob?comp=metadata
+  response:
+    body: {string: ''}
+    headers:
+      Date: ['Tue, 04 Apr 2017 16:48:15 GMT']
+      ETag: ['"0x8D47B7A63377187"']
+      Last-Modified: ['Tue, 04 Apr 2017 16:48:14 GMT']
+      Server: [Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0]
+      Transfer-Encoding: [chunked]
+      x-ms-meta-a: [b]
+      x-ms-meta-c: [d]
+      x-ms-version: ['2015-04-05']
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Accept-Encoding: [identity]
+      Connection: [keep-alive]
+      Content-Length: ['0']
+      User-Agent: [Azure-Storage/0.30.0 (Python CPython 3.5.2; Windows 10)]
+      x-ms-date: ['Tue, 04 Apr 2017 16:48:15 GMT']
+      x-ms-version: ['2015-04-05']
+    method: PUT
+    uri: https://dummystorage.blob.local.azurestack.external/cont1/testblockblob?comp=metadata
+  response:
+    body: {string: ''}
+    headers:
+      Date: ['Tue, 04 Apr 2017 16:48:15 GMT']
+      ETag: ['"0x8D47B7A63C5A4FA"']
+      Last-Modified: ['Tue, 04 Apr 2017 16:48:15 GMT']
+      Server: [Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0]
+      Transfer-Encoding: [chunked]
+      x-ms-version: ['2015-04-05']
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Accept-Encoding: [identity]
+      Connection: [keep-alive]
+      User-Agent: [Azure-Storage/0.30.0 (Python CPython 3.5.2; Windows 10)]
+      x-ms-date: ['Tue, 04 Apr 2017 16:48:16 GMT']
+      x-ms-version: ['2015-04-05']
+    method: GET
+    uri: https://dummystorage.blob.local.azurestack.external/cont1/testblockblob?comp=metadata
+  response:
+    body: {string: ''}
+    headers:
+      Date: ['Tue, 04 Apr 2017 16:48:15 GMT']
+      ETag: ['"0x8D47B7A63C5A4FA"']
+      Last-Modified: ['Tue, 04 Apr 2017 16:48:15 GMT']
+      Server: [Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0]
+      Transfer-Encoding: [chunked]
+      x-ms-version: ['2015-04-05']
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Accept-Encoding: [identity]
+      Connection: [keep-alive]
+      User-Agent: [Azure-Storage/0.30.0 (Python CPython 3.5.2; Windows 10)]
+      x-ms-date: ['Tue, 04 Apr 2017 16:48:16 GMT']
+      x-ms-version: ['2015-04-05']
+    method: GET
+    uri: https://dummystorage.blob.local.azurestack.external/cont1?restype=container&comp=list
+  response:
+    body: {string: "\uFEFF<?xml version=\"1.0\" encoding=\"utf-8\"?><EnumerationResults\
+        \ ServiceEndpoint=\"https://vcrstorage121316476055.blob.local.azurestack.external/\"\
+        \ ContainerName=\"cont1\"><Blobs><Blob><Name>testappendblob</Name><Properties><Last-Modified>Tue,\
+        \ 04 Apr 2017 16:48:12 GMT</Last-Modified><Etag>0x8D47B7A62306E9B</Etag><Content-Length>156</Content-Length><Content-Type>application/octet-stream</Content-Type><Content-Encoding\
+        \ /><Content-Language /><Content-MD5 /><Cache-Control /><Content-Disposition\
+        \ /><BlobType>AppendBlob</BlobType><LeaseStatus>unlocked</LeaseStatus><LeaseState>available</LeaseState></Properties></Blob><Blob><Name>testblockblob</Name><Properties><Last-Modified>Tue,\
+        \ 04 Apr 2017 16:48:15 GMT</Last-Modified><Etag>0x8D47B7A63C5A4FA</Etag><Content-Length>78</Content-Length><Content-Type>application/octet-stream</Content-Type><Content-Encoding\
+        \ /><Content-Language /><Content-MD5>zeGiTMG1TdAobIHawzap3A==</Content-MD5><Cache-Control\
+        \ /><Content-Disposition /><BlobType>BlockBlob</BlobType><LeaseStatus>unlocked</LeaseStatus><LeaseState>available</LeaseState></Properties></Blob><Blob><Name>testpageblob</Name><Properties><Last-Modified>Tue,\
+        \ 04 Apr 2017 16:48:11 GMT</Last-Modified><Etag>0x8D47B7A6150E514</Etag><Content-Length>512</Content-Length><Content-Type>application/octet-stream</Content-Type><Content-Encoding\
+        \ /><Content-Language /><Content-MD5 /><Cache-Control /><Content-Disposition\
+        \ /><x-ms-blob-sequence-number>0</x-ms-blob-sequence-number><BlobType>PageBlob</BlobType><LeaseStatus>unlocked</LeaseStatus><LeaseState>available</LeaseState></Properties></Blob></Blobs><NextMarker\
+        \ /></EnumerationResults>"}
+    headers:
+      Content-Type: [application/xml]
+      Date: ['Tue, 04 Apr 2017 16:48:16 GMT']
+      Server: [Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0]
+      Transfer-Encoding: [chunked]
+      x-ms-version: ['2015-04-05']
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Accept-Encoding: [identity]
+      Connection: [keep-alive]
+      User-Agent: [Azure-Storage/0.30.0 (Python CPython 3.5.2; Windows 10)]
+      x-ms-date: ['Tue, 04 Apr 2017 16:48:16 GMT']
+      x-ms-version: ['2015-04-05']
+    method: HEAD
+    uri: https://dummystorage.blob.local.azurestack.external/cont1/testblockblob
+  response:
+    body: {string: ''}
+    headers:
+      Accept-Ranges: [bytes]
+      Content-Length: ['78']
+      Content-MD5: [zeGiTMG1TdAobIHawzap3A==]
+      Content-Type: [application/octet-stream]
+      Date: ['Tue, 04 Apr 2017 16:48:16 GMT']
+      ETag: ['"0x8D47B7A63C5A4FA"']
+      Last-Modified: ['Tue, 04 Apr 2017 16:48:15 GMT']
+      Server: [Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0]
+      x-ms-blob-type: [BlockBlob]
+      x-ms-lease-state: [available]
+      x-ms-lease-status: [unlocked]
+      x-ms-version: ['2015-04-05']
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Accept-Encoding: [identity]
+      Connection: [keep-alive]
+      User-Agent: [Azure-Storage/0.30.0 (Python CPython 3.5.2; Windows 10)]
+      x-ms-date: ['Tue, 04 Apr 2017 16:48:17 GMT']
+      x-ms-version: ['2015-04-05']
+    method: HEAD
+    uri: https://dummystorage.blob.local.azurestack.external/cont1/testblockblob
+  response:
+    body: {string: ''}
+    headers:
+      Accept-Ranges: [bytes]
+      Content-Length: ['78']
+      Content-MD5: [zeGiTMG1TdAobIHawzap3A==]
+      Content-Type: [application/octet-stream]
+      Date: ['Tue, 04 Apr 2017 16:48:17 GMT']
+      ETag: ['"0x8D47B7A63C5A4FA"']
+      Last-Modified: ['Tue, 04 Apr 2017 16:48:15 GMT']
+      Server: [Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0]
+      x-ms-blob-type: [BlockBlob]
+      x-ms-lease-state: [available]
+      x-ms-lease-status: [unlocked]
+      x-ms-version: ['2015-04-05']
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Accept-Encoding: [identity]
+      Connection: [keep-alive]
+      Content-Length: ['0']
+      User-Agent: [Azure-Storage/0.30.0 (Python CPython 3.5.2; Windows 10)]
+      x-ms-blob-content-md5: [zeGiTMG1TdAobIHawzap3A==]
+      x-ms-blob-content-type: [test/type]
+      x-ms-date: ['Tue, 04 Apr 2017 16:48:17 GMT']
+      x-ms-version: ['2015-04-05']
+    method: PUT
+    uri: https://dummystorage.blob.local.azurestack.external/cont1/testblockblob?comp=properties
+  response:
+    body: {string: ''}
+    headers:
+      Date: ['Tue, 04 Apr 2017 16:48:17 GMT']
+      ETag: ['"0x8D47B7A64F97F77"']
+      Last-Modified: ['Tue, 04 Apr 2017 16:48:17 GMT']
+      Server: [Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0]
+      Transfer-Encoding: [chunked]
+      x-ms-version: ['2015-04-05']
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Accept-Encoding: [identity]
+      Connection: [keep-alive]
+      User-Agent: [Azure-Storage/0.30.0 (Python CPython 3.5.2; Windows 10)]
+      x-ms-date: ['Tue, 04 Apr 2017 16:48:17 GMT']
+      x-ms-version: ['2015-04-05']
+    method: HEAD
+    uri: https://dummystorage.blob.local.azurestack.external/cont1/testblockblob
+  response:
+    body: {string: ''}
+    headers:
+      Accept-Ranges: [bytes]
+      Content-Length: ['78']
+      Content-MD5: [zeGiTMG1TdAobIHawzap3A==]
+      Content-Type: [test/type]
+      Date: ['Tue, 04 Apr 2017 16:48:17 GMT']
+      ETag: ['"0x8D47B7A64F97F77"']
+      Last-Modified: ['Tue, 04 Apr 2017 16:48:17 GMT']
+      Server: [Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0]
+      x-ms-blob-type: [BlockBlob]
+      x-ms-lease-state: [available]
+      x-ms-lease-status: [unlocked]
+      x-ms-version: ['2015-04-05']
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Accept-Encoding: [identity]
+      Connection: [keep-alive]
+      User-Agent: [Azure-Storage/0.30.0 (Python CPython 3.5.2; Windows 10)]
+      x-ms-date: ['Tue, 04 Apr 2017 16:48:18 GMT']
+      x-ms-range: [bytes=None-]
+      x-ms-version: ['2015-04-05']
+    method: GET
+    uri: https://dummystorage.blob.local.azurestack.external/cont1/testblockblob
+  response:
+    body: {string: This is a test file for performance of automated tests. DO NOT
+        MOVE OR DELETE!}
+    headers:
+      Accept-Ranges: [bytes]
+      Content-Length: ['78']
+      Content-MD5: [zeGiTMG1TdAobIHawzap3A==]
+      Content-Type: [test/type]
+      Date: ['Tue, 04 Apr 2017 16:48:18 GMT']
+      ETag: ['"0x8D47B7A64F97F77"']
+      Last-Modified: ['Tue, 04 Apr 2017 16:48:17 GMT']
+      Server: [Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0]
+      x-ms-blob-type: [BlockBlob]
+      x-ms-lease-state: [available]
+      x-ms-lease-status: [unlocked]
+      x-ms-version: ['2015-04-05']
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Accept-Encoding: [identity]
+      Connection: [keep-alive]
+      Content-Length: ['0']
+      If-Modified-Since: ['Fri, 01 Apr 2016 12:00:00 GMT']
+      User-Agent: [Azure-Storage/0.30.0 (Python CPython 3.5.2; Windows 10)]
+      x-ms-date: ['Tue, 04 Apr 2017 16:48:18 GMT']
+      x-ms-lease-action: [acquire]
+      x-ms-lease-duration: ['60']
+      x-ms-proposed-lease-id: [abcdabcd-abcd-abcd-abcd-abcdabcdabcd]
+      x-ms-version: ['2015-04-05']
+    method: PUT
+    uri: https://dummystorage.blob.local.azurestack.external/cont1/testblockblob?comp=lease
+  response:
+    body: {string: ''}
+    headers:
+      Date: ['Tue, 04 Apr 2017 16:48:18 GMT']
+      ETag: ['"0x8D47B7A64F97F77"']
+      Last-Modified: ['Tue, 04 Apr 2017 16:48:17 GMT']
+      Server: [Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0]
+      Transfer-Encoding: [chunked]
+      x-ms-lease-id: [abcdabcd-abcd-abcd-abcd-abcdabcdabcd]
+      x-ms-version: ['2015-04-05']
+    status: {code: 201, message: Created}
+- request:
+    body: null
+    headers:
+      Accept-Encoding: [identity]
+      Connection: [keep-alive]
+      User-Agent: [Azure-Storage/0.30.0 (Python CPython 3.5.2; Windows 10)]
+      x-ms-date: ['Tue, 04 Apr 2017 16:48:19 GMT']
+      x-ms-version: ['2015-04-05']
+    method: HEAD
+    uri: https://dummystorage.blob.local.azurestack.external/cont1/testblockblob
+  response:
+    body: {string: ''}
+    headers:
+      Accept-Ranges: [bytes]
+      Content-Length: ['78']
+      Content-MD5: [zeGiTMG1TdAobIHawzap3A==]
+      Content-Type: [test/type]
+      Date: ['Tue, 04 Apr 2017 16:48:19 GMT']
+      ETag: ['"0x8D47B7A64F97F77"']
+      Last-Modified: ['Tue, 04 Apr 2017 16:48:17 GMT']
+      Server: [Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0]
+      x-ms-blob-type: [BlockBlob]
+      x-ms-lease-duration: [fixed]
+      x-ms-lease-state: [leased]
+      x-ms-lease-status: [locked]
+      x-ms-version: ['2015-04-05']
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Accept-Encoding: [identity]
+      Connection: [keep-alive]
+      Content-Length: ['0']
+      User-Agent: [Azure-Storage/0.30.0 (Python CPython 3.5.2; Windows 10)]
+      x-ms-date: ['Tue, 04 Apr 2017 16:48:19 GMT']
+      x-ms-lease-action: [change]
+      x-ms-lease-id: [abcdabcd-abcd-abcd-abcd-abcdabcdabcd]
+      x-ms-proposed-lease-id: [dcbadcba-dcba-dcba-dcba-dcbadcbadcba]
+      x-ms-version: ['2015-04-05']
+    method: PUT
+    uri: https://dummystorage.blob.local.azurestack.external/cont1/testblockblob?comp=lease
+  response:
+    body: {string: ''}
+    headers:
+      Date: ['Tue, 04 Apr 2017 16:48:19 GMT']
+      ETag: ['"0x8D47B7A64F97F77"']
+      Last-Modified: ['Tue, 04 Apr 2017 16:48:17 GMT']
+      Server: [Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0]
+      Transfer-Encoding: [chunked]
+      x-ms-lease-id: [dcbadcba-dcba-dcba-dcba-dcbadcbadcba]
+      x-ms-version: ['2015-04-05']
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Accept-Encoding: [identity]
+      Connection: [keep-alive]
+      Content-Length: ['0']
+      User-Agent: [Azure-Storage/0.30.0 (Python CPython 3.5.2; Windows 10)]
+      x-ms-date: ['Tue, 04 Apr 2017 16:48:20 GMT']
+      x-ms-lease-action: [renew]
+      x-ms-lease-id: [dcbadcba-dcba-dcba-dcba-dcbadcbadcba]
+      x-ms-version: ['2015-04-05']
+    method: PUT
+    uri: https://dummystorage.blob.local.azurestack.external/cont1/testblockblob?comp=lease
+  response:
+    body: {string: ''}
+    headers:
+      Date: ['Tue, 04 Apr 2017 16:48:20 GMT']
+      ETag: ['"0x8D47B7A64F97F77"']
+      Last-Modified: ['Tue, 04 Apr 2017 16:48:17 GMT']
+      Server: [Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0]
+      Transfer-Encoding: [chunked]
+      x-ms-lease-id: [dcbadcba-dcba-dcba-dcba-dcbadcbadcba]
+      x-ms-version: ['2015-04-05']
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Accept-Encoding: [identity]
+      Connection: [keep-alive]
+      User-Agent: [Azure-Storage/0.30.0 (Python CPython 3.5.2; Windows 10)]
+      x-ms-date: ['Tue, 04 Apr 2017 16:48:20 GMT']
+      x-ms-version: ['2015-04-05']
+    method: HEAD
+    uri: https://dummystorage.blob.local.azurestack.external/cont1/testblockblob
+  response:
+    body: {string: ''}
+    headers:
+      Accept-Ranges: [bytes]
+      Content-Length: ['78']
+      Content-MD5: [zeGiTMG1TdAobIHawzap3A==]
+      Content-Type: [test/type]
+      Date: ['Tue, 04 Apr 2017 16:48:20 GMT']
+      ETag: ['"0x8D47B7A64F97F77"']
+      Last-Modified: ['Tue, 04 Apr 2017 16:48:17 GMT']
+      Server: [Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0]
+      x-ms-blob-type: [BlockBlob]
+      x-ms-lease-duration: [fixed]
+      x-ms-lease-state: [leased]
+      x-ms-lease-status: [locked]
+      x-ms-version: ['2015-04-05']
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Accept-Encoding: [identity]
+      Connection: [keep-alive]
+      Content-Length: ['0']
+      User-Agent: [Azure-Storage/0.30.0 (Python CPython 3.5.2; Windows 10)]
+      x-ms-date: ['Tue, 04 Apr 2017 16:48:21 GMT']
+      x-ms-lease-action: [break]
+      x-ms-lease-break-period: ['30']
+      x-ms-version: ['2015-04-05']
+    method: PUT
+    uri: https://dummystorage.blob.local.azurestack.external/cont1/testblockblob?comp=lease
+  response:
+    body: {string: ''}
+    headers:
+      Date: ['Tue, 04 Apr 2017 16:48:21 GMT']
+      ETag: ['"0x8D47B7A64F97F77"']
+      Last-Modified: ['Tue, 04 Apr 2017 16:48:17 GMT']
+      Server: [Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0]
+      Transfer-Encoding: [chunked]
+      x-ms-lease-time: ['30']
+      x-ms-version: ['2015-04-05']
+    status: {code: 202, message: Accepted}
+- request:
+    body: null
+    headers:
+      Accept-Encoding: [identity]
+      Connection: [keep-alive]
+      User-Agent: [Azure-Storage/0.30.0 (Python CPython 3.5.2; Windows 10)]
+      x-ms-date: ['Tue, 04 Apr 2017 16:48:21 GMT']
+      x-ms-version: ['2015-04-05']
+    method: HEAD
+    uri: https://dummystorage.blob.local.azurestack.external/cont1/testblockblob
+  response:
+    body: {string: ''}
+    headers:
+      Accept-Ranges: [bytes]
+      Content-Length: ['78']
+      Content-MD5: [zeGiTMG1TdAobIHawzap3A==]
+      Content-Type: [test/type]
+      Date: ['Tue, 04 Apr 2017 16:48:21 GMT']
+      ETag: ['"0x8D47B7A64F97F77"']
+      Last-Modified: ['Tue, 04 Apr 2017 16:48:17 GMT']
+      Server: [Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0]
+      x-ms-blob-type: [BlockBlob]
+      x-ms-lease-state: [breaking]
+      x-ms-lease-status: [locked]
+      x-ms-version: ['2015-04-05']
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Accept-Encoding: [identity]
+      Connection: [keep-alive]
+      Content-Length: ['0']
+      User-Agent: [Azure-Storage/0.30.0 (Python CPython 3.5.2; Windows 10)]
+      x-ms-date: ['Tue, 04 Apr 2017 16:48:22 GMT']
+      x-ms-lease-action: [release]
+      x-ms-lease-id: [dcbadcba-dcba-dcba-dcba-dcbadcbadcba]
+      x-ms-version: ['2015-04-05']
+    method: PUT
+    uri: https://dummystorage.blob.local.azurestack.external/cont1/testblockblob?comp=lease
+  response:
+    body: {string: ''}
+    headers:
+      Date: ['Tue, 04 Apr 2017 16:48:22 GMT']
+      ETag: ['"0x8D47B7A64F97F77"']
+      Last-Modified: ['Tue, 04 Apr 2017 16:48:17 GMT']
+      Server: [Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0]
+      Transfer-Encoding: [chunked]
+      x-ms-version: ['2015-04-05']
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Accept-Encoding: [identity]
+      Connection: [keep-alive]
+      User-Agent: [Azure-Storage/0.30.0 (Python CPython 3.5.2; Windows 10)]
+      x-ms-date: ['Tue, 04 Apr 2017 16:48:22 GMT']
+      x-ms-version: ['2015-04-05']
+    method: HEAD
+    uri: https://dummystorage.blob.local.azurestack.external/cont1/testblockblob
+  response:
+    body: {string: ''}
+    headers:
+      Accept-Ranges: [bytes]
+      Content-Length: ['78']
+      Content-MD5: [zeGiTMG1TdAobIHawzap3A==]
+      Content-Type: [test/type]
+      Date: ['Tue, 04 Apr 2017 16:48:22 GMT']
+      ETag: ['"0x8D47B7A64F97F77"']
+      Last-Modified: ['Tue, 04 Apr 2017 16:48:17 GMT']
+      Server: [Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0]
+      x-ms-blob-type: [BlockBlob]
+      x-ms-lease-state: [available]
+      x-ms-lease-status: [unlocked]
+      x-ms-version: ['2015-04-05']
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Accept-Encoding: [identity]
+      Connection: [keep-alive]
+      Content-Length: ['0']
+      User-Agent: [Azure-Storage/0.30.0 (Python CPython 3.5.2; Windows 10)]
+      x-ms-date: ['Tue, 04 Apr 2017 16:48:23 GMT']
+      x-ms-version: ['2015-04-05']
+    method: PUT
+    uri: https://dummystorage.blob.local.azurestack.external/cont1/testappendblob?comp=snapshot
+  response:
+    body: {string: ''}
+    headers:
+      Date: ['Tue, 04 Apr 2017 16:48:23 GMT']
+      ETag: ['"0x8D47B7A62306E9B"']
+      Last-Modified: ['Tue, 04 Apr 2017 16:48:12 GMT']
+      Server: [Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0]
+      Transfer-Encoding: [chunked]
+      x-ms-snapshot: ['2017-04-04T16:48:23.5284711Z']
+      x-ms-version: ['2015-04-05']
+    status: {code: 201, message: Created}
+- request:
+    body: null
+    headers:
+      Accept-Encoding: [identity]
+      Connection: [keep-alive]
+      User-Agent: [Azure-Storage/0.30.0 (Python CPython 3.5.2; Windows 10)]
+      x-ms-date: ['Tue, 04 Apr 2017 16:48:23 GMT']
+      x-ms-version: ['2015-04-05']
+    method: HEAD
+    uri: https://dummystorage.blob.local.azurestack.external/cont1/testappendblob?snapshot=2017-04-04T16%3A48%3A23.5284711Z
+  response:
+    body: {string: ''}
+    headers:
+      Accept-Ranges: [bytes]
+      Content-Length: ['156']
+      Content-Type: [application/octet-stream]
+      Date: ['Tue, 04 Apr 2017 16:48:23 GMT']
+      ETag: ['"0x8D47B7A62306E9B"']
+      Last-Modified: ['Tue, 04 Apr 2017 16:48:12 GMT']
+      Server: [Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0]
+      x-ms-blob-committed-block-count: ['2']
+      x-ms-blob-type: [AppendBlob]
+      x-ms-version: ['2015-04-05']
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Accept-Encoding: [identity]
+      Connection: [keep-alive]
+      Content-Length: ['0']
+      User-Agent: [Azure-Storage/0.30.0 (Python CPython 3.5.2; Windows 10)]
+      x-ms-date: ['Tue, 04 Apr 2017 16:48:24 GMT']
+      x-ms-version: ['2015-04-05']
+    method: DELETE
+    uri: https://dummystorage.blob.local.azurestack.external/cont1/testblockblob
+  response:
+    body: {string: ''}
+    headers:
+      Date: ['Tue, 04 Apr 2017 16:48:24 GMT']
+      Server: [Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0]
+      Transfer-Encoding: [chunked]
+      x-ms-version: ['2015-04-05']
+    status: {code: 202, message: Accepted}
+- request:
+    body: null
+    headers:
+      Accept-Encoding: [identity]
+      Connection: [keep-alive]
+      User-Agent: [Azure-Storage/0.30.0 (Python CPython 3.5.2; Windows 10)]
+      x-ms-date: ['Tue, 04 Apr 2017 16:48:24 GMT']
+      x-ms-version: ['2015-04-05']
+    method: HEAD
+    uri: https://dummystorage.blob.local.azurestack.external/cont1/testblockblob
+  response:
+    body: {string: ''}
+    headers:
+      Date: ['Tue, 04 Apr 2017 16:48:24 GMT']
+      Server: [Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0]
+      Transfer-Encoding: [chunked]
+      x-ms-version: ['2015-04-05']
+    status: {code: 404, message: The specified blob does not exist.}
+- request:
+    body: null
+    headers:
+      Accept-Encoding: [identity]
+      Connection: [keep-alive]
+      Content-Length: ['0']
+      If-Modified-Since: ['Fri, 01 Apr 2016 12:00:00 GMT']
+      User-Agent: [Azure-Storage/0.30.0 (Python CPython 3.5.2; Windows 10)]
+      x-ms-date: ['Tue, 04 Apr 2017 16:48:25 GMT']
+      x-ms-lease-action: [acquire]
+      x-ms-lease-duration: ['60']
+      x-ms-proposed-lease-id: [abcdabcd-abcd-abcd-abcd-abcdabcdabcd]
+      x-ms-version: ['2015-04-05']
+    method: PUT
+    uri: https://dummystorage.blob.local.azurestack.external/cont1?restype=container&comp=lease
+  response:
+    body: {string: ''}
+    headers:
+      Date: ['Tue, 04 Apr 2017 16:48:25 GMT']
+      ETag: ['"0x8D47B7A601D90D6"']
+      Last-Modified: ['Tue, 04 Apr 2017 16:48:09 GMT']
+      Server: [Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0]
+      Transfer-Encoding: [chunked]
+      x-ms-lease-id: [abcdabcd-abcd-abcd-abcd-abcdabcdabcd]
+      x-ms-version: ['2015-04-05']
+    status: {code: 201, message: Created}
+- request:
+    body: null
+    headers:
+      Accept-Encoding: [identity]
+      Connection: [keep-alive]
+      User-Agent: [Azure-Storage/0.30.0 (Python CPython 3.5.2; Windows 10)]
+      x-ms-date: ['Tue, 04 Apr 2017 16:48:25 GMT']
+      x-ms-version: ['2015-04-05']
+    method: GET
+    uri: https://dummystorage.blob.local.azurestack.external/cont1?restype=container
+  response:
+    body: {string: ''}
+    headers:
+      Date: ['Tue, 04 Apr 2017 16:48:25 GMT']
+      ETag: ['"0x8D47B7A601D90D6"']
+      Last-Modified: ['Tue, 04 Apr 2017 16:48:09 GMT']
+      Server: [Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0]
+      Transfer-Encoding: [chunked]
+      x-ms-lease-duration: [fixed]
+      x-ms-lease-state: [leased]
+      x-ms-lease-status: [locked]
+      x-ms-version: ['2015-04-05']
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Accept-Encoding: [identity]
+      Connection: [keep-alive]
+      Content-Length: ['0']
+      User-Agent: [Azure-Storage/0.30.0 (Python CPython 3.5.2; Windows 10)]
+      x-ms-date: ['Tue, 04 Apr 2017 16:48:26 GMT']
+      x-ms-lease-action: [change]
+      x-ms-lease-id: [abcdabcd-abcd-abcd-abcd-abcdabcdabcd]
+      x-ms-proposed-lease-id: [dcbadcba-dcba-dcba-dcba-dcbadcbadcba]
+      x-ms-version: ['2015-04-05']
+    method: PUT
+    uri: https://dummystorage.blob.local.azurestack.external/cont1?restype=container&comp=lease
+  response:
+    body: {string: ''}
+    headers:
+      Date: ['Tue, 04 Apr 2017 16:48:26 GMT']
+      ETag: ['"0x8D47B7A601D90D6"']
+      Last-Modified: ['Tue, 04 Apr 2017 16:48:09 GMT']
+      Server: [Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0]
+      Transfer-Encoding: [chunked]
+      x-ms-lease-id: [dcbadcba-dcba-dcba-dcba-dcbadcbadcba]
+      x-ms-version: ['2015-04-05']
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Accept-Encoding: [identity]
+      Connection: [keep-alive]
+      Content-Length: ['0']
+      User-Agent: [Azure-Storage/0.30.0 (Python CPython 3.5.2; Windows 10)]
+      x-ms-date: ['Tue, 04 Apr 2017 16:48:26 GMT']
+      x-ms-lease-action: [renew]
+      x-ms-lease-id: [dcbadcba-dcba-dcba-dcba-dcbadcbadcba]
+      x-ms-version: ['2015-04-05']
+    method: PUT
+    uri: https://dummystorage.blob.local.azurestack.external/cont1?restype=container&comp=lease
+  response:
+    body: {string: ''}
+    headers:
+      Date: ['Tue, 04 Apr 2017 16:48:26 GMT']
+      ETag: ['"0x8D47B7A601D90D6"']
+      Last-Modified: ['Tue, 04 Apr 2017 16:48:09 GMT']
+      Server: [Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0]
+      Transfer-Encoding: [chunked]
+      x-ms-lease-id: [dcbadcba-dcba-dcba-dcba-dcbadcbadcba]
+      x-ms-version: ['2015-04-05']
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Accept-Encoding: [identity]
+      Connection: [keep-alive]
+      User-Agent: [Azure-Storage/0.30.0 (Python CPython 3.5.2; Windows 10)]
+      x-ms-date: ['Tue, 04 Apr 2017 16:48:27 GMT']
+      x-ms-version: ['2015-04-05']
+    method: GET
+    uri: https://dummystorage.blob.local.azurestack.external/cont1?restype=container
+  response:
+    body: {string: ''}
+    headers:
+      Date: ['Tue, 04 Apr 2017 16:48:27 GMT']
+      ETag: ['"0x8D47B7A601D90D6"']
+      Last-Modified: ['Tue, 04 Apr 2017 16:48:09 GMT']
+      Server: [Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0]
+      Transfer-Encoding: [chunked]
+      x-ms-lease-duration: [fixed]
+      x-ms-lease-state: [leased]
+      x-ms-lease-status: [locked]
+      x-ms-version: ['2015-04-05']
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Accept-Encoding: [identity]
+      Connection: [keep-alive]
+      Content-Length: ['0']
+      User-Agent: [Azure-Storage/0.30.0 (Python CPython 3.5.2; Windows 10)]
+      x-ms-date: ['Tue, 04 Apr 2017 16:48:27 GMT']
+      x-ms-lease-action: [break]
+      x-ms-lease-break-period: ['30']
+      x-ms-version: ['2015-04-05']
+    method: PUT
+    uri: https://dummystorage.blob.local.azurestack.external/cont1?restype=container&comp=lease
+  response:
+    body: {string: ''}
+    headers:
+      Date: ['Tue, 04 Apr 2017 16:48:27 GMT']
+      ETag: ['"0x8D47B7A601D90D6"']
+      Last-Modified: ['Tue, 04 Apr 2017 16:48:09 GMT']
+      Server: [Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0]
+      Transfer-Encoding: [chunked]
+      x-ms-lease-time: ['29']
+      x-ms-version: ['2015-04-05']
+    status: {code: 202, message: Accepted}
+- request:
+    body: null
+    headers:
+      Accept-Encoding: [identity]
+      Connection: [keep-alive]
+      User-Agent: [Azure-Storage/0.30.0 (Python CPython 3.5.2; Windows 10)]
+      x-ms-date: ['Tue, 04 Apr 2017 16:48:28 GMT']
+      x-ms-version: ['2015-04-05']
+    method: GET
+    uri: https://dummystorage.blob.local.azurestack.external/cont1?restype=container
+  response:
+    body: {string: ''}
+    headers:
+      Date: ['Tue, 04 Apr 2017 16:48:28 GMT']
+      ETag: ['"0x8D47B7A601D90D6"']
+      Last-Modified: ['Tue, 04 Apr 2017 16:48:09 GMT']
+      Server: [Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0]
+      Transfer-Encoding: [chunked]
+      x-ms-lease-state: [breaking]
+      x-ms-lease-status: [locked]
+      x-ms-version: ['2015-04-05']
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Accept-Encoding: [identity]
+      Connection: [keep-alive]
+      Content-Length: ['0']
+      User-Agent: [Azure-Storage/0.30.0 (Python CPython 3.5.2; Windows 10)]
+      x-ms-date: ['Tue, 04 Apr 2017 16:48:28 GMT']
+      x-ms-lease-action: [release]
+      x-ms-lease-id: [dcbadcba-dcba-dcba-dcba-dcbadcbadcba]
+      x-ms-version: ['2015-04-05']
+    method: PUT
+    uri: https://dummystorage.blob.local.azurestack.external/cont1?restype=container&comp=lease
+  response:
+    body: {string: ''}
+    headers:
+      Date: ['Tue, 04 Apr 2017 16:48:28 GMT']
+      ETag: ['"0x8D47B7A601D90D6"']
+      Last-Modified: ['Tue, 04 Apr 2017 16:48:09 GMT']
+      Server: [Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0]
+      Transfer-Encoding: [chunked]
+      x-ms-version: ['2015-04-05']
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Accept-Encoding: [identity]
+      Connection: [keep-alive]
+      User-Agent: [Azure-Storage/0.30.0 (Python CPython 3.5.2; Windows 10)]
+      x-ms-date: ['Tue, 04 Apr 2017 16:48:29 GMT']
+      x-ms-version: ['2015-04-05']
+    method: GET
+    uri: https://dummystorage.blob.local.azurestack.external/cont1?restype=container
+  response:
+    body: {string: ''}
+    headers:
+      Date: ['Tue, 04 Apr 2017 16:48:29 GMT']
+      ETag: ['"0x8D47B7A601D90D6"']
+      Last-Modified: ['Tue, 04 Apr 2017 16:48:09 GMT']
+      Server: [Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0]
+      Transfer-Encoding: [chunked]
+      x-ms-lease-state: [available]
+      x-ms-lease-status: [unlocked]
+      x-ms-version: ['2015-04-05']
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Accept-Encoding: [identity]
+      Connection: [keep-alive]
+      Content-Length: ['0']
+      User-Agent: [Azure-Storage/0.30.0 (Python CPython 3.5.2; Windows 10)]
+      x-ms-date: ['Tue, 04 Apr 2017 16:48:30 GMT']
+      x-ms-version: ['2015-04-05']
+    method: DELETE
+    uri: https://dummystorage.blob.local.azurestack.external/cont1?restype=container
+  response:
+    body: {string: ''}
+    headers:
+      Date: ['Tue, 04 Apr 2017 16:48:30 GMT']
+      Server: [Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0]
+      Transfer-Encoding: [chunked]
+      x-ms-version: ['2015-04-05']
+    status: {code: 202, message: Accepted}
+- request:
+    body: null
+    headers:
+      Accept-Encoding: [identity]
+      Connection: [keep-alive]
+      User-Agent: [Azure-Storage/0.30.0 (Python CPython 3.5.2; Windows 10)]
+      x-ms-date: ['Tue, 04 Apr 2017 16:48:30 GMT']
+      x-ms-version: ['2015-04-05']
+    method: GET
+    uri: https://dummystorage.blob.local.azurestack.external/cont1?restype=container
+  response:
+    body: {string: "\uFEFF<?xml version=\"1.0\" encoding=\"utf-8\"?><Error><Code>ContainerNotFound</Code><Message>The\
+        \ specified container does not exist.\nRequestId:304ddd41-ea3e-07b4-6949-ed111138bece\n\
+        Time:2017-04-04T16:48:30.8923650Z</Message><ExceptionDetails><ExceptionMessage>Exception\
+        \ of type 'Microsoft.Cis.Services.Nephos.Common.Storage.ContainerNotFoundException'\
+        \ was thrown.</ExceptionMessage><StackTrace>Microsoft.Cis.Services.Nephos.Common.Storage.ContainerNotFoundException:\
+        \ Exception of type 'Microsoft.Cis.Services.Nephos.Common.Storage.ContainerNotFoundException'\
+        \ was thrown. ---&gt; Microsoft.Cis.Services.Nephos.Common.Storage.ContainerNotFoundException:\
+        \ Exception of type 'Microsoft.Cis.Services.Nephos.Common.Storage.ContainerNotFoundException'\
+        \ was thrown. ---&gt; Microsoft.Cis.Services.Nephos.Common.Storage.ContainerNotFoundException:\
+        \ Exception of type 'Microsoft.Cis.Services.Nephos.Common.Storage.ContainerNotFoundException'\
+        \ was thrown. ---&gt; Microsoft.ObjectStorage.FrontEnd.WossProvider.WStoreException:\
+        \ GetBlobContainerPropertiesAsync failed\r\n   at Microsoft.ObjectStorage.FrontEnd.WossProvider.WBlobContainer.&lt;GetBlobContainerPropertiesAsync&gt;d__42.MoveNext()\r\
+        \n--- End of stack trace from previous location where exception was thrown\
+        \ ---\r\n   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task\
+        \ task)\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task\
+        \ task)\r\n   at Microsoft.ObjectStorage.FrontEnd.WossProvider.WContainer.&lt;GetPropertiesAsync&gt;d__87.MoveNext()\r\
+        \n--- End of stack trace from previous location where exception was thrown\
+        \ ---\r\n   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task\
+        \ task)\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task\
+        \ task)\r\n   at Microsoft.ObjectStorage.Util.Await(Task t)\r\n   at Microsoft.ObjectStorage.FrontEnd.WossProvider.WContainer.EndGetProperties(IAsyncResult\
+        \ ar)\r\n   --- End of inner exception stack trace ---\r\n   at Microsoft.ObjectStorage.FrontEnd.WossProvider.ExceptionManager.ReThrowIfWStoreException(Exception\
+        \ e)\r\n   at Microsoft.ObjectStorage.FrontEnd.WossProvider.WContainer.EndGetProperties(IAsyncResult\
+        \ ar)\r\n   at Microsoft.Cis.Services.Nephos.Storage.Service.ServiceManager.RealServiceManager.&lt;GetContainerPropertiesImpl&gt;d__117.MoveNext()\r\
+        \n   at AsyncHelper.AsyncIteratorContextBase.ExecuteIterator(Boolean inBegin)\r\
+        \n   --- End of inner exception stack trace ---\r\n   at Microsoft.Cis.Services.Nephos.Storage.Service.ServiceManager.RealServiceManager.EndGetContainerProperties(IAsyncResult\
+        \ ar)\r\n   at Microsoft.Cis.Services.Nephos.Storage.Service.Protocols.Rest.HttpRestProcessor.&lt;GetContainerPropertiesImpl&gt;d__42.MoveNext()\r\
+        \n   at AsyncHelper.AsyncIteratorContextBase.ExecuteIterator(Boolean inBegin)\r\
+        \n   --- End of inner exception stack trace ---\r\n   at Microsoft.Cis.Services.Nephos.Common.Protocols.Rest.BasicHttpProcessorWithAuthAndAccountContainer`1.EndPerformOperation(IAsyncResult\
+        \ ar)\r\n   at Microsoft.Cis.Services.Nephos.Common.Protocols.Rest.BasicHttpProcessorWithAuthAndAccountContainer`1.&lt;ProcessImpl&gt;d__4.MoveNext()</StackTrace></ExceptionDetails></Error>"}
+    headers:
+      Content-Length: ['3177']
+      Content-Type: [application/xml]
+      Date: ['Tue, 04 Apr 2017 16:48:30 GMT']
+      Server: [Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0]
+      x-ms-version: ['2015-04-05']
+    status: {code: 404, message: The specified container does not exist.}
+version: 1
