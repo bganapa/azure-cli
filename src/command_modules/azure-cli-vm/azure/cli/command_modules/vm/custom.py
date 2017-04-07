@@ -37,13 +37,15 @@ from ._actions import (load_images_from_aliases_doc,
                        load_extension_images_thru_services,
                        load_images_thru_services)
 from ._client_factory import _compute_client_factory
+from azure.cli.core.profiles.shared import ResourceType
+from azure.cli.core.profiles import get_versioned_models
 
 logger = azlogging.get_az_logger(__name__)
 
 
 def get_resource_group_location(resource_group_name):
     from azure.mgmt.resource import ResourceManagementClient
-    client = get_mgmt_service_client(ResourceManagementClient)
+    client = get_mgmt_service_client(ResourceType.MGMT_RESOURCE_RESOURCES)
     # pylint: disable=no-member
     return client.resource_groups.get(resource_group_name).location
 
@@ -1525,7 +1527,6 @@ def create_vm(vm_name, resource_group_name, image=None,
 
     from azure.cli.core._profile import CLOUD
     from azure.mgmt.resource import ResourceManagementClient
-    from azure.mgmt.resource.resources.models import DeploymentProperties, TemplateLink
 
     network_id_template = resource_id(
         subscription=get_subscription_id(), resource_group=resource_group_name,
@@ -1641,7 +1642,8 @@ def create_vm(vm_name, resource_group_name, image=None,
 
     # deploy ARM template
     deployment_name = 'vm_deploy_' + random_string(32)
-    client = get_mgmt_service_client(ResourceManagementClient).deployments
+    client = get_mgmt_service_client(ResourceType.MGMT_RESOURCE_RESOURCES).deployments
+    DeploymentProperties = get_versioned_models(ResourceType.MGMT_RESOURCE_RESOURCES, 'DeploymentProperties')
     properties = DeploymentProperties(template=template, parameters={}, mode='incremental')
     if validate:
         from azure.cli.command_modules.vm._vm_utils import log_pprint_template
@@ -1691,7 +1693,6 @@ def create_vmss(vmss_name, resource_group_name, image,
 
     from azure.cli.core._profile import CLOUD
     from azure.mgmt.resource import ResourceManagementClient
-    from azure.mgmt.resource.resources.models import DeploymentProperties, TemplateLink
     from azure.mgmt.compute.models import CachingTypes
 
     network_id_template = resource_id(
@@ -1875,7 +1876,8 @@ def create_vmss(vmss_name, resource_group_name, image,
 
     # deploy ARM template
     deployment_name = 'vmss_deploy_' + random_string(32)
-    client = get_mgmt_service_client(ResourceManagementClient).deployments
+    client = get_mgmt_service_client(ResourceType.MGMT_RESOURCE_RESOURCES).deployments
+    DeploymentProperties = get_versioned_models(ResourceType.MGMT_RESOURCE_RESOURCES, 'DeploymentProperties')
     properties = DeploymentProperties(template=template, parameters={}, mode='incremental')
     if validate:
         from azure.cli.command_modules.vm._vm_utils import log_pprint_template
@@ -1891,8 +1893,7 @@ def create_av_set(availability_set_name, resource_group_name,
                   location=None, no_wait=False,
                   unmanaged=False, tags=None, validate=False):
     from azure.mgmt.resource import ResourceManagementClient
-    from azure.mgmt.resource.resources.models import DeploymentProperties, TemplateLink
-    from azure.cli.core.util import random_string
+    from azure.cli.core._util import random_string
     from azure.cli.command_modules.vm._template_builder import (ArmTemplateBuilder,
                                                                 build_av_set_resource)
 
@@ -1910,7 +1911,8 @@ def create_av_set(availability_set_name, resource_group_name,
 
     # deploy ARM template
     deployment_name = 'av_set_deploy_' + random_string(32)
-    client = get_mgmt_service_client(ResourceManagementClient).deployments
+    client = get_mgmt_service_client(ResourceType.MGMT_RESOURCE_RESOURCES).deployments
+    DeploymentProperties = get_versioned_models(ResourceType.MGMT_RESOURCE_RESOURCES, 'DeploymentProperties')
     properties = DeploymentProperties(template=template, parameters={}, mode='incremental')
     if validate:
         return client.validate(resource_group_name, deployment_name, properties)
