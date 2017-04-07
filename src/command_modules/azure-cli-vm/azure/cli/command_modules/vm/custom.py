@@ -1893,7 +1893,7 @@ def create_av_set(availability_set_name, resource_group_name,
                   location=None, no_wait=False,
                   unmanaged=False, tags=None, validate=False):
     from azure.mgmt.resource import ResourceManagementClient
-    from azure.cli.core._util import random_string
+    from azure.cli.core.util import random_string
     from azure.cli.command_modules.vm._template_builder import (ArmTemplateBuilder,
                                                                 build_av_set_resource)
 
