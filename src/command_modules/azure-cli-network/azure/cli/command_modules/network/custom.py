@@ -9,11 +9,10 @@ from msrestazure.azure_exceptions import CloudError
 
 # pylint: disable=no-self-use,too-many-arguments,no-member,too-many-lines
 from azure.mgmt.network.models import \
-    (SecurityRule,
-     FrontendIPConfiguration, Probe, 
-     Route, VpnClientRootCertificate, VpnClientConfiguration,
+    ( Probe, 
+     VpnClientRootCertificate, VpnClientConfiguration,
      VpnClientRevokedCertificate, VirtualNetworkPeering,
-     ApplicationGatewayFirewallMode, SecurityRuleAccess, SecurityRuleDirection,
+     ApplicationGatewayFirewallMode, 
      SecurityRuleProtocol, IPAllocationMethod, IPVersion,
      ExpressRouteCircuitSkuTier, ExpressRouteCircuitSkuFamily,
      VpnType)
@@ -55,6 +54,13 @@ BackendAddressPool = get_versioned_models(ResourceType.MGMT_NETWORK, 'BackendAdd
 LoadBalancingRule = get_versioned_models(ResourceType.MGMT_NETWORK, 'LoadBalancingRule')
 VirtualNetworkGatewayType = get_versioned_models(ResourceType.MGMT_NETWORK, 'VirtualNetworkGatewayType')
 VirtualNetworkGatewaySkuName = get_versioned_models(ResourceType.MGMT_NETWORK, 'VirtualNetworkGatewaySkuName')
+SecurityRule = get_versioned_models(ResourceType.MGMT_NETWORK, 'SecurityRule')
+FrontendIPConfiguration = get_versioned_models(ResourceType.MGMT_NETWORK, 'FrontendIPConfiguration')
+Route = get_versioned_models(ResourceType.MGMT_NETWORK, 'Route')
+VpnClientRootCertificate = get_versioned_models(ResourceType.MGMT_NETWORK, 'VpnClientRootCertificate')
+SecurityRuleAccess = get_versioned_models(ResourceType.MGMT_NETWORK, 'SecurityRuleAccess')
+SecurityRuleDirection = get_versioned_models(ResourceType.MGMT_NETWORK, 'SecurityRuleDirection')
+
 
 def _upsert(parent, collection_name, obj_to_add, key_name):
 
@@ -1429,7 +1435,10 @@ update_route.__doc__ = Route.__doc__
 def create_local_gateway(resource_group_name, local_network_gateway_name, gateway_ip_address,
                          location=None, tags=None, local_address_prefix=None, asn=None,
                          bgp_peering_address=None, peer_weight=None, no_wait=False):
-    from azure.mgmt.network.models import LocalNetworkGateway, BgpSettings
+    ###from azure.mgmt.network.models import LocalNetworkGateway, BgpSettings
+    LocalNetworkGateway = get_versioned_models(ResourceType.MGMT_NETWORK,"LocalNetworkGateway")
+    BgpSettings = get_versioned_models(ResourceType.MGMT_NETWORK,"BgpSettings")
+
     client = _network_client_factory().local_network_gateways
     local_gateway = LocalNetworkGateway(
         local_address_prefix or [], location=location, tags=tags,

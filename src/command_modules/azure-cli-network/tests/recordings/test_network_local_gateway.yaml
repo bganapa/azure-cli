@@ -1,0 +1,264 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept: [application/json]
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Type: [application/json; charset=utf-8]
+      User-Agent: [python/3.5.2 (Windows-10-10.0.14393-SP0) requests/2.9.1 msrest/0.4.6
+          msrest_azure/0.4.7 resourcemanagementclient/0.40.0 Azure-SDK-For-Python
+          AZURECLI/TEST/2.0.1+dev]
+      accept-language: [en-US]
+      x-ms-client-request-id: [b071983a-1b0c-11e7-967a-00155db0d302]
+    method: GET
+    uri: https://adminmanagement.local.azurestack.external/subscriptions/00000000-0000-0000-0000-000000000000/resourcegroups/local_gateway_scenario?api-version=2016-02-01
+  response:
+    body: {string: '{"id":"/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/local_gateway_scenario","name":"local_gateway_scenario","location":"local","tags":{"use":"az-test"},"properties":{"provisioningState":"Succeeded"}}'}
+    headers:
+      Cache-Control: [no-cache]
+      Content-Length: ['233']
+      Content-Type: [application/json; charset=utf-8]
+      Date: ['Thu, 06 Apr 2017 21:04:56 GMT']
+      Expires: ['-1']
+      Pragma: [no-cache]
+      Strict-Transport-Security: [max-age=31536000; includeSubDomains]
+    status: {code: 200, message: OK}
+- request:
+    body: '{"properties": {"gatewayIpAddress": "10.1.1.1"}, "id": "[]", "location":
+      "local"}'
+    headers:
+      Accept: [application/json]
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['81']
+      Content-Type: [application/json; charset=utf-8]
+      User-Agent: [python/3.5.2 (Windows-10-10.0.14393-SP0) requests/2.9.1 msrest/0.4.6
+          msrest_azure/0.4.7 networkmanagementclient/0.40.0 Azure-SDK-For-Python AZURECLI/TEST/2.0.1+dev]
+      accept-language: [en-US]
+      x-ms-client-request-id: [b083e7d2-1b0c-11e7-a0ca-00155db0d302]
+    method: PUT
+    uri: https://adminmanagement.local.azurestack.external/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/local_gateway_scenario/providers/Microsoft.Network/localNetworkGateways/cli-test-loc-gateway?api-version=2015-06-15
+  response:
+    body: {string: "{\r\n  \"name\": \"cli-test-loc-gateway\",\r\n  \"id\": \"/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/local_gateway_scenario/providers/Microsoft.Network/localNetworkGateways/cli-test-loc-gateway\"\
+        ,\r\n  \"etag\": \"W/\\\"c8290ca9-881b-4c48-a81d-94adb460f994\\\"\",\r\n \
+        \ \"type\": \"Microsoft.Network/localNetworkGateways\",\r\n  \"location\"\
+        : \"local\",\r\n  \"properties\": {\r\n    \"provisioningState\": \"Updating\"\
+        ,\r\n    \"resourceGuid\": \"de0b90f9-4ab4-4e21-818b-dfe05a16818f\",\r\n \
+        \   \"localNetworkAddressSpace\": {\r\n      \"addressPrefixes\": []\r\n \
+        \   },\r\n    \"gatewayIpAddress\": \"10.1.1.1\"\r\n  }\r\n}"}
+    headers:
+      Azure-AsyncOperation: ['https://adminmanagement.local.azurestack.external/subscriptions/2c966402-b31d-4a3e-a3dc-397286c0c609/providers/Microsoft.Network/locations/local/operations/df61b051-0bac-4b91-a772-8988a1d30830?api-version=2015-06-15']
+      Cache-Control: [no-cache]
+      Content-Length: ['582']
+      Content-Type: [application/json; charset=utf-8]
+      Date: ['Thu, 06 Apr 2017 21:04:57 GMT']
+      Expires: ['-1']
+      Pragma: [no-cache]
+      Retry-After: ['10']
+      Server: [Microsoft-HTTPAPI/2.0, Microsoft-HTTPAPI/2.0]
+      Strict-Transport-Security: [max-age=31536000; includeSubDomains]
+      x-ms-ratelimit-remaining-subscription-writes: ['1118']
+    status: {code: 201, message: Created}
+- request:
+    body: null
+    headers:
+      Accept: [application/json]
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Type: [application/json; charset=utf-8]
+      User-Agent: [python/3.5.2 (Windows-10-10.0.14393-SP0) requests/2.9.1 msrest/0.4.6
+          msrest_azure/0.4.7 networkmanagementclient/0.40.0 Azure-SDK-For-Python AZURECLI/TEST/2.0.1+dev]
+      accept-language: [en-US]
+      x-ms-client-request-id: [b083e7d2-1b0c-11e7-a0ca-00155db0d302]
+    method: GET
+    uri: https://adminmanagement.local.azurestack.external/subscriptions/00000000-0000-0000-0000-000000000000/providers/Microsoft.Network/locations/local/operations/df61b051-0bac-4b91-a772-8988a1d30830?api-version=2015-06-15
+  response:
+    body: {string: "{\r\n  \"status\": \"Succeeded\"\r\n}"}
+    headers:
+      Cache-Control: [no-cache]
+      Content-Length: ['29']
+      Content-Type: [application/json; charset=utf-8]
+      Date: ['Thu, 06 Apr 2017 21:05:08 GMT']
+      Expires: ['-1']
+      Pragma: [no-cache]
+      Server: [Microsoft-HTTPAPI/2.0, Microsoft-HTTPAPI/2.0]
+      Strict-Transport-Security: [max-age=31536000; includeSubDomains]
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Accept: [application/json]
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Type: [application/json; charset=utf-8]
+      User-Agent: [python/3.5.2 (Windows-10-10.0.14393-SP0) requests/2.9.1 msrest/0.4.6
+          msrest_azure/0.4.7 networkmanagementclient/0.40.0 Azure-SDK-For-Python AZURECLI/TEST/2.0.1+dev]
+      accept-language: [en-US]
+      x-ms-client-request-id: [b083e7d2-1b0c-11e7-a0ca-00155db0d302]
+    method: GET
+    uri: https://adminmanagement.local.azurestack.external/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/local_gateway_scenario/providers/Microsoft.Network/localNetworkGateways/cli-test-loc-gateway?api-version=2015-06-15
+  response:
+    body: {string: "{\r\n  \"name\": \"cli-test-loc-gateway\",\r\n  \"id\": \"/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/local_gateway_scenario/providers/Microsoft.Network/localNetworkGateways/cli-test-loc-gateway\"\
+        ,\r\n  \"etag\": \"W/\\\"29bdf331-1b14-4b7e-ae67-04a011cfe6ab\\\"\",\r\n \
+        \ \"type\": \"Microsoft.Network/localNetworkGateways\",\r\n  \"location\"\
+        : \"local\",\r\n  \"properties\": {\r\n    \"provisioningState\": \"Succeeded\"\
+        ,\r\n    \"resourceGuid\": \"de0b90f9-4ab4-4e21-818b-dfe05a16818f\",\r\n \
+        \   \"localNetworkAddressSpace\": {\r\n      \"addressPrefixes\": []\r\n \
+        \   },\r\n    \"gatewayIpAddress\": \"10.1.1.1\"\r\n  }\r\n}"}
+    headers:
+      Cache-Control: [no-cache]
+      Content-Length: ['583']
+      Content-Type: [application/json; charset=utf-8]
+      Date: ['Thu, 06 Apr 2017 21:05:08 GMT']
+      ETag: [W/"29bdf331-1b14-4b7e-ae67-04a011cfe6ab"]
+      Expires: ['-1']
+      Pragma: [no-cache]
+      Server: [Microsoft-HTTPAPI/2.0, Microsoft-HTTPAPI/2.0]
+      Strict-Transport-Security: [max-age=31536000; includeSubDomains]
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Accept: [application/json]
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Type: [application/json; charset=utf-8]
+      User-Agent: [python/3.5.2 (Windows-10-10.0.14393-SP0) requests/2.9.1 msrest/0.4.6
+          msrest_azure/0.4.7 networkmanagementclient/0.40.0 Azure-SDK-For-Python AZURECLI/TEST/2.0.1+dev]
+      accept-language: [en-US]
+      x-ms-client-request-id: [b7525d12-1b0c-11e7-82a8-00155db0d302]
+    method: GET
+    uri: https://adminmanagement.local.azurestack.external/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/local_gateway_scenario/providers/Microsoft.Network/localNetworkGateways?api-version=2015-06-15
+  response:
+    body: {string: "{\r\n  \"value\": [\r\n    {\r\n      \"name\": \"cli-test-loc-gateway\"\
+        ,\r\n      \"id\": \"/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/local_gateway_scenario/providers/Microsoft.Network/localNetworkGateways/cli-test-loc-gateway\"\
+        ,\r\n      \"etag\": \"W/\\\"29bdf331-1b14-4b7e-ae67-04a011cfe6ab\\\"\",\r\
+        \n      \"type\": \"Microsoft.Network/localNetworkGateways\",\r\n      \"\
+        location\": \"local\",\r\n      \"properties\": {\r\n        \"provisioningState\"\
+        : \"Succeeded\",\r\n        \"resourceGuid\": \"de0b90f9-4ab4-4e21-818b-dfe05a16818f\"\
+        ,\r\n        \"localNetworkAddressSpace\": {\r\n          \"addressPrefixes\"\
+        : []\r\n        },\r\n        \"gatewayIpAddress\": \"10.1.1.1\"\r\n     \
+        \ }\r\n    }\r\n  ]\r\n}"}
+    headers:
+      Cache-Control: [no-cache]
+      Content-Length: ['668']
+      Content-Type: [application/json; charset=utf-8]
+      Date: ['Thu, 06 Apr 2017 21:05:08 GMT']
+      Expires: ['-1']
+      Pragma: [no-cache]
+      Server: [Microsoft-HTTPAPI/2.0, Microsoft-HTTPAPI/2.0]
+      Strict-Transport-Security: [max-age=31536000; includeSubDomains]
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Accept: [application/json]
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Type: [application/json; charset=utf-8]
+      User-Agent: [python/3.5.2 (Windows-10-10.0.14393-SP0) requests/2.9.1 msrest/0.4.6
+          msrest_azure/0.4.7 networkmanagementclient/0.40.0 Azure-SDK-For-Python AZURECLI/TEST/2.0.1+dev]
+      accept-language: [en-US]
+      x-ms-client-request-id: [b7ac0788-1b0c-11e7-90e7-00155db0d302]
+    method: GET
+    uri: https://adminmanagement.local.azurestack.external/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/local_gateway_scenario/providers/Microsoft.Network/localNetworkGateways/cli-test-loc-gateway?api-version=2015-06-15
+  response:
+    body: {string: "{\r\n  \"name\": \"cli-test-loc-gateway\",\r\n  \"id\": \"/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/local_gateway_scenario/providers/Microsoft.Network/localNetworkGateways/cli-test-loc-gateway\"\
+        ,\r\n  \"etag\": \"W/\\\"29bdf331-1b14-4b7e-ae67-04a011cfe6ab\\\"\",\r\n \
+        \ \"type\": \"Microsoft.Network/localNetworkGateways\",\r\n  \"location\"\
+        : \"local\",\r\n  \"properties\": {\r\n    \"provisioningState\": \"Succeeded\"\
+        ,\r\n    \"resourceGuid\": \"de0b90f9-4ab4-4e21-818b-dfe05a16818f\",\r\n \
+        \   \"localNetworkAddressSpace\": {\r\n      \"addressPrefixes\": []\r\n \
+        \   },\r\n    \"gatewayIpAddress\": \"10.1.1.1\"\r\n  }\r\n}"}
+    headers:
+      Cache-Control: [no-cache]
+      Content-Length: ['583']
+      Content-Type: [application/json; charset=utf-8]
+      Date: ['Thu, 06 Apr 2017 21:05:09 GMT']
+      ETag: [W/"29bdf331-1b14-4b7e-ae67-04a011cfe6ab"]
+      Expires: ['-1']
+      Pragma: [no-cache]
+      Server: [Microsoft-HTTPAPI/2.0, Microsoft-HTTPAPI/2.0]
+      Strict-Transport-Security: [max-age=31536000; includeSubDomains]
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Accept: [application/json]
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['0']
+      Content-Type: [application/json; charset=utf-8]
+      User-Agent: [python/3.5.2 (Windows-10-10.0.14393-SP0) requests/2.9.1 msrest/0.4.6
+          msrest_azure/0.4.7 networkmanagementclient/0.40.0 Azure-SDK-For-Python AZURECLI/TEST/2.0.1+dev]
+      accept-language: [en-US]
+      x-ms-client-request-id: [b800bb68-1b0c-11e7-9cff-00155db0d302]
+    method: DELETE
+    uri: https://adminmanagement.local.azurestack.external/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/local_gateway_scenario/providers/Microsoft.Network/localNetworkGateways/cli-test-loc-gateway?api-version=2015-06-15
+  response:
+    body: {string: ''}
+    headers:
+      Azure-AsyncOperation: ['https://adminmanagement.local.azurestack.external/subscriptions/2c966402-b31d-4a3e-a3dc-397286c0c609/providers/Microsoft.Network/locations/local/operations/772c23eb-40f8-4178-8451-95c1a821fd7f?api-version=2015-06-15']
+      Cache-Control: [no-cache]
+      Content-Length: ['0']
+      Date: ['Thu, 06 Apr 2017 21:05:09 GMT']
+      Expires: ['-1']
+      Location: ['https://adminmanagement.local.azurestack.external/subscriptions/2c966402-b31d-4a3e-a3dc-397286c0c609/providers/Microsoft.Network/locations/local/operationResults/772c23eb-40f8-4178-8451-95c1a821fd7f?api-version=2015-06-15']
+      Pragma: [no-cache]
+      Retry-After: ['10']
+      Server: [Microsoft-HTTPAPI/2.0, Microsoft-HTTPAPI/2.0]
+      Strict-Transport-Security: [max-age=31536000; includeSubDomains]
+      x-ms-ratelimit-remaining-subscription-writes: ['1117']
+    status: {code: 202, message: Accepted}
+- request:
+    body: null
+    headers:
+      Accept: [application/json]
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Type: [application/json; charset=utf-8]
+      User-Agent: [python/3.5.2 (Windows-10-10.0.14393-SP0) requests/2.9.1 msrest/0.4.6
+          msrest_azure/0.4.7 networkmanagementclient/0.40.0 Azure-SDK-For-Python AZURECLI/TEST/2.0.1+dev]
+      accept-language: [en-US]
+      x-ms-client-request-id: [b800bb68-1b0c-11e7-9cff-00155db0d302]
+    method: GET
+    uri: https://adminmanagement.local.azurestack.external/subscriptions/00000000-0000-0000-0000-000000000000/providers/Microsoft.Network/locations/local/operations/772c23eb-40f8-4178-8451-95c1a821fd7f?api-version=2015-06-15
+  response:
+    body: {string: "{\r\n  \"status\": \"Succeeded\"\r\n}"}
+    headers:
+      Cache-Control: [no-cache]
+      Content-Length: ['29']
+      Content-Type: [application/json; charset=utf-8]
+      Date: ['Thu, 06 Apr 2017 21:05:20 GMT']
+      Expires: ['-1']
+      Pragma: [no-cache]
+      Server: [Microsoft-HTTPAPI/2.0, Microsoft-HTTPAPI/2.0]
+      Strict-Transport-Security: [max-age=31536000; includeSubDomains]
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Accept: [application/json]
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Type: [application/json; charset=utf-8]
+      User-Agent: [python/3.5.2 (Windows-10-10.0.14393-SP0) requests/2.9.1 msrest/0.4.6
+          msrest_azure/0.4.7 networkmanagementclient/0.40.0 Azure-SDK-For-Python AZURECLI/TEST/2.0.1+dev]
+      accept-language: [en-US]
+      x-ms-client-request-id: [bed24e62-1b0c-11e7-abe9-00155db0d302]
+    method: GET
+    uri: https://adminmanagement.local.azurestack.external/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/local_gateway_scenario/providers/Microsoft.Network/localNetworkGateways?api-version=2015-06-15
+  response:
+    body: {string: "{\r\n  \"value\": []\r\n}"}
+    headers:
+      Cache-Control: [no-cache]
+      Content-Length: ['19']
+      Content-Type: [application/json; charset=utf-8]
+      Date: ['Thu, 06 Apr 2017 21:05:21 GMT']
+      Expires: ['-1']
+      Pragma: [no-cache]
+      Server: [Microsoft-HTTPAPI/2.0, Microsoft-HTTPAPI/2.0]
+      Strict-Transport-Security: [max-age=31536000; includeSubDomains]
+    status: {code: 200, message: OK}
+version: 1

@@ -10,7 +10,7 @@ interactions:
           msrest_azure/0.4.7 resourcemanagementclient/0.40.0 Azure-SDK-For-Python
           AZURECLI/TEST/2.0.1+dev]
       accept-language: [en-US]
-      x-ms-client-request-id: [56c36800-1b44-11e7-b4ac-00155db0d302]
+      x-ms-client-request-id: [599bd252-1651-11e7-9fa2-00155db0d302]
     method: GET
     uri: https://adminmanagement.local.azurestack.external/subscriptions/00000000-0000-0000-0000-000000000000/resourcegroups/cli_test_vm_with_specialized_unmanaged_disk?api-version=2016-02-01
   response:
@@ -19,7 +19,7 @@ interactions:
       Cache-Control: [no-cache]
       Content-Length: ['275']
       Content-Type: [application/json; charset=utf-8]
-      Date: ['Fri, 07 Apr 2017 03:43:18 GMT']
+      Date: ['Fri, 31 Mar 2017 20:33:50 GMT']
       Expires: ['-1']
       Pragma: [no-cache]
       Strict-Transport-Security: [max-age=31536000; includeSubDomains]
@@ -76,9 +76,9 @@ interactions:
       Content-Length: ['2235']
       Content-Security-Policy: [default-src 'none'; style-src 'unsafe-inline']
       Content-Type: [text/plain; charset=utf-8]
-      Date: ['Fri, 07 Apr 2017 03:43:18 GMT']
+      Date: ['Fri, 31 Mar 2017 20:33:51 GMT']
       ETag: ['"d6824855d13e27c5258a680eb60f635d088fd05e"']
-      Expires: ['Fri, 07 Apr 2017 03:48:18 GMT']
+      Expires: ['Fri, 31 Mar 2017 20:38:51 GMT']
       Source-Age: ['0']
       Strict-Transport-Security: [max-age=31536000]
       Vary: ['Authorization,Accept-Encoding']
@@ -86,12 +86,12 @@ interactions:
       X-Cache: [MISS]
       X-Cache-Hits: ['0']
       X-Content-Type-Options: [nosniff]
-      X-Fastly-Request-ID: [b8fcc4d575e8988e178ed1edd28a1489e05430d2]
+      X-Fastly-Request-ID: [4f2f85c548be8e148cd9b0879128141eb3a27d73]
       X-Frame-Options: [deny]
       X-Geo-Block-List: ['']
-      X-GitHub-Request-Id: ['14B2:04F8:37AFE3C:39DD298:58E70AD5']
-      X-Served-By: [cache-sea1042-SEA]
-      X-Timer: ['S1491536598.678931,VS0,VE104']
+      X-GitHub-Request-Id: ['B7EA:BDCD:3D1F8F:3F5518:58DEBD2F']
+      X-Served-By: [cache-dfw1825-DFW]
+      X-Timer: ['S1490992431.527059,VS0,VE64']
       X-XSS-Protection: [1; mode=block]
     status: {code: 200, message: OK}
 - request:
@@ -104,7 +104,7 @@ interactions:
       User-Agent: [python/3.5.2 (Windows-10-10.0.14393-SP0) requests/2.9.1 msrest/0.4.6
           msrest_azure/0.4.7 storagemanagementclient/0.40.0 Azure-SDK-For-Python AZURECLI/TEST/2.0.1+dev]
       accept-language: [en-US]
-      x-ms-client-request-id: [56f064ee-1b44-11e7-af43-00155db0d302]
+      x-ms-client-request-id: [5a0d8c3a-1651-11e7-8626-00155db0d302]
     method: GET
     uri: https://adminmanagement.local.azurestack.external/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/cli_test_vm_with_specialized_unmanaged_disk/providers/Microsoft.Storage/storageAccounts?api-version=2015-06-15
   response:
@@ -113,7 +113,7 @@ interactions:
       Cache-Control: [no-cache]
       Content-Length: ['19']
       Content-Type: [application/json; charset=utf-8]
-      Date: ['Fri, 07 Apr 2017 03:43:18 GMT']
+      Date: ['Fri, 31 Mar 2017 20:33:51 GMT']
       Expires: ['-1']
       Pragma: [no-cache]
       Server: [Microsoft-HTTPAPI/2.0, Microsoft-HTTPAPI/2.0]
@@ -129,7 +129,7 @@ interactions:
       User-Agent: [python/3.5.2 (Windows-10-10.0.14393-SP0) requests/2.9.1 msrest/0.4.6
           msrest_azure/0.4.7 networkmanagementclient/0.40.0 Azure-SDK-For-Python AZURECLI/TEST/2.0.1+dev]
       accept-language: [en-US]
-      x-ms-client-request-id: [5712bf34-1b44-11e7-8ace-00155db0d302]
+      x-ms-client-request-id: [5a448282-1651-11e7-894e-00155db0d302]
     method: GET
     uri: https://adminmanagement.local.azurestack.external/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/cli_test_vm_with_specialized_unmanaged_disk/providers/Microsoft.Network/virtualnetworks?api-version=2015-06-15
   response:
@@ -138,45 +138,45 @@ interactions:
       Cache-Control: [no-cache]
       Content-Length: ['19']
       Content-Type: [application/json; charset=utf-8]
-      Date: ['Fri, 07 Apr 2017 03:43:19 GMT']
+      Date: ['Fri, 31 Mar 2017 20:33:51 GMT']
       Expires: ['-1']
       Pragma: [no-cache]
       Server: [Microsoft-HTTPAPI/2.0, Microsoft-HTTPAPI/2.0]
       Strict-Transport-Security: [max-age=31536000; includeSubDomains]
     status: {code: 200, message: OK}
 - request:
-    body: '{"properties": {"template": {"resources": [{"dependsOn": [], "type": "Microsoft.Storage/storageAccounts",
-      "name": "vhdstoragen62tlktg1lfdb8", "location": "local", "apiVersion": "2015-06-15",
-      "properties": {"accountType": "Premium_LRS"}, "tags": {}}, {"dependsOn": [],
-      "type": "Microsoft.Network/virtualNetworks", "name": "vm1VNET", "location":
-      "local", "tags": {}, "properties": {"subnets": [{"properties": {"addressPrefix":
+    body: '{"properties": {"parameters": {}, "template": {"contentVersion": "1.0.0.0",
+      "parameters": {}, "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+      "variables": {}, "resources": [{"dependsOn": [], "properties": {"accountType":
+      "Premium_LRS"}, "name": "vhdstorageacf2tllseya0su", "apiVersion": "2015-06-15",
+      "type": "Microsoft.Storage/storageAccounts", "location": "local", "tags": {}},
+      {"dependsOn": [], "properties": {"subnets": [{"properties": {"addressPrefix":
       "10.0.0.0/24"}, "name": "vm1Subnet"}], "addressSpace": {"addressPrefixes": ["10.0.0.0/16"]}},
-      "apiVersion": "2015-06-15"}, {"dependsOn": [], "type": "Microsoft.Network/networkSecurityGroups",
-      "name": "vm1NSG", "location": "local", "apiVersion": "2015-06-15", "properties":
-      {"securityRules": [{"properties": {"destinationPortRange": "3389", "sourceAddressPrefix":
-      "*", "sourcePortRange": "*", "access": "Allow", "destinationAddressPrefix":
-      "*", "priority": 1000, "direction": "Inbound", "protocol": "Tcp"}, "name": "rdp"}]},
-      "tags": {}}, {"dependsOn": [], "type": "Microsoft.Network/publicIPAddresses",
-      "name": "vm1PublicIP", "location": "local", "apiVersion": "2015-06-15", "properties":
-      {"publicIPAllocationMethod": "dynamic"}, "tags": {}}, {"dependsOn": ["Microsoft.Network/virtualNetworks/vm1VNET",
+      "name": "vm1VNET", "apiVersion": "2015-06-15", "type": "Microsoft.Network/virtualNetworks",
+      "location": "local", "tags": {}}, {"dependsOn": [], "properties": {"securityRules":
+      [{"properties": {"destinationPortRange": "3389", "priority": 1000, "sourceAddressPrefix":
+      "*", "destinationAddressPrefix": "*", "protocol": "Tcp", "sourcePortRange":
+      "*", "direction": "Inbound", "access": "Allow"}, "name": "rdp"}]}, "name": "vm1NSG",
+      "apiVersion": "2015-06-15", "type": "Microsoft.Network/networkSecurityGroups",
+      "location": "local", "tags": {}}, {"dependsOn": [], "properties": {"publicIPAllocationMethod":
+      "dynamic"}, "apiVersion": "2015-06-15", "name": "vm1PublicIP", "type": "Microsoft.Network/publicIPAddresses",
+      "location": "local", "tags": {}}, {"dependsOn": ["Microsoft.Network/virtualNetworks/vm1VNET",
       "Microsoft.Network/networkSecurityGroups/vm1NSG", "Microsoft.Network/publicIpAddresses/vm1PublicIP"],
-      "type": "Microsoft.Network/networkInterfaces", "name": "vm1VMNic", "location":
-      "local", "apiVersion": "2015-06-15", "properties": {"ipConfigurations": [{"properties":
-      {"privateIPAllocationMethod": "Dynamic", "publicIPAddress": {"id": "/subscriptions/2C966402-B31D-4A3E-A3DC-397286C0C609/resourceGroups/cli_test_vm_with_specialized_unmanaged_disk/providers/Microsoft.Network/publicIPAddresses/vm1PublicIP"},
-      "subnet": {"id": "/subscriptions/2C966402-B31D-4A3E-A3DC-397286C0C609/resourceGroups/cli_test_vm_with_specialized_unmanaged_disk/providers/Microsoft.Network/virtualNetworks/vm1VNET/subnets/vm1Subnet"}},
-      "name": "ipconfigvm1"}], "networkSecurityGroup": {"id": "/subscriptions/2C966402-B31D-4A3E-A3DC-397286C0C609/resourceGroups/cli_test_vm_with_specialized_unmanaged_disk/providers/Microsoft.Network/networkSecurityGroups/vm1NSG"}},
-      "tags": {}}, {"dependsOn": ["Microsoft.Storage/storageAccounts/vhdstoragen62tlktg1lfdb8",
-      "Microsoft.Network/networkInterfaces/vm1VMNic"], "type": "Microsoft.Compute/virtualMachines",
-      "name": "vm1", "location": "local", "apiVersion": "2016-03-30", "properties":
-      {"hardwareProfile": {"vmSize": "Standard_A1"}, "osProfile": {"adminPassword":
-      "testPassword0", "computerName": "vm1", "adminUsername": "ubuntu"}, "networkProfile":
-      {"networkInterfaces": [{"id": "/subscriptions/2C966402-B31D-4A3E-A3DC-397286C0C609/resourceGroups/cli_test_vm_with_specialized_unmanaged_disk/providers/Microsoft.Network/networkInterfaces/vm1VMNic"}]},
-      "storageProfile": {"imageReference": {"version": "latest", "publisher": "MicrosoftWindowsServer",
-      "sku": "2012-R2-Datacenter", "offer": "WindowsServer"}, "osDisk": {"createOption":
-      "fromImage", "caching": null, "vhd": {"uri": "https://vhdstoragen62tlktg1lfdb8.blob.local.azurestack.external/vhds/osdisk_K6n81K9Qt8.vhd"},
-      "name": "osdisk_K6n81K9Qt8"}}}, "tags": {}}], "outputs": {}, "contentVersion":
-      "1.0.0.0", "parameters": {}, "variables": {}, "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#"},
-      "mode": "Incremental", "parameters": {}}}'
+      "properties": {"networkSecurityGroup": {"id": "/subscriptions/2C966402-B31D-4A3E-A3DC-397286C0C609/resourceGroups/cli_test_vm_with_specialized_unmanaged_disk/providers/Microsoft.Network/networkSecurityGroups/vm1NSG"},
+      "ipConfigurations": [{"properties": {"publicIPAddress": {"id": "/subscriptions/2C966402-B31D-4A3E-A3DC-397286C0C609/resourceGroups/cli_test_vm_with_specialized_unmanaged_disk/providers/Microsoft.Network/publicIPAddresses/vm1PublicIP"},
+      "subnet": {"id": "/subscriptions/2C966402-B31D-4A3E-A3DC-397286C0C609/resourceGroups/cli_test_vm_with_specialized_unmanaged_disk/providers/Microsoft.Network/virtualNetworks/vm1VNET/subnets/vm1Subnet"},
+      "privateIPAllocationMethod": "Dynamic"}, "name": "ipconfigvm1"}]}, "apiVersion":
+      "2015-06-15", "name": "vm1VMNic", "type": "Microsoft.Network/networkInterfaces",
+      "location": "local", "tags": {}}, {"dependsOn": ["Microsoft.Storage/storageAccounts/vhdstorageacf2tllseya0su",
+      "Microsoft.Network/networkInterfaces/vm1VMNic"], "properties": {"osProfile":
+      {"adminPassword": "testPassword0", "adminUsername": "ubuntu", "computerName":
+      "vm1"}, "networkProfile": {"networkInterfaces": [{"id": "/subscriptions/2C966402-B31D-4A3E-A3DC-397286C0C609/resourceGroups/cli_test_vm_with_specialized_unmanaged_disk/providers/Microsoft.Network/networkInterfaces/vm1VMNic"}]},
+      "hardwareProfile": {"vmSize": "Standard_A1"}, "storageProfile": {"osDisk": {"createOption":
+      "fromImage", "caching": null, "vhd": {"uri": "https://vhdstorageacf2tllseya0su.blob.local.azurestack.external/vhds/osdisk_BUVaFRKtdd.vhd"},
+      "name": "osdisk_BUVaFRKtdd"}, "imageReference": {"publisher": "MicrosoftWindowsServer",
+      "offer": "WindowsServer", "sku": "2012-R2-Datacenter", "version": "latest"}}},
+      "apiVersion": "2016-03-30", "name": "vm1", "type": "Microsoft.Compute/virtualMachines",
+      "location": "local", "tags": {}}], "outputs": {}}, "mode": "Incremental"}}'
     headers:
       Accept: [application/json]
       Accept-Encoding: ['gzip, deflate']
@@ -187,21 +187,21 @@ interactions:
           msrest_azure/0.4.7 resourcemanagementclient/0.40.0 Azure-SDK-For-Python
           AZURECLI/TEST/2.0.1+dev]
       accept-language: [en-US]
-      x-ms-client-request-id: [5733ddb4-1b44-11e7-944e-00155db0d302]
+      x-ms-client-request-id: [5a77a576-1651-11e7-98ff-00155db0d302]
     method: PUT
     uri: https://adminmanagement.local.azurestack.external/subscriptions/00000000-0000-0000-0000-000000000000/resourcegroups/cli_test_vm_with_specialized_unmanaged_disk/providers/Microsoft.Resources/deployments/mock-deployment?api-version=2016-02-01
   response:
-    body: {string: '{"id":"/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/cli_test_vm_with_specialized_unmanaged_disk/providers/Microsoft.Resources/deployments/vm_deploy_qHSXPWKapMYtiWdPzOszA31R1LDpo4rn","name":"vm_deploy_qHSXPWKapMYtiWdPzOszA31R1LDpo4rn","properties":{"templateHash":"8125525996862088432","parameters":{},"mode":"Incremental","provisioningState":"Accepted","timestamp":"2017-04-07T03:43:19.5183215Z","duration":"PT0.0932864S","correlationId":"36e2632e-7b16-452a-9522-3fed9920de97","providers":[{"namespace":"Microsoft.Storage","resourceTypes":[{"resourceType":"storageAccounts","locations":["local"]}]},{"namespace":"Microsoft.Network","resourceTypes":[{"resourceType":"virtualNetworks","locations":["local"]},{"resourceType":"networkSecurityGroups","locations":["local"]},{"resourceType":"publicIPAddresses","locations":["local"]},{"resourceType":"networkInterfaces","locations":["local"]}]},{"namespace":"Microsoft.Compute","resourceTypes":[{"resourceType":"virtualMachines","locations":["local"]}]}],"dependencies":[{"dependsOn":[{"id":"/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/cli_test_vm_with_specialized_unmanaged_disk/providers/Microsoft.Network/virtualNetworks/vm1VNET","resourceType":"Microsoft.Network/virtualNetworks","resourceName":"vm1VNET"},{"id":"/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/cli_test_vm_with_specialized_unmanaged_disk/providers/Microsoft.Network/networkSecurityGroups/vm1NSG","resourceType":"Microsoft.Network/networkSecurityGroups","resourceName":"vm1NSG"},{"id":"/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/cli_test_vm_with_specialized_unmanaged_disk/providers/Microsoft.Network/publicIpAddresses/vm1PublicIP","resourceType":"Microsoft.Network/publicIpAddresses","resourceName":"vm1PublicIP"}],"id":"/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/cli_test_vm_with_specialized_unmanaged_disk/providers/Microsoft.Network/networkInterfaces/vm1VMNic","resourceType":"Microsoft.Network/networkInterfaces","resourceName":"vm1VMNic"},{"dependsOn":[{"id":"/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/cli_test_vm_with_specialized_unmanaged_disk/providers/Microsoft.Storage/storageAccounts/vhdstoragen62tlktg1lfdb8","resourceType":"Microsoft.Storage/storageAccounts","resourceName":"vhdstoragen62tlktg1lfdb8"},{"id":"/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/cli_test_vm_with_specialized_unmanaged_disk/providers/Microsoft.Network/networkInterfaces/vm1VMNic","resourceType":"Microsoft.Network/networkInterfaces","resourceName":"vm1VMNic"}],"id":"/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/cli_test_vm_with_specialized_unmanaged_disk/providers/Microsoft.Compute/virtualMachines/vm1","resourceType":"Microsoft.Compute/virtualMachines","resourceName":"vm1"}]}}'}
+    body: {string: '{"id":"/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/cli_test_vm_with_specialized_unmanaged_disk/providers/Microsoft.Resources/deployments/vm_deploy_g6I8qojCHB4bhsPN6WdI2534FK3OMCwo","name":"vm_deploy_g6I8qojCHB4bhsPN6WdI2534FK3OMCwo","properties":{"templateHash":"14208383662538962814","parameters":{},"mode":"Incremental","provisioningState":"Accepted","timestamp":"2017-03-31T20:33:52.7322983Z","duration":"PT0.0850119S","correlationId":"45192437-6a14-45c1-8dd8-57d019b6ba4e","providers":[{"namespace":"Microsoft.Storage","resourceTypes":[{"resourceType":"storageAccounts","locations":["local"]}]},{"namespace":"Microsoft.Network","resourceTypes":[{"resourceType":"virtualNetworks","locations":["local"]},{"resourceType":"networkSecurityGroups","locations":["local"]},{"resourceType":"publicIPAddresses","locations":["local"]},{"resourceType":"networkInterfaces","locations":["local"]}]},{"namespace":"Microsoft.Compute","resourceTypes":[{"resourceType":"virtualMachines","locations":["local"]}]}],"dependencies":[{"dependsOn":[{"id":"/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/cli_test_vm_with_specialized_unmanaged_disk/providers/Microsoft.Network/virtualNetworks/vm1VNET","resourceType":"Microsoft.Network/virtualNetworks","resourceName":"vm1VNET"},{"id":"/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/cli_test_vm_with_specialized_unmanaged_disk/providers/Microsoft.Network/networkSecurityGroups/vm1NSG","resourceType":"Microsoft.Network/networkSecurityGroups","resourceName":"vm1NSG"},{"id":"/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/cli_test_vm_with_specialized_unmanaged_disk/providers/Microsoft.Network/publicIpAddresses/vm1PublicIP","resourceType":"Microsoft.Network/publicIpAddresses","resourceName":"vm1PublicIP"}],"id":"/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/cli_test_vm_with_specialized_unmanaged_disk/providers/Microsoft.Network/networkInterfaces/vm1VMNic","resourceType":"Microsoft.Network/networkInterfaces","resourceName":"vm1VMNic"},{"dependsOn":[{"id":"/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/cli_test_vm_with_specialized_unmanaged_disk/providers/Microsoft.Storage/storageAccounts/vhdstorageacf2tllseya0su","resourceType":"Microsoft.Storage/storageAccounts","resourceName":"vhdstorageacf2tllseya0su"},{"id":"/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/cli_test_vm_with_specialized_unmanaged_disk/providers/Microsoft.Network/networkInterfaces/vm1VMNic","resourceType":"Microsoft.Network/networkInterfaces","resourceName":"vm1VMNic"}],"id":"/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/cli_test_vm_with_specialized_unmanaged_disk/providers/Microsoft.Compute/virtualMachines/vm1","resourceType":"Microsoft.Compute/virtualMachines","resourceName":"vm1"}]}}'}
     headers:
-      Azure-AsyncOperation: ['https://adminmanagement.local.azurestack.external/subscriptions/2C966402-B31D-4A3E-A3DC-397286C0C609/resourcegroups/cli_test_vm_with_specialized_unmanaged_disk/providers/Microsoft.Resources/deployments/vm_deploy_qHSXPWKapMYtiWdPzOszA31R1LDpo4rn/operationStatuses/08587100702860527219?api-version=2016-02-01']
+      Azure-AsyncOperation: ['https://adminmanagement.local.azurestack.external/subscriptions/2C966402-B31D-4A3E-A3DC-397286C0C609/resourcegroups/cli_test_vm_with_specialized_unmanaged_disk/providers/Microsoft.Resources/deployments/vm_deploy_g6I8qojCHB4bhsPN6WdI2534FK3OMCwo/operationStatuses/08587106144528304941?api-version=2016-02-01']
       Cache-Control: [no-cache]
-      Content-Length: ['2911']
+      Content-Length: ['2912']
       Content-Type: [application/json; charset=utf-8]
-      Date: ['Fri, 07 Apr 2017 03:43:19 GMT']
+      Date: ['Fri, 31 Mar 2017 20:33:52 GMT']
       Expires: ['-1']
       Pragma: [no-cache]
       Strict-Transport-Security: [max-age=31536000; includeSubDomains]
-      x-ms-ratelimit-remaining-subscription-writes: ['1187']
+      x-ms-ratelimit-remaining-subscription-writes: ['1181']
     status: {code: 201, message: Created}
 - request:
     body: null
@@ -214,16 +214,16 @@ interactions:
           msrest_azure/0.4.7 resourcemanagementclient/0.40.0 Azure-SDK-For-Python
           AZURECLI/TEST/2.0.1+dev]
       accept-language: [en-US]
-      x-ms-client-request-id: [5733ddb4-1b44-11e7-944e-00155db0d302]
+      x-ms-client-request-id: [5a77a576-1651-11e7-98ff-00155db0d302]
     method: GET
-    uri: https://adminmanagement.local.azurestack.external/subscriptions/00000000-0000-0000-0000-000000000000/resourcegroups/cli_test_vm_with_specialized_unmanaged_disk/providers/Microsoft.Resources/deployments/mock-deployment/operationStatuses/08587100702860527219?api-version=2016-02-01
+    uri: https://adminmanagement.local.azurestack.external/subscriptions/00000000-0000-0000-0000-000000000000/resourcegroups/cli_test_vm_with_specialized_unmanaged_disk/providers/Microsoft.Resources/deployments/mock-deployment/operationStatuses/08587106144528304941?api-version=2016-02-01
   response:
     body: {string: '{"status":"Running"}'}
     headers:
       Cache-Control: [no-cache]
       Content-Length: ['20']
       Content-Type: [application/json; charset=utf-8]
-      Date: ['Fri, 07 Apr 2017 03:43:49 GMT']
+      Date: ['Fri, 31 Mar 2017 20:34:23 GMT']
       Expires: ['-1']
       Pragma: [no-cache]
       Strict-Transport-Security: [max-age=31536000; includeSubDomains]
@@ -239,16 +239,16 @@ interactions:
           msrest_azure/0.4.7 resourcemanagementclient/0.40.0 Azure-SDK-For-Python
           AZURECLI/TEST/2.0.1+dev]
       accept-language: [en-US]
-      x-ms-client-request-id: [5733ddb4-1b44-11e7-944e-00155db0d302]
+      x-ms-client-request-id: [5a77a576-1651-11e7-98ff-00155db0d302]
     method: GET
-    uri: https://adminmanagement.local.azurestack.external/subscriptions/00000000-0000-0000-0000-000000000000/resourcegroups/cli_test_vm_with_specialized_unmanaged_disk/providers/Microsoft.Resources/deployments/mock-deployment/operationStatuses/08587100702860527219?api-version=2016-02-01
+    uri: https://adminmanagement.local.azurestack.external/subscriptions/00000000-0000-0000-0000-000000000000/resourcegroups/cli_test_vm_with_specialized_unmanaged_disk/providers/Microsoft.Resources/deployments/mock-deployment/operationStatuses/08587106144528304941?api-version=2016-02-01
   response:
     body: {string: '{"status":"Running"}'}
     headers:
       Cache-Control: [no-cache]
       Content-Length: ['20']
       Content-Type: [application/json; charset=utf-8]
-      Date: ['Fri, 07 Apr 2017 03:44:19 GMT']
+      Date: ['Fri, 31 Mar 2017 20:34:53 GMT']
       Expires: ['-1']
       Pragma: [no-cache]
       Strict-Transport-Security: [max-age=31536000; includeSubDomains]
@@ -264,16 +264,16 @@ interactions:
           msrest_azure/0.4.7 resourcemanagementclient/0.40.0 Azure-SDK-For-Python
           AZURECLI/TEST/2.0.1+dev]
       accept-language: [en-US]
-      x-ms-client-request-id: [5733ddb4-1b44-11e7-944e-00155db0d302]
+      x-ms-client-request-id: [5a77a576-1651-11e7-98ff-00155db0d302]
     method: GET
-    uri: https://adminmanagement.local.azurestack.external/subscriptions/00000000-0000-0000-0000-000000000000/resourcegroups/cli_test_vm_with_specialized_unmanaged_disk/providers/Microsoft.Resources/deployments/mock-deployment/operationStatuses/08587100702860527219?api-version=2016-02-01
+    uri: https://adminmanagement.local.azurestack.external/subscriptions/00000000-0000-0000-0000-000000000000/resourcegroups/cli_test_vm_with_specialized_unmanaged_disk/providers/Microsoft.Resources/deployments/mock-deployment/operationStatuses/08587106144528304941?api-version=2016-02-01
   response:
     body: {string: '{"status":"Running"}'}
     headers:
       Cache-Control: [no-cache]
       Content-Length: ['20']
       Content-Type: [application/json; charset=utf-8]
-      Date: ['Fri, 07 Apr 2017 03:44:50 GMT']
+      Date: ['Fri, 31 Mar 2017 20:35:23 GMT']
       Expires: ['-1']
       Pragma: [no-cache]
       Strict-Transport-Security: [max-age=31536000; includeSubDomains]
@@ -289,16 +289,16 @@ interactions:
           msrest_azure/0.4.7 resourcemanagementclient/0.40.0 Azure-SDK-For-Python
           AZURECLI/TEST/2.0.1+dev]
       accept-language: [en-US]
-      x-ms-client-request-id: [5733ddb4-1b44-11e7-944e-00155db0d302]
+      x-ms-client-request-id: [5a77a576-1651-11e7-98ff-00155db0d302]
     method: GET
-    uri: https://adminmanagement.local.azurestack.external/subscriptions/00000000-0000-0000-0000-000000000000/resourcegroups/cli_test_vm_with_specialized_unmanaged_disk/providers/Microsoft.Resources/deployments/mock-deployment/operationStatuses/08587100702860527219?api-version=2016-02-01
+    uri: https://adminmanagement.local.azurestack.external/subscriptions/00000000-0000-0000-0000-000000000000/resourcegroups/cli_test_vm_with_specialized_unmanaged_disk/providers/Microsoft.Resources/deployments/mock-deployment/operationStatuses/08587106144528304941?api-version=2016-02-01
   response:
     body: {string: '{"status":"Running"}'}
     headers:
       Cache-Control: [no-cache]
       Content-Length: ['20']
       Content-Type: [application/json; charset=utf-8]
-      Date: ['Fri, 07 Apr 2017 03:45:20 GMT']
+      Date: ['Fri, 31 Mar 2017 20:35:54 GMT']
       Expires: ['-1']
       Pragma: [no-cache]
       Strict-Transport-Security: [max-age=31536000; includeSubDomains]
@@ -314,16 +314,16 @@ interactions:
           msrest_azure/0.4.7 resourcemanagementclient/0.40.0 Azure-SDK-For-Python
           AZURECLI/TEST/2.0.1+dev]
       accept-language: [en-US]
-      x-ms-client-request-id: [5733ddb4-1b44-11e7-944e-00155db0d302]
+      x-ms-client-request-id: [5a77a576-1651-11e7-98ff-00155db0d302]
     method: GET
-    uri: https://adminmanagement.local.azurestack.external/subscriptions/00000000-0000-0000-0000-000000000000/resourcegroups/cli_test_vm_with_specialized_unmanaged_disk/providers/Microsoft.Resources/deployments/mock-deployment/operationStatuses/08587100702860527219?api-version=2016-02-01
+    uri: https://adminmanagement.local.azurestack.external/subscriptions/00000000-0000-0000-0000-000000000000/resourcegroups/cli_test_vm_with_specialized_unmanaged_disk/providers/Microsoft.Resources/deployments/mock-deployment/operationStatuses/08587106144528304941?api-version=2016-02-01
   response:
     body: {string: '{"status":"Running"}'}
     headers:
       Cache-Control: [no-cache]
       Content-Length: ['20']
       Content-Type: [application/json; charset=utf-8]
-      Date: ['Fri, 07 Apr 2017 03:45:50 GMT']
+      Date: ['Fri, 31 Mar 2017 20:36:23 GMT']
       Expires: ['-1']
       Pragma: [no-cache]
       Strict-Transport-Security: [max-age=31536000; includeSubDomains]
@@ -339,16 +339,16 @@ interactions:
           msrest_azure/0.4.7 resourcemanagementclient/0.40.0 Azure-SDK-For-Python
           AZURECLI/TEST/2.0.1+dev]
       accept-language: [en-US]
-      x-ms-client-request-id: [5733ddb4-1b44-11e7-944e-00155db0d302]
+      x-ms-client-request-id: [5a77a576-1651-11e7-98ff-00155db0d302]
     method: GET
-    uri: https://adminmanagement.local.azurestack.external/subscriptions/00000000-0000-0000-0000-000000000000/resourcegroups/cli_test_vm_with_specialized_unmanaged_disk/providers/Microsoft.Resources/deployments/mock-deployment/operationStatuses/08587100702860527219?api-version=2016-02-01
+    uri: https://adminmanagement.local.azurestack.external/subscriptions/00000000-0000-0000-0000-000000000000/resourcegroups/cli_test_vm_with_specialized_unmanaged_disk/providers/Microsoft.Resources/deployments/mock-deployment/operationStatuses/08587106144528304941?api-version=2016-02-01
   response:
     body: {string: '{"status":"Running"}'}
     headers:
       Cache-Control: [no-cache]
       Content-Length: ['20']
       Content-Type: [application/json; charset=utf-8]
-      Date: ['Fri, 07 Apr 2017 03:46:20 GMT']
+      Date: ['Fri, 31 Mar 2017 20:36:54 GMT']
       Expires: ['-1']
       Pragma: [no-cache]
       Strict-Transport-Security: [max-age=31536000; includeSubDomains]
@@ -364,16 +364,16 @@ interactions:
           msrest_azure/0.4.7 resourcemanagementclient/0.40.0 Azure-SDK-For-Python
           AZURECLI/TEST/2.0.1+dev]
       accept-language: [en-US]
-      x-ms-client-request-id: [5733ddb4-1b44-11e7-944e-00155db0d302]
+      x-ms-client-request-id: [5a77a576-1651-11e7-98ff-00155db0d302]
     method: GET
-    uri: https://adminmanagement.local.azurestack.external/subscriptions/00000000-0000-0000-0000-000000000000/resourcegroups/cli_test_vm_with_specialized_unmanaged_disk/providers/Microsoft.Resources/deployments/mock-deployment/operationStatuses/08587100702860527219?api-version=2016-02-01
+    uri: https://adminmanagement.local.azurestack.external/subscriptions/00000000-0000-0000-0000-000000000000/resourcegroups/cli_test_vm_with_specialized_unmanaged_disk/providers/Microsoft.Resources/deployments/mock-deployment/operationStatuses/08587106144528304941?api-version=2016-02-01
   response:
     body: {string: '{"status":"Running"}'}
     headers:
       Cache-Control: [no-cache]
       Content-Length: ['20']
       Content-Type: [application/json; charset=utf-8]
-      Date: ['Fri, 07 Apr 2017 03:46:51 GMT']
+      Date: ['Fri, 31 Mar 2017 20:37:25 GMT']
       Expires: ['-1']
       Pragma: [no-cache]
       Strict-Transport-Security: [max-age=31536000; includeSubDomains]
@@ -389,16 +389,16 @@ interactions:
           msrest_azure/0.4.7 resourcemanagementclient/0.40.0 Azure-SDK-For-Python
           AZURECLI/TEST/2.0.1+dev]
       accept-language: [en-US]
-      x-ms-client-request-id: [5733ddb4-1b44-11e7-944e-00155db0d302]
+      x-ms-client-request-id: [5a77a576-1651-11e7-98ff-00155db0d302]
     method: GET
-    uri: https://adminmanagement.local.azurestack.external/subscriptions/00000000-0000-0000-0000-000000000000/resourcegroups/cli_test_vm_with_specialized_unmanaged_disk/providers/Microsoft.Resources/deployments/mock-deployment/operationStatuses/08587100702860527219?api-version=2016-02-01
+    uri: https://adminmanagement.local.azurestack.external/subscriptions/00000000-0000-0000-0000-000000000000/resourcegroups/cli_test_vm_with_specialized_unmanaged_disk/providers/Microsoft.Resources/deployments/mock-deployment/operationStatuses/08587106144528304941?api-version=2016-02-01
   response:
     body: {string: '{"status":"Running"}'}
     headers:
       Cache-Control: [no-cache]
       Content-Length: ['20']
       Content-Type: [application/json; charset=utf-8]
-      Date: ['Fri, 07 Apr 2017 03:47:21 GMT']
+      Date: ['Fri, 31 Mar 2017 20:37:55 GMT']
       Expires: ['-1']
       Pragma: [no-cache]
       Strict-Transport-Security: [max-age=31536000; includeSubDomains]
@@ -414,16 +414,16 @@ interactions:
           msrest_azure/0.4.7 resourcemanagementclient/0.40.0 Azure-SDK-For-Python
           AZURECLI/TEST/2.0.1+dev]
       accept-language: [en-US]
-      x-ms-client-request-id: [5733ddb4-1b44-11e7-944e-00155db0d302]
+      x-ms-client-request-id: [5a77a576-1651-11e7-98ff-00155db0d302]
     method: GET
-    uri: https://adminmanagement.local.azurestack.external/subscriptions/00000000-0000-0000-0000-000000000000/resourcegroups/cli_test_vm_with_specialized_unmanaged_disk/providers/Microsoft.Resources/deployments/mock-deployment/operationStatuses/08587100702860527219?api-version=2016-02-01
+    uri: https://adminmanagement.local.azurestack.external/subscriptions/00000000-0000-0000-0000-000000000000/resourcegroups/cli_test_vm_with_specialized_unmanaged_disk/providers/Microsoft.Resources/deployments/mock-deployment/operationStatuses/08587106144528304941?api-version=2016-02-01
   response:
     body: {string: '{"status":"Running"}'}
     headers:
       Cache-Control: [no-cache]
       Content-Length: ['20']
       Content-Type: [application/json; charset=utf-8]
-      Date: ['Fri, 07 Apr 2017 03:47:51 GMT']
+      Date: ['Fri, 31 Mar 2017 20:38:25 GMT']
       Expires: ['-1']
       Pragma: [no-cache]
       Strict-Transport-Security: [max-age=31536000; includeSubDomains]
@@ -439,16 +439,16 @@ interactions:
           msrest_azure/0.4.7 resourcemanagementclient/0.40.0 Azure-SDK-For-Python
           AZURECLI/TEST/2.0.1+dev]
       accept-language: [en-US]
-      x-ms-client-request-id: [5733ddb4-1b44-11e7-944e-00155db0d302]
+      x-ms-client-request-id: [5a77a576-1651-11e7-98ff-00155db0d302]
     method: GET
-    uri: https://adminmanagement.local.azurestack.external/subscriptions/00000000-0000-0000-0000-000000000000/resourcegroups/cli_test_vm_with_specialized_unmanaged_disk/providers/Microsoft.Resources/deployments/mock-deployment/operationStatuses/08587100702860527219?api-version=2016-02-01
+    uri: https://adminmanagement.local.azurestack.external/subscriptions/00000000-0000-0000-0000-000000000000/resourcegroups/cli_test_vm_with_specialized_unmanaged_disk/providers/Microsoft.Resources/deployments/mock-deployment/operationStatuses/08587106144528304941?api-version=2016-02-01
   response:
     body: {string: '{"status":"Running"}'}
     headers:
       Cache-Control: [no-cache]
       Content-Length: ['20']
       Content-Type: [application/json; charset=utf-8]
-      Date: ['Fri, 07 Apr 2017 03:48:21 GMT']
+      Date: ['Fri, 31 Mar 2017 20:38:55 GMT']
       Expires: ['-1']
       Pragma: [no-cache]
       Strict-Transport-Security: [max-age=31536000; includeSubDomains]
@@ -464,16 +464,16 @@ interactions:
           msrest_azure/0.4.7 resourcemanagementclient/0.40.0 Azure-SDK-For-Python
           AZURECLI/TEST/2.0.1+dev]
       accept-language: [en-US]
-      x-ms-client-request-id: [5733ddb4-1b44-11e7-944e-00155db0d302]
+      x-ms-client-request-id: [5a77a576-1651-11e7-98ff-00155db0d302]
     method: GET
-    uri: https://adminmanagement.local.azurestack.external/subscriptions/00000000-0000-0000-0000-000000000000/resourcegroups/cli_test_vm_with_specialized_unmanaged_disk/providers/Microsoft.Resources/deployments/mock-deployment/operationStatuses/08587100702860527219?api-version=2016-02-01
+    uri: https://adminmanagement.local.azurestack.external/subscriptions/00000000-0000-0000-0000-000000000000/resourcegroups/cli_test_vm_with_specialized_unmanaged_disk/providers/Microsoft.Resources/deployments/mock-deployment/operationStatuses/08587106144528304941?api-version=2016-02-01
   response:
     body: {string: '{"status":"Running"}'}
     headers:
       Cache-Control: [no-cache]
       Content-Length: ['20']
       Content-Type: [application/json; charset=utf-8]
-      Date: ['Fri, 07 Apr 2017 03:48:51 GMT']
+      Date: ['Fri, 31 Mar 2017 20:39:25 GMT']
       Expires: ['-1']
       Pragma: [no-cache]
       Strict-Transport-Security: [max-age=31536000; includeSubDomains]
@@ -489,16 +489,16 @@ interactions:
           msrest_azure/0.4.7 resourcemanagementclient/0.40.0 Azure-SDK-For-Python
           AZURECLI/TEST/2.0.1+dev]
       accept-language: [en-US]
-      x-ms-client-request-id: [5733ddb4-1b44-11e7-944e-00155db0d302]
+      x-ms-client-request-id: [5a77a576-1651-11e7-98ff-00155db0d302]
     method: GET
-    uri: https://adminmanagement.local.azurestack.external/subscriptions/00000000-0000-0000-0000-000000000000/resourcegroups/cli_test_vm_with_specialized_unmanaged_disk/providers/Microsoft.Resources/deployments/mock-deployment/operationStatuses/08587100702860527219?api-version=2016-02-01
+    uri: https://adminmanagement.local.azurestack.external/subscriptions/00000000-0000-0000-0000-000000000000/resourcegroups/cli_test_vm_with_specialized_unmanaged_disk/providers/Microsoft.Resources/deployments/mock-deployment/operationStatuses/08587106144528304941?api-version=2016-02-01
   response:
     body: {string: '{"status":"Running"}'}
     headers:
       Cache-Control: [no-cache]
       Content-Length: ['20']
       Content-Type: [application/json; charset=utf-8]
-      Date: ['Fri, 07 Apr 2017 03:49:21 GMT']
+      Date: ['Fri, 31 Mar 2017 20:39:56 GMT']
       Expires: ['-1']
       Pragma: [no-cache]
       Strict-Transport-Security: [max-age=31536000; includeSubDomains]
@@ -514,16 +514,16 @@ interactions:
           msrest_azure/0.4.7 resourcemanagementclient/0.40.0 Azure-SDK-For-Python
           AZURECLI/TEST/2.0.1+dev]
       accept-language: [en-US]
-      x-ms-client-request-id: [5733ddb4-1b44-11e7-944e-00155db0d302]
+      x-ms-client-request-id: [5a77a576-1651-11e7-98ff-00155db0d302]
     method: GET
-    uri: https://adminmanagement.local.azurestack.external/subscriptions/00000000-0000-0000-0000-000000000000/resourcegroups/cli_test_vm_with_specialized_unmanaged_disk/providers/Microsoft.Resources/deployments/mock-deployment/operationStatuses/08587100702860527219?api-version=2016-02-01
+    uri: https://adminmanagement.local.azurestack.external/subscriptions/00000000-0000-0000-0000-000000000000/resourcegroups/cli_test_vm_with_specialized_unmanaged_disk/providers/Microsoft.Resources/deployments/mock-deployment/operationStatuses/08587106144528304941?api-version=2016-02-01
   response:
     body: {string: '{"status":"Running"}'}
     headers:
       Cache-Control: [no-cache]
       Content-Length: ['20']
       Content-Type: [application/json; charset=utf-8]
-      Date: ['Fri, 07 Apr 2017 03:49:52 GMT']
+      Date: ['Fri, 31 Mar 2017 20:40:26 GMT']
       Expires: ['-1']
       Pragma: [no-cache]
       Strict-Transport-Security: [max-age=31536000; includeSubDomains]
@@ -539,41 +539,16 @@ interactions:
           msrest_azure/0.4.7 resourcemanagementclient/0.40.0 Azure-SDK-For-Python
           AZURECLI/TEST/2.0.1+dev]
       accept-language: [en-US]
-      x-ms-client-request-id: [5733ddb4-1b44-11e7-944e-00155db0d302]
+      x-ms-client-request-id: [5a77a576-1651-11e7-98ff-00155db0d302]
     method: GET
-    uri: https://adminmanagement.local.azurestack.external/subscriptions/00000000-0000-0000-0000-000000000000/resourcegroups/cli_test_vm_with_specialized_unmanaged_disk/providers/Microsoft.Resources/deployments/mock-deployment/operationStatuses/08587100702860527219?api-version=2016-02-01
-  response:
-    body: {string: '{"status":"Running"}'}
-    headers:
-      Cache-Control: [no-cache]
-      Content-Length: ['20']
-      Content-Type: [application/json; charset=utf-8]
-      Date: ['Fri, 07 Apr 2017 03:50:22 GMT']
-      Expires: ['-1']
-      Pragma: [no-cache]
-      Strict-Transport-Security: [max-age=31536000; includeSubDomains]
-    status: {code: 200, message: OK}
-- request:
-    body: null
-    headers:
-      Accept: [application/json]
-      Accept-Encoding: ['gzip, deflate']
-      Connection: [keep-alive]
-      Content-Type: [application/json; charset=utf-8]
-      User-Agent: [python/3.5.2 (Windows-10-10.0.14393-SP0) requests/2.9.1 msrest/0.4.6
-          msrest_azure/0.4.7 resourcemanagementclient/0.40.0 Azure-SDK-For-Python
-          AZURECLI/TEST/2.0.1+dev]
-      accept-language: [en-US]
-      x-ms-client-request-id: [5733ddb4-1b44-11e7-944e-00155db0d302]
-    method: GET
-    uri: https://adminmanagement.local.azurestack.external/subscriptions/00000000-0000-0000-0000-000000000000/resourcegroups/cli_test_vm_with_specialized_unmanaged_disk/providers/Microsoft.Resources/deployments/mock-deployment/operationStatuses/08587100702860527219?api-version=2016-02-01
+    uri: https://adminmanagement.local.azurestack.external/subscriptions/00000000-0000-0000-0000-000000000000/resourcegroups/cli_test_vm_with_specialized_unmanaged_disk/providers/Microsoft.Resources/deployments/mock-deployment/operationStatuses/08587106144528304941?api-version=2016-02-01
   response:
     body: {string: '{"status":"Succeeded"}'}
     headers:
       Cache-Control: [no-cache]
       Content-Length: ['22']
       Content-Type: [application/json; charset=utf-8]
-      Date: ['Fri, 07 Apr 2017 03:50:52 GMT']
+      Date: ['Fri, 31 Mar 2017 20:40:57 GMT']
       Expires: ['-1']
       Pragma: [no-cache]
       Strict-Transport-Security: [max-age=31536000; includeSubDomains]
@@ -589,16 +564,16 @@ interactions:
           msrest_azure/0.4.7 resourcemanagementclient/0.40.0 Azure-SDK-For-Python
           AZURECLI/TEST/2.0.1+dev]
       accept-language: [en-US]
-      x-ms-client-request-id: [5733ddb4-1b44-11e7-944e-00155db0d302]
+      x-ms-client-request-id: [5a77a576-1651-11e7-98ff-00155db0d302]
     method: GET
     uri: https://adminmanagement.local.azurestack.external/subscriptions/00000000-0000-0000-0000-000000000000/resourcegroups/cli_test_vm_with_specialized_unmanaged_disk/providers/Microsoft.Resources/deployments/mock-deployment?api-version=2016-02-01
   response:
-    body: {string: '{"id":"/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/cli_test_vm_with_specialized_unmanaged_disk/providers/Microsoft.Resources/deployments/vm_deploy_qHSXPWKapMYtiWdPzOszA31R1LDpo4rn","name":"vm_deploy_qHSXPWKapMYtiWdPzOszA31R1LDpo4rn","properties":{"templateHash":"8125525996862088432","parameters":{},"mode":"Incremental","provisioningState":"Succeeded","timestamp":"2017-04-07T03:50:45.4392182Z","duration":"PT7M26.0141831S","correlationId":"36e2632e-7b16-452a-9522-3fed9920de97","providers":[{"namespace":"Microsoft.Storage","resourceTypes":[{"resourceType":"storageAccounts","locations":["local"]}]},{"namespace":"Microsoft.Network","resourceTypes":[{"resourceType":"virtualNetworks","locations":["local"]},{"resourceType":"networkSecurityGroups","locations":["local"]},{"resourceType":"publicIPAddresses","locations":["local"]},{"resourceType":"networkInterfaces","locations":["local"]}]},{"namespace":"Microsoft.Compute","resourceTypes":[{"resourceType":"virtualMachines","locations":["local"]}]}],"dependencies":[{"dependsOn":[{"id":"/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/cli_test_vm_with_specialized_unmanaged_disk/providers/Microsoft.Network/virtualNetworks/vm1VNET","resourceType":"Microsoft.Network/virtualNetworks","resourceName":"vm1VNET"},{"id":"/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/cli_test_vm_with_specialized_unmanaged_disk/providers/Microsoft.Network/networkSecurityGroups/vm1NSG","resourceType":"Microsoft.Network/networkSecurityGroups","resourceName":"vm1NSG"},{"id":"/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/cli_test_vm_with_specialized_unmanaged_disk/providers/Microsoft.Network/publicIpAddresses/vm1PublicIP","resourceType":"Microsoft.Network/publicIpAddresses","resourceName":"vm1PublicIP"}],"id":"/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/cli_test_vm_with_specialized_unmanaged_disk/providers/Microsoft.Network/networkInterfaces/vm1VMNic","resourceType":"Microsoft.Network/networkInterfaces","resourceName":"vm1VMNic"},{"dependsOn":[{"id":"/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/cli_test_vm_with_specialized_unmanaged_disk/providers/Microsoft.Storage/storageAccounts/vhdstoragen62tlktg1lfdb8","resourceType":"Microsoft.Storage/storageAccounts","resourceName":"vhdstoragen62tlktg1lfdb8"},{"id":"/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/cli_test_vm_with_specialized_unmanaged_disk/providers/Microsoft.Network/networkInterfaces/vm1VMNic","resourceType":"Microsoft.Network/networkInterfaces","resourceName":"vm1VMNic"}],"id":"/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/cli_test_vm_with_specialized_unmanaged_disk/providers/Microsoft.Compute/virtualMachines/vm1","resourceType":"Microsoft.Compute/virtualMachines","resourceName":"vm1"}],"outputs":{},"outputResources":[{"id":"Microsoft.Compute/virtualMachines/vm1"},{"id":"Microsoft.Network/networkInterfaces/vm1VMNic"},{"id":"Microsoft.Network/networkSecurityGroups/vm1NSG"},{"id":"Microsoft.Network/publicIPAddresses/vm1PublicIP"},{"id":"Microsoft.Network/virtualNetworks/vm1VNET"},{"id":"Microsoft.Storage/storageAccounts/vhdstoragen62tlktg1lfdb8"}]}}'}
+    body: {string: '{"id":"/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/cli_test_vm_with_specialized_unmanaged_disk/providers/Microsoft.Resources/deployments/vm_deploy_g6I8qojCHB4bhsPN6WdI2534FK3OMCwo","name":"vm_deploy_g6I8qojCHB4bhsPN6WdI2534FK3OMCwo","properties":{"templateHash":"14208383662538962814","parameters":{},"mode":"Incremental","provisioningState":"Succeeded","timestamp":"2017-03-31T20:40:49.782468Z","duration":"PT6M57.1351816S","correlationId":"45192437-6a14-45c1-8dd8-57d019b6ba4e","providers":[{"namespace":"Microsoft.Storage","resourceTypes":[{"resourceType":"storageAccounts","locations":["local"]}]},{"namespace":"Microsoft.Network","resourceTypes":[{"resourceType":"virtualNetworks","locations":["local"]},{"resourceType":"networkSecurityGroups","locations":["local"]},{"resourceType":"publicIPAddresses","locations":["local"]},{"resourceType":"networkInterfaces","locations":["local"]}]},{"namespace":"Microsoft.Compute","resourceTypes":[{"resourceType":"virtualMachines","locations":["local"]}]}],"dependencies":[{"dependsOn":[{"id":"/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/cli_test_vm_with_specialized_unmanaged_disk/providers/Microsoft.Network/virtualNetworks/vm1VNET","resourceType":"Microsoft.Network/virtualNetworks","resourceName":"vm1VNET"},{"id":"/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/cli_test_vm_with_specialized_unmanaged_disk/providers/Microsoft.Network/networkSecurityGroups/vm1NSG","resourceType":"Microsoft.Network/networkSecurityGroups","resourceName":"vm1NSG"},{"id":"/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/cli_test_vm_with_specialized_unmanaged_disk/providers/Microsoft.Network/publicIpAddresses/vm1PublicIP","resourceType":"Microsoft.Network/publicIpAddresses","resourceName":"vm1PublicIP"}],"id":"/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/cli_test_vm_with_specialized_unmanaged_disk/providers/Microsoft.Network/networkInterfaces/vm1VMNic","resourceType":"Microsoft.Network/networkInterfaces","resourceName":"vm1VMNic"},{"dependsOn":[{"id":"/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/cli_test_vm_with_specialized_unmanaged_disk/providers/Microsoft.Storage/storageAccounts/vhdstorageacf2tllseya0su","resourceType":"Microsoft.Storage/storageAccounts","resourceName":"vhdstorageacf2tllseya0su"},{"id":"/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/cli_test_vm_with_specialized_unmanaged_disk/providers/Microsoft.Network/networkInterfaces/vm1VMNic","resourceType":"Microsoft.Network/networkInterfaces","resourceName":"vm1VMNic"}],"id":"/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/cli_test_vm_with_specialized_unmanaged_disk/providers/Microsoft.Compute/virtualMachines/vm1","resourceType":"Microsoft.Compute/virtualMachines","resourceName":"vm1"}],"outputs":{},"outputResources":[{"id":"Microsoft.Compute/virtualMachines/vm1"},{"id":"Microsoft.Network/networkInterfaces/vm1VMNic"},{"id":"Microsoft.Network/networkSecurityGroups/vm1NSG"},{"id":"Microsoft.Network/publicIPAddresses/vm1PublicIP"},{"id":"Microsoft.Network/virtualNetworks/vm1VNET"},{"id":"Microsoft.Storage/storageAccounts/vhdstorageacf2tllseya0su"}]}}'}
     headers:
       Cache-Control: [no-cache]
       Content-Length: ['3281']
       Content-Type: [application/json; charset=utf-8]
-      Date: ['Fri, 07 Apr 2017 03:50:52 GMT']
+      Date: ['Fri, 31 Mar 2017 20:40:57 GMT']
       Expires: ['-1']
       Pragma: [no-cache]
       Strict-Transport-Security: [max-age=31536000; includeSubDomains]
@@ -613,18 +588,18 @@ interactions:
       User-Agent: [python/3.5.2 (Windows-10-10.0.14393-SP0) requests/2.9.1 msrest/0.4.6
           msrest_azure/0.4.7 computemanagementclient/0.40.0 Azure-SDK-For-Python AZURECLI/TEST/2.0.1+dev]
       accept-language: [en-US]
-      x-ms-client-request-id: [65f4c1ac-1b45-11e7-9851-00155db0d302]
+      x-ms-client-request-id: [57f593b4-1652-11e7-91c1-00155db0d302]
     method: GET
-    uri: https://adminmanagement.local.azurestack.external/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/cli_test_vm_with_specialized_unmanaged_disk/providers/Microsoft.Compute/virtualMachines/vm1?api-version=2015-06-15&$expand=instanceView
+    uri: https://adminmanagement.local.azurestack.external/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/cli_test_vm_with_specialized_unmanaged_disk/providers/Microsoft.Compute/virtualMachines/vm1?$expand=instanceView&api-version=2015-06-15
   response:
-    body: {string: "{\r\n  \"properties\": {\r\n    \"vmId\": \"5212e33f-98f1-41c0-8271-fee3ec8d8bf7\"\
+    body: {string: "{\r\n  \"properties\": {\r\n    \"vmId\": \"20db2ce6-740a-4bf1-8c12-0b45afa70931\"\
         ,\r\n    \"hardwareProfile\": {\r\n      \"vmSize\": \"Standard_A1\"\r\n \
         \   },\r\n    \"storageProfile\": {\r\n      \"imageReference\": {\r\n   \
         \     \"publisher\": \"MicrosoftWindowsServer\",\r\n        \"offer\": \"\
         WindowsServer\",\r\n        \"sku\": \"2012-R2-Datacenter\",\r\n        \"\
         version\": \"latest\"\r\n      },\r\n      \"osDisk\": {\r\n        \"osType\"\
-        : \"Windows\",\r\n        \"name\": \"osdisk_K6n81K9Qt8\",\r\n        \"createOption\"\
-        : \"FromImage\",\r\n        \"vhd\": {\r\n          \"uri\": \"https://vhdstoragen62tlktg1lfdb8.blob.local.azurestack.external/vhds/osdisk_K6n81K9Qt8.vhd\"\
+        : \"Windows\",\r\n        \"name\": \"osdisk_BUVaFRKtdd\",\r\n        \"createOption\"\
+        : \"FromImage\",\r\n        \"vhd\": {\r\n          \"uri\": \"https://vhdstorageacf2tllseya0su.blob.local.azurestack.external/vhds/osdisk_BUVaFRKtdd.vhd\"\
         \r\n        },\r\n        \"caching\": \"ReadWrite\"\r\n      },\r\n     \
         \ \"dataDisks\": []\r\n    },\r\n    \"osProfile\": {\r\n      \"computerName\"\
         : \"vm1\",\r\n      \"adminUsername\": \"ubuntu\",\r\n      \"windowsConfiguration\"\
@@ -632,22 +607,22 @@ interactions:
         : true\r\n      },\r\n      \"secrets\": []\r\n    },\r\n    \"networkProfile\"\
         : {\"networkInterfaces\":[{\"id\":\"/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/cli_test_vm_with_specialized_unmanaged_disk/providers/Microsoft.Network/networkInterfaces/vm1VMNic\"\
         }]},\r\n    \"provisioningState\": \"Succeeded\",\r\n    \"instanceView\"\
-        : {\r\n      \"rdpThumbPrint\": \"23BF502E4313D1DA69CB0517D7321DC2852C5A03\"\
+        : {\r\n      \"rdpThumbPrint\": \"ED5A64B3E10E4C794F8CEEF154ED913960D1194B\"\
         ,\r\n      \"vmAgent\": {\r\n        \"vmAgentVersion\": \"2.7.1196.1249\"\
         ,\r\n        \"statuses\": [\r\n          {\r\n            \"code\": \"ProvisioningState/Succeeded\"\
         ,\r\n            \"level\": \"Info\",\r\n            \"displayStatus\": \"\
         Ready\",\r\n            \"message\": \"GuestAgent is running and accepting\
-        \ new configurations.\",\r\n            \"time\": \"2017-04-07T03:50:53+00:00\"\
+        \ new configurations.\",\r\n            \"time\": \"2017-03-31T20:40:57+00:00\"\
         \r\n          }\r\n        ],\r\n        \"extensionHandlers\": []\r\n   \
-        \   },\r\n      \"disks\": [\r\n        {\r\n          \"name\": \"osdisk_K6n81K9Qt8\"\
+        \   },\r\n      \"disks\": [\r\n        {\r\n          \"name\": \"osdisk_BUVaFRKtdd\"\
         ,\r\n          \"statuses\": [\r\n            {\r\n              \"code\"\
         : \"ProvisioningState/Succeeded\",\r\n              \"level\": \"Info\",\r\
         \n              \"displayStatus\": \"Provisioning Succeeded\",\r\n       \
-        \       \"time\": \"2017-04-07T03:45:58.1013519+00:00\"\r\n            }\r\
+        \       \"time\": \"2017-03-31T20:36:23.3964325+00:00\"\r\n            }\r\
         \n          ]\r\n        }\r\n      ],\r\n      \"statuses\": [\r\n      \
         \  {\r\n          \"code\": \"ProvisioningState/Succeeded/osProvisioningComplete\"\
         ,\r\n          \"level\": \"Info\",\r\n          \"displayStatus\": \"OS provisioning\
-        \ complete\",\r\n          \"time\": \"2017-04-07T03:50:32.6841402+00:00\"\
+        \ complete\",\r\n          \"time\": \"2017-03-31T20:40:34.3920019+00:00\"\
         \r\n        },\r\n        {\r\n          \"code\": \"PowerState/running\"\
         ,\r\n          \"level\": \"Info\",\r\n          \"displayStatus\": \"VM running\"\
         \r\n        }\r\n      ]\r\n    }\r\n  },\r\n  \"type\": \"Microsoft.Compute/virtualMachines\"\
@@ -657,7 +632,7 @@ interactions:
       Cache-Control: [no-cache]
       Content-Length: ['2755']
       Content-Type: [application/json; charset=utf-8]
-      Date: ['Fri, 07 Apr 2017 03:50:53 GMT']
+      Date: ['Fri, 31 Mar 2017 20:40:57 GMT']
       Expires: ['-1']
       Pragma: [no-cache]
       Server: [Microsoft-HTTPAPI/2.0, Microsoft-HTTPAPI/2.0]
@@ -673,17 +648,17 @@ interactions:
       User-Agent: [python/3.5.2 (Windows-10-10.0.14393-SP0) requests/2.9.1 msrest/0.4.6
           msrest_azure/0.4.7 networkmanagementclient/0.40.0 Azure-SDK-For-Python AZURECLI/TEST/2.0.1+dev]
       accept-language: [en-US]
-      x-ms-client-request-id: [66190e8c-1b45-11e7-a8ea-00155db0d302]
+      x-ms-client-request-id: [582d069a-1652-11e7-ab36-00155db0d302]
     method: GET
     uri: https://adminmanagement.local.azurestack.external/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/cli_test_vm_with_specialized_unmanaged_disk/providers/Microsoft.Network/networkInterfaces/vm1VMNic?api-version=2015-06-15
   response:
     body: {string: "{\r\n  \"name\": \"vm1VMNic\",\r\n  \"id\": \"/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/cli_test_vm_with_specialized_unmanaged_disk/providers/Microsoft.Network/networkInterfaces/vm1VMNic\"\
-        ,\r\n  \"etag\": \"W/\\\"7366fb84-455f-4829-b149-36862267ebdb\\\"\",\r\n \
+        ,\r\n  \"etag\": \"W/\\\"16b3e298-f84a-46b6-b555-d1d602f0ee99\\\"\",\r\n \
         \ \"location\": \"local\",\r\n  \"tags\": {},\r\n  \"properties\": {\r\n \
-        \   \"provisioningState\": \"Succeeded\",\r\n    \"resourceGuid\": \"b6473a93-102b-4179-88b5-eda8ebc3ed75\"\
+        \   \"provisioningState\": \"Succeeded\",\r\n    \"resourceGuid\": \"f4a91a13-20ea-406f-af6e-d1fd65f7c112\"\
         ,\r\n    \"ipConfigurations\": [\r\n      {\r\n        \"name\": \"ipconfigvm1\"\
         ,\r\n        \"id\": \"/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/cli_test_vm_with_specialized_unmanaged_disk/providers/Microsoft.Network/networkInterfaces/vm1VMNic/ipConfigurations/ipconfigvm1\"\
-        ,\r\n        \"etag\": \"W/\\\"7366fb84-455f-4829-b149-36862267ebdb\\\"\"\
+        ,\r\n        \"etag\": \"W/\\\"16b3e298-f84a-46b6-b555-d1d602f0ee99\\\"\"\
         ,\r\n        \"properties\": {\r\n          \"provisioningState\": \"Succeeded\"\
         ,\r\n          \"privateIPAddress\": \"10.0.0.4\",\r\n          \"privateIPAllocationMethod\"\
         : \"Dynamic\",\r\n          \"publicIPAddress\": {\r\n            \"id\":\
@@ -691,7 +666,7 @@ interactions:
         \r\n          },\r\n          \"subnet\": {\r\n            \"id\": \"/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/cli_test_vm_with_specialized_unmanaged_disk/providers/Microsoft.Network/virtualNetworks/vm1VNET/subnets/vm1Subnet\"\
         \r\n          },\r\n          \"primary\": true\r\n        }\r\n      }\r\n\
         \    ],\r\n    \"dnsSettings\": {\r\n      \"dnsServers\": [],\r\n      \"\
-        appliedDnsServers\": []\r\n    },\r\n    \"macAddress\": \"001DD8B71C10\"\
+        appliedDnsServers\": []\r\n    },\r\n    \"macAddress\": \"001DD8B71C05\"\
         ,\r\n    \"enableIPForwarding\": false,\r\n    \"networkSecurityGroup\": {\r\
         \n      \"id\": \"/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/cli_test_vm_with_specialized_unmanaged_disk/providers/Microsoft.Network/networkSecurityGroups/vm1NSG\"\
         \r\n    },\r\n    \"primary\": true,\r\n    \"virtualMachine\": {\r\n    \
@@ -702,8 +677,8 @@ interactions:
       Cache-Control: [no-cache]
       Content-Length: ['2154']
       Content-Type: [application/json; charset=utf-8]
-      Date: ['Fri, 07 Apr 2017 03:50:53 GMT']
-      ETag: [W/"7366fb84-455f-4829-b149-36862267ebdb"]
+      Date: ['Fri, 31 Mar 2017 20:40:58 GMT']
+      ETag: [W/"16b3e298-f84a-46b6-b555-d1d602f0ee99"]
       Expires: ['-1']
       Pragma: [no-cache]
       Server: [Microsoft-HTTPAPI/2.0, Microsoft-HTTPAPI/2.0]
@@ -719,27 +694,27 @@ interactions:
       User-Agent: [python/3.5.2 (Windows-10-10.0.14393-SP0) requests/2.9.1 msrest/0.4.6
           msrest_azure/0.4.7 networkmanagementclient/0.40.0 Azure-SDK-For-Python AZURECLI/TEST/2.0.1+dev]
       accept-language: [en-US]
-      x-ms-client-request-id: [6635b718-1b45-11e7-8fbe-00155db0d302]
+      x-ms-client-request-id: [585b483e-1652-11e7-91ba-00155db0d302]
     method: GET
     uri: https://adminmanagement.local.azurestack.external/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/cli_test_vm_with_specialized_unmanaged_disk/providers/Microsoft.Network/publicIPAddresses/vm1PublicIP?api-version=2015-06-15
   response:
     body: {string: "{\r\n  \"name\": \"vm1PublicIP\",\r\n  \"id\": \"/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/cli_test_vm_with_specialized_unmanaged_disk/providers/Microsoft.Network/publicIPAddresses/vm1PublicIP\"\
-        ,\r\n  \"etag\": \"W/\\\"761d4d2d-845f-40bc-90fa-896ac4ae42b0\\\"\",\r\n \
+        ,\r\n  \"etag\": \"W/\\\"92b341b9-a5d2-49a9-bfad-f9425b7abaf5\\\"\",\r\n \
         \ \"type\": \"Microsoft.Network/publicIPAddresses\",\r\n  \"location\": \"\
         local\",\r\n  \"tags\": {},\r\n  \"properties\": {\r\n    \"provisioningState\"\
-        : \"Succeeded\",\r\n    \"resourceGuid\": \"1d3e585a-c309-4899-8cb6-ce9e8b22807a\"\
-        ,\r\n    \"ipAddress\": \"192.168.102.25\",\r\n    \"publicIPAllocationMethod\"\
+        : \"Succeeded\",\r\n    \"resourceGuid\": \"de30f470-09bb-4b0a-864d-f8df4f8e7e36\"\
+        ,\r\n    \"ipAddress\": \"192.168.102.16\",\r\n    \"publicIPAllocationMethod\"\
         : \"Dynamic\",\r\n    \"idleTimeoutInMinutes\": 4,\r\n    \"ipConfiguration\"\
         : {\r\n      \"id\": \"/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/cli_test_vm_with_specialized_unmanaged_disk/providers/Microsoft.Network/networkInterfaces/vm1VMNic/ipConfigurations/ipconfigvm1\"\
         \r\n    },\r\n    \"allocatedTenants\": [\r\n      {\r\n        \"id\": \"\
-        /subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups//providers/Microsoft.Compute/tenants/5212e33f-98f1-41c0-8271-fee3ec8d8bf7\"\
+        /subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups//providers/Microsoft.Compute/tenants/20db2ce6-740a-4bf1-8c12-0b45afa70931\"\
         \r\n      }\r\n    ]\r\n  }\r\n}"}
     headers:
       Cache-Control: [no-cache]
       Content-Length: ['1059']
       Content-Type: [application/json; charset=utf-8]
-      Date: ['Fri, 07 Apr 2017 03:50:53 GMT']
-      ETag: [W/"761d4d2d-845f-40bc-90fa-896ac4ae42b0"]
+      Date: ['Fri, 31 Mar 2017 20:40:58 GMT']
+      ETag: [W/"92b341b9-a5d2-49a9-bfad-f9425b7abaf5"]
       Expires: ['-1']
       Pragma: [no-cache]
       Server: [Microsoft-HTTPAPI/2.0, Microsoft-HTTPAPI/2.0]
@@ -755,18 +730,18 @@ interactions:
       User-Agent: [python/3.5.2 (Windows-10-10.0.14393-SP0) requests/2.9.1 msrest/0.4.6
           msrest_azure/0.4.7 computemanagementclient/0.40.0 Azure-SDK-For-Python AZURECLI/TEST/2.0.1+dev]
       accept-language: [en-US]
-      x-ms-client-request-id: [6683f818-1b45-11e7-a374-00155db0d302]
+      x-ms-client-request-id: [5b712058-1652-11e7-b346-00155db0d302]
     method: GET
     uri: https://adminmanagement.local.azurestack.external/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/cli_test_vm_with_specialized_unmanaged_disk/providers/Microsoft.Compute/virtualMachines/vm1?api-version=2015-06-15
   response:
-    body: {string: "{\r\n  \"properties\": {\r\n    \"vmId\": \"5212e33f-98f1-41c0-8271-fee3ec8d8bf7\"\
+    body: {string: "{\r\n  \"properties\": {\r\n    \"vmId\": \"20db2ce6-740a-4bf1-8c12-0b45afa70931\"\
         ,\r\n    \"hardwareProfile\": {\r\n      \"vmSize\": \"Standard_A1\"\r\n \
         \   },\r\n    \"storageProfile\": {\r\n      \"imageReference\": {\r\n   \
         \     \"publisher\": \"MicrosoftWindowsServer\",\r\n        \"offer\": \"\
         WindowsServer\",\r\n        \"sku\": \"2012-R2-Datacenter\",\r\n        \"\
         version\": \"latest\"\r\n      },\r\n      \"osDisk\": {\r\n        \"osType\"\
-        : \"Windows\",\r\n        \"name\": \"osdisk_K6n81K9Qt8\",\r\n        \"createOption\"\
-        : \"FromImage\",\r\n        \"vhd\": {\r\n          \"uri\": \"https://vhdstoragen62tlktg1lfdb8.blob.local.azurestack.external/vhds/osdisk_K6n81K9Qt8.vhd\"\
+        : \"Windows\",\r\n        \"name\": \"osdisk_BUVaFRKtdd\",\r\n        \"createOption\"\
+        : \"FromImage\",\r\n        \"vhd\": {\r\n          \"uri\": \"https://vhdstorageacf2tllseya0su.blob.local.azurestack.external/vhds/osdisk_BUVaFRKtdd.vhd\"\
         \r\n        },\r\n        \"caching\": \"ReadWrite\"\r\n      },\r\n     \
         \ \"dataDisks\": []\r\n    },\r\n    \"osProfile\": {\r\n      \"computerName\"\
         : \"vm1\",\r\n      \"adminUsername\": \"ubuntu\",\r\n      \"windowsConfiguration\"\
@@ -781,7 +756,7 @@ interactions:
       Cache-Control: [no-cache]
       Content-Length: ['1477']
       Content-Type: [application/json; charset=utf-8]
-      Date: ['Fri, 07 Apr 2017 03:50:53 GMT']
+      Date: ['Fri, 31 Mar 2017 20:41:03 GMT']
       Expires: ['-1']
       Pragma: [no-cache]
       Server: [Microsoft-HTTPAPI/2.0, Microsoft-HTTPAPI/2.0]
@@ -798,22 +773,22 @@ interactions:
       User-Agent: [python/3.5.2 (Windows-10-10.0.14393-SP0) requests/2.9.1 msrest/0.4.6
           msrest_azure/0.4.7 computemanagementclient/0.40.0 Azure-SDK-For-Python AZURECLI/TEST/2.0.1+dev]
       accept-language: [en-US]
-      x-ms-client-request-id: [66d6a838-1b45-11e7-9759-00155db0d302]
+      x-ms-client-request-id: [5e97bf1e-1652-11e7-8103-00155db0d302]
     method: DELETE
     uri: https://adminmanagement.local.azurestack.external/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/cli_test_vm_with_specialized_unmanaged_disk/providers/Microsoft.Compute/virtualMachines/vm1?api-version=2015-06-15
   response:
     body: {string: ''}
     headers:
-      Azure-AsyncOperation: ['https://adminmanagement.local.azurestack.external/subscriptions/2c966402-b31d-4a3e-a3dc-397286c0c609/providers/Microsoft.Compute/locations/local/operations/c414e6d3-f3e1-428e-9d45-d64f869507e2?api-version=2015-06-15']
+      Azure-AsyncOperation: ['https://adminmanagement.local.azurestack.external/subscriptions/2c966402-b31d-4a3e-a3dc-397286c0c609/providers/Microsoft.Compute/locations/local/operations/3b87806c-c599-4769-a8c3-f2757d5f3cf2?api-version=2015-06-15']
       Cache-Control: [no-cache]
       Content-Length: ['0']
-      Date: ['Fri, 07 Apr 2017 03:50:55 GMT']
+      Date: ['Fri, 31 Mar 2017 20:41:09 GMT']
       Expires: ['-1']
-      Location: ['https://adminmanagement.local.azurestack.external/subscriptions/2c966402-b31d-4a3e-a3dc-397286c0c609/providers/Microsoft.Compute/locations/local/operations/c414e6d3-f3e1-428e-9d45-d64f869507e2?monitor=true&api-version=2015-06-15']
+      Location: ['https://adminmanagement.local.azurestack.external/subscriptions/2c966402-b31d-4a3e-a3dc-397286c0c609/providers/Microsoft.Compute/locations/local/operations/3b87806c-c599-4769-a8c3-f2757d5f3cf2?monitor=true&api-version=2015-06-15']
       Pragma: [no-cache]
       Server: [Microsoft-HTTPAPI/2.0, Microsoft-HTTPAPI/2.0]
       Strict-Transport-Security: [max-age=31536000; includeSubDomains]
-      x-ms-ratelimit-remaining-subscription-writes: ['1186']
+      x-ms-ratelimit-remaining-subscription-writes: ['1180']
     status: {code: 202, message: Accepted}
 - request:
     body: null
@@ -825,18 +800,18 @@ interactions:
       User-Agent: [python/3.5.2 (Windows-10-10.0.14393-SP0) requests/2.9.1 msrest/0.4.6
           msrest_azure/0.4.7 computemanagementclient/0.40.0 Azure-SDK-For-Python AZURECLI/TEST/2.0.1+dev]
       accept-language: [en-US]
-      x-ms-client-request-id: [66d6a838-1b45-11e7-9759-00155db0d302]
+      x-ms-client-request-id: [5e97bf1e-1652-11e7-8103-00155db0d302]
     method: GET
-    uri: https://adminmanagement.local.azurestack.external/subscriptions/00000000-0000-0000-0000-000000000000/providers/Microsoft.Compute/locations/local/operations/c414e6d3-f3e1-428e-9d45-d64f869507e2?api-version=2015-06-15
+    uri: https://adminmanagement.local.azurestack.external/subscriptions/00000000-0000-0000-0000-000000000000/providers/Microsoft.Compute/locations/local/operations/3b87806c-c599-4769-a8c3-f2757d5f3cf2?api-version=2015-06-15
   response:
-    body: {string: "{\r\n  \"operationId\": \"c414e6d3-f3e1-428e-9d45-d64f869507e2\"\
-        ,\r\n  \"startTime\": \"2017-04-07T03:50:55.1844417+00:00\",\r\n  \"status\"\
+    body: {string: "{\r\n  \"operationId\": \"3b87806c-c599-4769-a8c3-f2757d5f3cf2\"\
+        ,\r\n  \"startTime\": \"2017-03-31T20:41:09.0979726+00:00\",\r\n  \"status\"\
         : \"InProgress\"\r\n}"}
     headers:
       Cache-Control: [no-cache]
       Content-Length: ['141']
       Content-Type: [application/json; charset=utf-8]
-      Date: ['Fri, 07 Apr 2017 03:51:25 GMT']
+      Date: ['Fri, 31 Mar 2017 20:41:39 GMT']
       Expires: ['-1']
       Pragma: [no-cache]
       Server: [Microsoft-HTTPAPI/2.0, Microsoft-HTTPAPI/2.0]
@@ -852,18 +827,18 @@ interactions:
       User-Agent: [python/3.5.2 (Windows-10-10.0.14393-SP0) requests/2.9.1 msrest/0.4.6
           msrest_azure/0.4.7 computemanagementclient/0.40.0 Azure-SDK-For-Python AZURECLI/TEST/2.0.1+dev]
       accept-language: [en-US]
-      x-ms-client-request-id: [66d6a838-1b45-11e7-9759-00155db0d302]
+      x-ms-client-request-id: [5e97bf1e-1652-11e7-8103-00155db0d302]
     method: GET
-    uri: https://adminmanagement.local.azurestack.external/subscriptions/00000000-0000-0000-0000-000000000000/providers/Microsoft.Compute/locations/local/operations/c414e6d3-f3e1-428e-9d45-d64f869507e2?api-version=2015-06-15
+    uri: https://adminmanagement.local.azurestack.external/subscriptions/00000000-0000-0000-0000-000000000000/providers/Microsoft.Compute/locations/local/operations/3b87806c-c599-4769-a8c3-f2757d5f3cf2?api-version=2015-06-15
   response:
-    body: {string: "{\r\n  \"operationId\": \"c414e6d3-f3e1-428e-9d45-d64f869507e2\"\
-        ,\r\n  \"startTime\": \"2017-04-07T03:50:55.1844417+00:00\",\r\n  \"status\"\
+    body: {string: "{\r\n  \"operationId\": \"3b87806c-c599-4769-a8c3-f2757d5f3cf2\"\
+        ,\r\n  \"startTime\": \"2017-03-31T20:41:09.0979726+00:00\",\r\n  \"status\"\
         : \"InProgress\"\r\n}"}
     headers:
       Cache-Control: [no-cache]
       Content-Length: ['141']
       Content-Type: [application/json; charset=utf-8]
-      Date: ['Fri, 07 Apr 2017 03:51:55 GMT']
+      Date: ['Fri, 31 Mar 2017 20:42:09 GMT']
       Expires: ['-1']
       Pragma: [no-cache]
       Server: [Microsoft-HTTPAPI/2.0, Microsoft-HTTPAPI/2.0]
@@ -879,18 +854,18 @@ interactions:
       User-Agent: [python/3.5.2 (Windows-10-10.0.14393-SP0) requests/2.9.1 msrest/0.4.6
           msrest_azure/0.4.7 computemanagementclient/0.40.0 Azure-SDK-For-Python AZURECLI/TEST/2.0.1+dev]
       accept-language: [en-US]
-      x-ms-client-request-id: [66d6a838-1b45-11e7-9759-00155db0d302]
+      x-ms-client-request-id: [5e97bf1e-1652-11e7-8103-00155db0d302]
     method: GET
-    uri: https://adminmanagement.local.azurestack.external/subscriptions/00000000-0000-0000-0000-000000000000/providers/Microsoft.Compute/locations/local/operations/c414e6d3-f3e1-428e-9d45-d64f869507e2?api-version=2015-06-15
+    uri: https://adminmanagement.local.azurestack.external/subscriptions/00000000-0000-0000-0000-000000000000/providers/Microsoft.Compute/locations/local/operations/3b87806c-c599-4769-a8c3-f2757d5f3cf2?api-version=2015-06-15
   response:
-    body: {string: "{\r\n  \"operationId\": \"c414e6d3-f3e1-428e-9d45-d64f869507e2\"\
-        ,\r\n  \"startTime\": \"2017-04-07T03:50:55.1844417+00:00\",\r\n  \"status\"\
+    body: {string: "{\r\n  \"operationId\": \"3b87806c-c599-4769-a8c3-f2757d5f3cf2\"\
+        ,\r\n  \"startTime\": \"2017-03-31T20:41:09.0979726+00:00\",\r\n  \"status\"\
         : \"InProgress\"\r\n}"}
     headers:
       Cache-Control: [no-cache]
       Content-Length: ['141']
       Content-Type: [application/json; charset=utf-8]
-      Date: ['Fri, 07 Apr 2017 03:52:25 GMT']
+      Date: ['Fri, 31 Mar 2017 20:42:40 GMT']
       Expires: ['-1']
       Pragma: [no-cache]
       Server: [Microsoft-HTTPAPI/2.0, Microsoft-HTTPAPI/2.0]
@@ -906,18 +881,18 @@ interactions:
       User-Agent: [python/3.5.2 (Windows-10-10.0.14393-SP0) requests/2.9.1 msrest/0.4.6
           msrest_azure/0.4.7 computemanagementclient/0.40.0 Azure-SDK-For-Python AZURECLI/TEST/2.0.1+dev]
       accept-language: [en-US]
-      x-ms-client-request-id: [66d6a838-1b45-11e7-9759-00155db0d302]
+      x-ms-client-request-id: [5e97bf1e-1652-11e7-8103-00155db0d302]
     method: GET
-    uri: https://adminmanagement.local.azurestack.external/subscriptions/00000000-0000-0000-0000-000000000000/providers/Microsoft.Compute/locations/local/operations/c414e6d3-f3e1-428e-9d45-d64f869507e2?api-version=2015-06-15
+    uri: https://adminmanagement.local.azurestack.external/subscriptions/00000000-0000-0000-0000-000000000000/providers/Microsoft.Compute/locations/local/operations/3b87806c-c599-4769-a8c3-f2757d5f3cf2?api-version=2015-06-15
   response:
-    body: {string: "{\r\n  \"operationId\": \"c414e6d3-f3e1-428e-9d45-d64f869507e2\"\
-        ,\r\n  \"startTime\": \"2017-04-07T03:50:55.1844417+00:00\",\r\n  \"status\"\
+    body: {string: "{\r\n  \"operationId\": \"3b87806c-c599-4769-a8c3-f2757d5f3cf2\"\
+        ,\r\n  \"startTime\": \"2017-03-31T20:41:09.0979726+00:00\",\r\n  \"status\"\
         : \"InProgress\"\r\n}"}
     headers:
       Cache-Control: [no-cache]
       Content-Length: ['141']
       Content-Type: [application/json; charset=utf-8]
-      Date: ['Fri, 07 Apr 2017 03:52:55 GMT']
+      Date: ['Fri, 31 Mar 2017 20:43:10 GMT']
       Expires: ['-1']
       Pragma: [no-cache]
       Server: [Microsoft-HTTPAPI/2.0, Microsoft-HTTPAPI/2.0]
@@ -933,18 +908,18 @@ interactions:
       User-Agent: [python/3.5.2 (Windows-10-10.0.14393-SP0) requests/2.9.1 msrest/0.4.6
           msrest_azure/0.4.7 computemanagementclient/0.40.0 Azure-SDK-For-Python AZURECLI/TEST/2.0.1+dev]
       accept-language: [en-US]
-      x-ms-client-request-id: [66d6a838-1b45-11e7-9759-00155db0d302]
+      x-ms-client-request-id: [5e97bf1e-1652-11e7-8103-00155db0d302]
     method: GET
-    uri: https://adminmanagement.local.azurestack.external/subscriptions/00000000-0000-0000-0000-000000000000/providers/Microsoft.Compute/locations/local/operations/c414e6d3-f3e1-428e-9d45-d64f869507e2?api-version=2015-06-15
+    uri: https://adminmanagement.local.azurestack.external/subscriptions/00000000-0000-0000-0000-000000000000/providers/Microsoft.Compute/locations/local/operations/3b87806c-c599-4769-a8c3-f2757d5f3cf2?api-version=2015-06-15
   response:
-    body: {string: "{\r\n  \"operationId\": \"c414e6d3-f3e1-428e-9d45-d64f869507e2\"\
-        ,\r\n  \"startTime\": \"2017-04-07T03:50:55.1844417+00:00\",\r\n  \"status\"\
+    body: {string: "{\r\n  \"operationId\": \"3b87806c-c599-4769-a8c3-f2757d5f3cf2\"\
+        ,\r\n  \"startTime\": \"2017-03-31T20:41:09.0979726+00:00\",\r\n  \"status\"\
         : \"InProgress\"\r\n}"}
     headers:
       Cache-Control: [no-cache]
       Content-Length: ['141']
       Content-Type: [application/json; charset=utf-8]
-      Date: ['Fri, 07 Apr 2017 03:53:25 GMT']
+      Date: ['Fri, 31 Mar 2017 20:43:40 GMT']
       Expires: ['-1']
       Pragma: [no-cache]
       Server: [Microsoft-HTTPAPI/2.0, Microsoft-HTTPAPI/2.0]
@@ -960,18 +935,18 @@ interactions:
       User-Agent: [python/3.5.2 (Windows-10-10.0.14393-SP0) requests/2.9.1 msrest/0.4.6
           msrest_azure/0.4.7 computemanagementclient/0.40.0 Azure-SDK-For-Python AZURECLI/TEST/2.0.1+dev]
       accept-language: [en-US]
-      x-ms-client-request-id: [66d6a838-1b45-11e7-9759-00155db0d302]
+      x-ms-client-request-id: [5e97bf1e-1652-11e7-8103-00155db0d302]
     method: GET
-    uri: https://adminmanagement.local.azurestack.external/subscriptions/00000000-0000-0000-0000-000000000000/providers/Microsoft.Compute/locations/local/operations/c414e6d3-f3e1-428e-9d45-d64f869507e2?api-version=2015-06-15
+    uri: https://adminmanagement.local.azurestack.external/subscriptions/00000000-0000-0000-0000-000000000000/providers/Microsoft.Compute/locations/local/operations/3b87806c-c599-4769-a8c3-f2757d5f3cf2?api-version=2015-06-15
   response:
-    body: {string: "{\r\n  \"operationId\": \"c414e6d3-f3e1-428e-9d45-d64f869507e2\"\
-        ,\r\n  \"startTime\": \"2017-04-07T03:50:55.1844417+00:00\",\r\n  \"status\"\
+    body: {string: "{\r\n  \"operationId\": \"3b87806c-c599-4769-a8c3-f2757d5f3cf2\"\
+        ,\r\n  \"startTime\": \"2017-03-31T20:41:09.0979726+00:00\",\r\n  \"status\"\
         : \"InProgress\"\r\n}"}
     headers:
       Cache-Control: [no-cache]
       Content-Length: ['141']
       Content-Type: [application/json; charset=utf-8]
-      Date: ['Fri, 07 Apr 2017 03:53:56 GMT']
+      Date: ['Fri, 31 Mar 2017 20:44:10 GMT']
       Expires: ['-1']
       Pragma: [no-cache]
       Server: [Microsoft-HTTPAPI/2.0, Microsoft-HTTPAPI/2.0]
@@ -987,19 +962,19 @@ interactions:
       User-Agent: [python/3.5.2 (Windows-10-10.0.14393-SP0) requests/2.9.1 msrest/0.4.6
           msrest_azure/0.4.7 computemanagementclient/0.40.0 Azure-SDK-For-Python AZURECLI/TEST/2.0.1+dev]
       accept-language: [en-US]
-      x-ms-client-request-id: [66d6a838-1b45-11e7-9759-00155db0d302]
+      x-ms-client-request-id: [5e97bf1e-1652-11e7-8103-00155db0d302]
     method: GET
-    uri: https://adminmanagement.local.azurestack.external/subscriptions/00000000-0000-0000-0000-000000000000/providers/Microsoft.Compute/locations/local/operations/c414e6d3-f3e1-428e-9d45-d64f869507e2?api-version=2015-06-15
+    uri: https://adminmanagement.local.azurestack.external/subscriptions/00000000-0000-0000-0000-000000000000/providers/Microsoft.Compute/locations/local/operations/3b87806c-c599-4769-a8c3-f2757d5f3cf2?api-version=2015-06-15
   response:
-    body: {string: "{\r\n  \"operationId\": \"c414e6d3-f3e1-428e-9d45-d64f869507e2\"\
-        ,\r\n  \"startTime\": \"2017-04-07T03:50:55.1844417+00:00\",\r\n  \"endTime\"\
-        : \"2017-04-07T03:54:24.8862867+00:00\",\r\n  \"status\": \"Succeeded\"\r\n\
+    body: {string: "{\r\n  \"operationId\": \"3b87806c-c599-4769-a8c3-f2757d5f3cf2\"\
+        ,\r\n  \"startTime\": \"2017-03-31T20:41:09.0979726+00:00\",\r\n  \"endTime\"\
+        : \"2017-03-31T20:44:30.2905919+00:00\",\r\n  \"status\": \"Succeeded\"\r\n\
         }"}
     headers:
       Cache-Control: [no-cache]
       Content-Length: ['191']
       Content-Type: [application/json; charset=utf-8]
-      Date: ['Fri, 07 Apr 2017 03:54:26 GMT']
+      Date: ['Fri, 31 Mar 2017 20:44:41 GMT']
       Expires: ['-1']
       Pragma: [no-cache]
       Server: [Microsoft-HTTPAPI/2.0, Microsoft-HTTPAPI/2.0]
@@ -1016,7 +991,7 @@ interactions:
           msrest_azure/0.4.7 resourcemanagementclient/0.40.0 Azure-SDK-For-Python
           AZURECLI/TEST/2.0.1+dev]
       accept-language: [en-US]
-      x-ms-client-request-id: [e58b5240-1b45-11e7-941e-00155db0d302]
+      x-ms-client-request-id: [f5560276-1652-11e7-b40f-00155db0d302]
     method: GET
     uri: https://adminmanagement.local.azurestack.external/subscriptions/00000000-0000-0000-0000-000000000000/resourcegroups/cli_test_vm_with_specialized_unmanaged_disk?api-version=2016-02-01
   response:
@@ -1025,7 +1000,7 @@ interactions:
       Cache-Control: [no-cache]
       Content-Length: ['275']
       Content-Type: [application/json; charset=utf-8]
-      Date: ['Fri, 07 Apr 2017 03:54:27 GMT']
+      Date: ['Fri, 31 Mar 2017 20:45:21 GMT']
       Expires: ['-1']
       Pragma: [no-cache]
       Strict-Transport-Security: [max-age=31536000; includeSubDomains]
@@ -1040,21 +1015,21 @@ interactions:
       User-Agent: [python/3.5.2 (Windows-10-10.0.14393-SP0) requests/2.9.1 msrest/0.4.6
           msrest_azure/0.4.7 networkmanagementclient/0.40.0 Azure-SDK-For-Python AZURECLI/TEST/2.0.1+dev]
       accept-language: [en-US]
-      x-ms-client-request-id: [e59dfd08-1b45-11e7-a739-00155db0d302]
+      x-ms-client-request-id: [f5950e5a-1652-11e7-bdea-00155db0d302]
     method: GET
     uri: https://adminmanagement.local.azurestack.external/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/cli_test_vm_with_specialized_unmanaged_disk/providers/Microsoft.Network/virtualnetworks?api-version=2015-06-15
   response:
     body: {string: "{\r\n  \"value\": [\r\n    {\r\n      \"name\": \"vm1VNET\",\r\
         \n      \"id\": \"/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/cli_test_vm_with_specialized_unmanaged_disk/providers/Microsoft.Network/virtualNetworks/vm1VNET\"\
-        ,\r\n      \"etag\": \"W/\\\"3f2ce1d8-ae0d-4c84-a6cd-651032ed3555\\\"\",\r\
+        ,\r\n      \"etag\": \"W/\\\"88108cf4-ccab-42bc-b525-d9489deefa6d\\\"\",\r\
         \n      \"type\": \"Microsoft.Network/virtualNetworks\",\r\n      \"location\"\
         : \"local\",\r\n      \"tags\": {},\r\n      \"properties\": {\r\n       \
-        \ \"provisioningState\": \"Succeeded\",\r\n        \"resourceGuid\": \"57ddaf09-d071-448c-9cb2-d45a453b8e68\"\
+        \ \"provisioningState\": \"Succeeded\",\r\n        \"resourceGuid\": \"80f0ce4a-7180-43d8-97b3-40a4f7cc9eba\"\
         ,\r\n        \"addressSpace\": {\r\n          \"addressPrefixes\": [\r\n \
         \           \"10.0.0.0/16\"\r\n          ]\r\n        },\r\n        \"subnets\"\
         : [\r\n          {\r\n            \"name\": \"vm1Subnet\",\r\n           \
         \ \"id\": \"/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/cli_test_vm_with_specialized_unmanaged_disk/providers/Microsoft.Network/virtualNetworks/vm1VNET/subnets/vm1Subnet\"\
-        ,\r\n            \"etag\": \"W/\\\"3f2ce1d8-ae0d-4c84-a6cd-651032ed3555\\\"\
+        ,\r\n            \"etag\": \"W/\\\"88108cf4-ccab-42bc-b525-d9489deefa6d\\\"\
         \",\r\n            \"properties\": {\r\n              \"provisioningState\"\
         : \"Succeeded\",\r\n              \"addressPrefix\": \"10.0.0.0/24\",\r\n\
         \              \"ipConfigurations\": [\r\n                {\r\n          \
@@ -1065,36 +1040,35 @@ interactions:
       Cache-Control: [no-cache]
       Content-Length: ['1488']
       Content-Type: [application/json; charset=utf-8]
-      Date: ['Fri, 07 Apr 2017 03:54:27 GMT']
+      Date: ['Fri, 31 Mar 2017 20:45:22 GMT']
       Expires: ['-1']
       Pragma: [no-cache]
       Server: [Microsoft-HTTPAPI/2.0, Microsoft-HTTPAPI/2.0]
       Strict-Transport-Security: [max-age=31536000; includeSubDomains]
     status: {code: 200, message: OK}
 - request:
-    body: '{"properties": {"template": {"resources": [{"dependsOn": [], "type": "Microsoft.Network/networkSecurityGroups",
-      "name": "vm2NSG", "location": "local", "apiVersion": "2015-06-15", "properties":
-      {"securityRules": [{"properties": {"destinationPortRange": "3389", "sourceAddressPrefix":
-      "*", "sourcePortRange": "*", "access": "Allow", "destinationAddressPrefix":
-      "*", "priority": 1000, "direction": "Inbound", "protocol": "Tcp"}, "name": "rdp"}]},
-      "tags": {}}, {"dependsOn": [], "type": "Microsoft.Network/publicIPAddresses",
-      "name": "vm2PublicIP", "location": "local", "apiVersion": "2015-06-15", "properties":
-      {"publicIPAllocationMethod": "dynamic"}, "tags": {}}, {"dependsOn": ["Microsoft.Network/networkSecurityGroups/vm2NSG",
-      "Microsoft.Network/publicIpAddresses/vm2PublicIP"], "type": "Microsoft.Network/networkInterfaces",
-      "name": "vm2VMNic", "location": "local", "apiVersion": "2015-06-15", "properties":
-      {"ipConfigurations": [{"properties": {"privateIPAllocationMethod": "Dynamic",
-      "publicIPAddress": {"id": "/subscriptions/2C966402-B31D-4A3E-A3DC-397286C0C609/resourceGroups/cli_test_vm_with_specialized_unmanaged_disk/providers/Microsoft.Network/publicIPAddresses/vm2PublicIP"},
-      "subnet": {"id": "/subscriptions/2C966402-B31D-4A3E-A3DC-397286C0C609/resourceGroups/cli_test_vm_with_specialized_unmanaged_disk/providers/Microsoft.Network/virtualNetworks/vm1VNET/subnets/vm1Subnet"}},
-      "name": "ipconfigvm2"}], "networkSecurityGroup": {"id": "/subscriptions/2C966402-B31D-4A3E-A3DC-397286C0C609/resourceGroups/cli_test_vm_with_specialized_unmanaged_disk/providers/Microsoft.Network/networkSecurityGroups/vm2NSG"}},
-      "tags": {}}, {"dependsOn": ["Microsoft.Network/networkInterfaces/vm2VMNic"],
-      "type": "Microsoft.Compute/virtualMachines", "name": "vm2", "location": "local",
-      "apiVersion": "2016-03-30", "properties": {"hardwareProfile": {"vmSize": "Standard_A1"},
-      "networkProfile": {"networkInterfaces": [{"id": "/subscriptions/2C966402-B31D-4A3E-A3DC-397286C0C609/resourceGroups/cli_test_vm_with_specialized_unmanaged_disk/providers/Microsoft.Network/networkInterfaces/vm2VMNic"}]},
-      "storageProfile": {"osDisk": {"createOption": "attach", "osType": "windows",
-      "vhd": {"uri": "https://vhdstoragen62tlktg1lfdb8.blob.local.azurestack.external/vhds/osdisk_K6n81K9Qt8.vhd"},
-      "name": "osdisk_K6n81K9Qt8"}}}, "tags": {}}], "outputs": {}, "contentVersion":
-      "1.0.0.0", "parameters": {}, "variables": {}, "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#"},
-      "mode": "Incremental", "parameters": {}}}'
+    body: '{"properties": {"parameters": {}, "template": {"contentVersion": "1.0.0.0",
+      "parameters": {}, "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+      "variables": {}, "resources": [{"dependsOn": [], "properties": {"securityRules":
+      [{"properties": {"destinationPortRange": "3389", "priority": 1000, "sourceAddressPrefix":
+      "*", "destinationAddressPrefix": "*", "protocol": "Tcp", "sourcePortRange":
+      "*", "direction": "Inbound", "access": "Allow"}, "name": "rdp"}]}, "name": "vm2NSG",
+      "apiVersion": "2015-06-15", "type": "Microsoft.Network/networkSecurityGroups",
+      "location": "local", "tags": {}}, {"dependsOn": [], "properties": {"publicIPAllocationMethod":
+      "dynamic"}, "apiVersion": "2015-06-15", "name": "vm2PublicIP", "type": "Microsoft.Network/publicIPAddresses",
+      "location": "local", "tags": {}}, {"dependsOn": ["Microsoft.Network/networkSecurityGroups/vm2NSG",
+      "Microsoft.Network/publicIpAddresses/vm2PublicIP"], "properties": {"networkSecurityGroup":
+      {"id": "/subscriptions/2C966402-B31D-4A3E-A3DC-397286C0C609/resourceGroups/cli_test_vm_with_specialized_unmanaged_disk/providers/Microsoft.Network/networkSecurityGroups/vm2NSG"},
+      "ipConfigurations": [{"properties": {"publicIPAddress": {"id": "/subscriptions/2C966402-B31D-4A3E-A3DC-397286C0C609/resourceGroups/cli_test_vm_with_specialized_unmanaged_disk/providers/Microsoft.Network/publicIPAddresses/vm2PublicIP"},
+      "subnet": {"id": "/subscriptions/2C966402-B31D-4A3E-A3DC-397286C0C609/resourceGroups/cli_test_vm_with_specialized_unmanaged_disk/providers/Microsoft.Network/virtualNetworks/vm1VNET/subnets/vm1Subnet"},
+      "privateIPAllocationMethod": "Dynamic"}, "name": "ipconfigvm2"}]}, "apiVersion":
+      "2015-06-15", "name": "vm2VMNic", "type": "Microsoft.Network/networkInterfaces",
+      "location": "local", "tags": {}}, {"dependsOn": ["Microsoft.Network/networkInterfaces/vm2VMNic"],
+      "properties": {"networkProfile": {"networkInterfaces": [{"id": "/subscriptions/2C966402-B31D-4A3E-A3DC-397286C0C609/resourceGroups/cli_test_vm_with_specialized_unmanaged_disk/providers/Microsoft.Network/networkInterfaces/vm2VMNic"}]},
+      "hardwareProfile": {"vmSize": "Standard_A1"}, "storageProfile": {"osDisk": {"createOption":
+      "attach", "osType": "windows", "name": "osdisk_BUVaFRKtdd", "vhd": {"uri": "https://vhdstorageacf2tllseya0su.blob.local.azurestack.external/vhds/osdisk_BUVaFRKtdd.vhd"}}}},
+      "apiVersion": "2016-03-30", "name": "vm2", "type": "Microsoft.Compute/virtualMachines",
+      "location": "local", "tags": {}}], "outputs": {}}, "mode": "Incremental"}}'
     headers:
       Accept: [application/json]
       Accept-Encoding: ['gzip, deflate']
@@ -1105,21 +1079,21 @@ interactions:
           msrest_azure/0.4.7 resourcemanagementclient/0.40.0 Azure-SDK-For-Python
           AZURECLI/TEST/2.0.1+dev]
       accept-language: [en-US]
-      x-ms-client-request-id: [e5bb6514-1b45-11e7-bbcf-00155db0d302]
+      x-ms-client-request-id: [f5dffccc-1652-11e7-956a-00155db0d302]
     method: PUT
     uri: https://adminmanagement.local.azurestack.external/subscriptions/00000000-0000-0000-0000-000000000000/resourcegroups/cli_test_vm_with_specialized_unmanaged_disk/providers/Microsoft.Resources/deployments/mock-deployment?api-version=2016-02-01
   response:
-    body: {string: '{"id":"/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/cli_test_vm_with_specialized_unmanaged_disk/providers/Microsoft.Resources/deployments/vm_deploy_QPd5EMIMDs6HcEtXTxbUKsQQYNvLe6P7","name":"vm_deploy_QPd5EMIMDs6HcEtXTxbUKsQQYNvLe6P7","properties":{"templateHash":"2190396516835665944","parameters":{},"mode":"Incremental","provisioningState":"Accepted","timestamp":"2017-04-07T03:54:28.2020521Z","duration":"PT0.1119055S","correlationId":"06171e39-f0df-401d-a830-1a1381f87443","providers":[{"namespace":"Microsoft.Network","resourceTypes":[{"resourceType":"networkSecurityGroups","locations":["local"]},{"resourceType":"publicIPAddresses","locations":["local"]},{"resourceType":"networkInterfaces","locations":["local"]}]},{"namespace":"Microsoft.Compute","resourceTypes":[{"resourceType":"virtualMachines","locations":["local"]}]}],"dependencies":[{"dependsOn":[{"id":"/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/cli_test_vm_with_specialized_unmanaged_disk/providers/Microsoft.Network/networkSecurityGroups/vm2NSG","resourceType":"Microsoft.Network/networkSecurityGroups","resourceName":"vm2NSG"},{"id":"/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/cli_test_vm_with_specialized_unmanaged_disk/providers/Microsoft.Network/publicIpAddresses/vm2PublicIP","resourceType":"Microsoft.Network/publicIpAddresses","resourceName":"vm2PublicIP"}],"id":"/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/cli_test_vm_with_specialized_unmanaged_disk/providers/Microsoft.Network/networkInterfaces/vm2VMNic","resourceType":"Microsoft.Network/networkInterfaces","resourceName":"vm2VMNic"},{"dependsOn":[{"id":"/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/cli_test_vm_with_specialized_unmanaged_disk/providers/Microsoft.Network/networkInterfaces/vm2VMNic","resourceType":"Microsoft.Network/networkInterfaces","resourceName":"vm2VMNic"}],"id":"/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/cli_test_vm_with_specialized_unmanaged_disk/providers/Microsoft.Compute/virtualMachines/vm2","resourceType":"Microsoft.Compute/virtualMachines","resourceName":"vm2"}]}}'}
+    body: {string: '{"id":"/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/cli_test_vm_with_specialized_unmanaged_disk/providers/Microsoft.Resources/deployments/vm_deploy_qAYVn1Ob5ez3lChVBsCddj9myQi3EnAN","name":"vm_deploy_qAYVn1Ob5ez3lChVBsCddj9myQi3EnAN","properties":{"templateHash":"2491175760199639181","parameters":{},"mode":"Incremental","provisioningState":"Accepted","timestamp":"2017-03-31T20:45:22.9968041Z","duration":"PT0.0849361S","correlationId":"ab207bc8-a627-4e15-9b6c-f183d9327db4","providers":[{"namespace":"Microsoft.Network","resourceTypes":[{"resourceType":"networkSecurityGroups","locations":["local"]},{"resourceType":"publicIPAddresses","locations":["local"]},{"resourceType":"networkInterfaces","locations":["local"]}]},{"namespace":"Microsoft.Compute","resourceTypes":[{"resourceType":"virtualMachines","locations":["local"]}]}],"dependencies":[{"dependsOn":[{"id":"/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/cli_test_vm_with_specialized_unmanaged_disk/providers/Microsoft.Network/networkSecurityGroups/vm2NSG","resourceType":"Microsoft.Network/networkSecurityGroups","resourceName":"vm2NSG"},{"id":"/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/cli_test_vm_with_specialized_unmanaged_disk/providers/Microsoft.Network/publicIpAddresses/vm2PublicIP","resourceType":"Microsoft.Network/publicIpAddresses","resourceName":"vm2PublicIP"}],"id":"/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/cli_test_vm_with_specialized_unmanaged_disk/providers/Microsoft.Network/networkInterfaces/vm2VMNic","resourceType":"Microsoft.Network/networkInterfaces","resourceName":"vm2VMNic"},{"dependsOn":[{"id":"/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/cli_test_vm_with_specialized_unmanaged_disk/providers/Microsoft.Network/networkInterfaces/vm2VMNic","resourceType":"Microsoft.Network/networkInterfaces","resourceName":"vm2VMNic"}],"id":"/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/cli_test_vm_with_specialized_unmanaged_disk/providers/Microsoft.Compute/virtualMachines/vm2","resourceType":"Microsoft.Compute/virtualMachines","resourceName":"vm2"}]}}'}
     headers:
-      Azure-AsyncOperation: ['https://adminmanagement.local.azurestack.external/subscriptions/2C966402-B31D-4A3E-A3DC-397286C0C609/resourcegroups/cli_test_vm_with_specialized_unmanaged_disk/providers/Microsoft.Resources/deployments/vm_deploy_QPd5EMIMDs6HcEtXTxbUKsQQYNvLe6P7/operationStatuses/08587100696173876124?api-version=2016-02-01']
+      Azure-AsyncOperation: ['https://adminmanagement.local.azurestack.external/subscriptions/2C966402-B31D-4A3E-A3DC-397286C0C609/resourcegroups/cli_test_vm_with_specialized_unmanaged_disk/providers/Microsoft.Resources/deployments/vm_deploy_qAYVn1Ob5ez3lChVBsCddj9myQi3EnAN/operationStatuses/08587106137625658727?api-version=2016-02-01']
       Cache-Control: [no-cache]
       Content-Length: ['2203']
       Content-Type: [application/json; charset=utf-8]
-      Date: ['Fri, 07 Apr 2017 03:54:27 GMT']
+      Date: ['Fri, 31 Mar 2017 20:45:22 GMT']
       Expires: ['-1']
       Pragma: [no-cache]
       Strict-Transport-Security: [max-age=31536000; includeSubDomains]
-      x-ms-ratelimit-remaining-subscription-writes: ['1185']
+      x-ms-ratelimit-remaining-subscription-writes: ['1182']
     status: {code: 201, message: Created}
 - request:
     body: null
@@ -1132,16 +1106,16 @@ interactions:
           msrest_azure/0.4.7 resourcemanagementclient/0.40.0 Azure-SDK-For-Python
           AZURECLI/TEST/2.0.1+dev]
       accept-language: [en-US]
-      x-ms-client-request-id: [e5bb6514-1b45-11e7-bbcf-00155db0d302]
+      x-ms-client-request-id: [f5dffccc-1652-11e7-956a-00155db0d302]
     method: GET
-    uri: https://adminmanagement.local.azurestack.external/subscriptions/00000000-0000-0000-0000-000000000000/resourcegroups/cli_test_vm_with_specialized_unmanaged_disk/providers/Microsoft.Resources/deployments/mock-deployment/operationStatuses/08587100696173876124?api-version=2016-02-01
+    uri: https://adminmanagement.local.azurestack.external/subscriptions/00000000-0000-0000-0000-000000000000/resourcegroups/cli_test_vm_with_specialized_unmanaged_disk/providers/Microsoft.Resources/deployments/mock-deployment/operationStatuses/08587106137625658727?api-version=2016-02-01
   response:
     body: {string: '{"status":"Running"}'}
     headers:
       Cache-Control: [no-cache]
       Content-Length: ['20']
       Content-Type: [application/json; charset=utf-8]
-      Date: ['Fri, 07 Apr 2017 03:54:58 GMT']
+      Date: ['Fri, 31 Mar 2017 20:45:54 GMT']
       Expires: ['-1']
       Pragma: [no-cache]
       Strict-Transport-Security: [max-age=31536000; includeSubDomains]
@@ -1157,16 +1131,16 @@ interactions:
           msrest_azure/0.4.7 resourcemanagementclient/0.40.0 Azure-SDK-For-Python
           AZURECLI/TEST/2.0.1+dev]
       accept-language: [en-US]
-      x-ms-client-request-id: [e5bb6514-1b45-11e7-bbcf-00155db0d302]
+      x-ms-client-request-id: [f5dffccc-1652-11e7-956a-00155db0d302]
     method: GET
-    uri: https://adminmanagement.local.azurestack.external/subscriptions/00000000-0000-0000-0000-000000000000/resourcegroups/cli_test_vm_with_specialized_unmanaged_disk/providers/Microsoft.Resources/deployments/mock-deployment/operationStatuses/08587100696173876124?api-version=2016-02-01
+    uri: https://adminmanagement.local.azurestack.external/subscriptions/00000000-0000-0000-0000-000000000000/resourcegroups/cli_test_vm_with_specialized_unmanaged_disk/providers/Microsoft.Resources/deployments/mock-deployment/operationStatuses/08587106137625658727?api-version=2016-02-01
   response:
     body: {string: '{"status":"Running"}'}
     headers:
       Cache-Control: [no-cache]
       Content-Length: ['20']
       Content-Type: [application/json; charset=utf-8]
-      Date: ['Fri, 07 Apr 2017 03:55:28 GMT']
+      Date: ['Fri, 31 Mar 2017 20:46:24 GMT']
       Expires: ['-1']
       Pragma: [no-cache]
       Strict-Transport-Security: [max-age=31536000; includeSubDomains]
@@ -1182,16 +1156,16 @@ interactions:
           msrest_azure/0.4.7 resourcemanagementclient/0.40.0 Azure-SDK-For-Python
           AZURECLI/TEST/2.0.1+dev]
       accept-language: [en-US]
-      x-ms-client-request-id: [e5bb6514-1b45-11e7-bbcf-00155db0d302]
+      x-ms-client-request-id: [f5dffccc-1652-11e7-956a-00155db0d302]
     method: GET
-    uri: https://adminmanagement.local.azurestack.external/subscriptions/00000000-0000-0000-0000-000000000000/resourcegroups/cli_test_vm_with_specialized_unmanaged_disk/providers/Microsoft.Resources/deployments/mock-deployment/operationStatuses/08587100696173876124?api-version=2016-02-01
+    uri: https://adminmanagement.local.azurestack.external/subscriptions/00000000-0000-0000-0000-000000000000/resourcegroups/cli_test_vm_with_specialized_unmanaged_disk/providers/Microsoft.Resources/deployments/mock-deployment/operationStatuses/08587106137625658727?api-version=2016-02-01
   response:
     body: {string: '{"status":"Running"}'}
     headers:
       Cache-Control: [no-cache]
       Content-Length: ['20']
       Content-Type: [application/json; charset=utf-8]
-      Date: ['Fri, 07 Apr 2017 03:55:58 GMT']
+      Date: ['Fri, 31 Mar 2017 20:46:55 GMT']
       Expires: ['-1']
       Pragma: [no-cache]
       Strict-Transport-Security: [max-age=31536000; includeSubDomains]
@@ -1207,16 +1181,16 @@ interactions:
           msrest_azure/0.4.7 resourcemanagementclient/0.40.0 Azure-SDK-For-Python
           AZURECLI/TEST/2.0.1+dev]
       accept-language: [en-US]
-      x-ms-client-request-id: [e5bb6514-1b45-11e7-bbcf-00155db0d302]
+      x-ms-client-request-id: [f5dffccc-1652-11e7-956a-00155db0d302]
     method: GET
-    uri: https://adminmanagement.local.azurestack.external/subscriptions/00000000-0000-0000-0000-000000000000/resourcegroups/cli_test_vm_with_specialized_unmanaged_disk/providers/Microsoft.Resources/deployments/mock-deployment/operationStatuses/08587100696173876124?api-version=2016-02-01
+    uri: https://adminmanagement.local.azurestack.external/subscriptions/00000000-0000-0000-0000-000000000000/resourcegroups/cli_test_vm_with_specialized_unmanaged_disk/providers/Microsoft.Resources/deployments/mock-deployment/operationStatuses/08587106137625658727?api-version=2016-02-01
   response:
     body: {string: '{"status":"Running"}'}
     headers:
       Cache-Control: [no-cache]
       Content-Length: ['20']
       Content-Type: [application/json; charset=utf-8]
-      Date: ['Fri, 07 Apr 2017 03:56:28 GMT']
+      Date: ['Fri, 31 Mar 2017 20:47:25 GMT']
       Expires: ['-1']
       Pragma: [no-cache]
       Strict-Transport-Security: [max-age=31536000; includeSubDomains]
@@ -1232,16 +1206,16 @@ interactions:
           msrest_azure/0.4.7 resourcemanagementclient/0.40.0 Azure-SDK-For-Python
           AZURECLI/TEST/2.0.1+dev]
       accept-language: [en-US]
-      x-ms-client-request-id: [e5bb6514-1b45-11e7-bbcf-00155db0d302]
+      x-ms-client-request-id: [f5dffccc-1652-11e7-956a-00155db0d302]
     method: GET
-    uri: https://adminmanagement.local.azurestack.external/subscriptions/00000000-0000-0000-0000-000000000000/resourcegroups/cli_test_vm_with_specialized_unmanaged_disk/providers/Microsoft.Resources/deployments/mock-deployment/operationStatuses/08587100696173876124?api-version=2016-02-01
+    uri: https://adminmanagement.local.azurestack.external/subscriptions/00000000-0000-0000-0000-000000000000/resourcegroups/cli_test_vm_with_specialized_unmanaged_disk/providers/Microsoft.Resources/deployments/mock-deployment/operationStatuses/08587106137625658727?api-version=2016-02-01
   response:
     body: {string: '{"status":"Running"}'}
     headers:
       Cache-Control: [no-cache]
       Content-Length: ['20']
       Content-Type: [application/json; charset=utf-8]
-      Date: ['Fri, 07 Apr 2017 03:56:59 GMT']
+      Date: ['Fri, 31 Mar 2017 20:47:56 GMT']
       Expires: ['-1']
       Pragma: [no-cache]
       Strict-Transport-Security: [max-age=31536000; includeSubDomains]
@@ -1257,16 +1231,16 @@ interactions:
           msrest_azure/0.4.7 resourcemanagementclient/0.40.0 Azure-SDK-For-Python
           AZURECLI/TEST/2.0.1+dev]
       accept-language: [en-US]
-      x-ms-client-request-id: [e5bb6514-1b45-11e7-bbcf-00155db0d302]
+      x-ms-client-request-id: [f5dffccc-1652-11e7-956a-00155db0d302]
     method: GET
-    uri: https://adminmanagement.local.azurestack.external/subscriptions/00000000-0000-0000-0000-000000000000/resourcegroups/cli_test_vm_with_specialized_unmanaged_disk/providers/Microsoft.Resources/deployments/mock-deployment/operationStatuses/08587100696173876124?api-version=2016-02-01
+    uri: https://adminmanagement.local.azurestack.external/subscriptions/00000000-0000-0000-0000-000000000000/resourcegroups/cli_test_vm_with_specialized_unmanaged_disk/providers/Microsoft.Resources/deployments/mock-deployment/operationStatuses/08587106137625658727?api-version=2016-02-01
   response:
     body: {string: '{"status":"Running"}'}
     headers:
       Cache-Control: [no-cache]
       Content-Length: ['20']
       Content-Type: [application/json; charset=utf-8]
-      Date: ['Fri, 07 Apr 2017 03:57:29 GMT']
+      Date: ['Fri, 31 Mar 2017 20:48:27 GMT']
       Expires: ['-1']
       Pragma: [no-cache]
       Strict-Transport-Security: [max-age=31536000; includeSubDomains]
@@ -1282,16 +1256,16 @@ interactions:
           msrest_azure/0.4.7 resourcemanagementclient/0.40.0 Azure-SDK-For-Python
           AZURECLI/TEST/2.0.1+dev]
       accept-language: [en-US]
-      x-ms-client-request-id: [e5bb6514-1b45-11e7-bbcf-00155db0d302]
+      x-ms-client-request-id: [f5dffccc-1652-11e7-956a-00155db0d302]
     method: GET
-    uri: https://adminmanagement.local.azurestack.external/subscriptions/00000000-0000-0000-0000-000000000000/resourcegroups/cli_test_vm_with_specialized_unmanaged_disk/providers/Microsoft.Resources/deployments/mock-deployment/operationStatuses/08587100696173876124?api-version=2016-02-01
+    uri: https://adminmanagement.local.azurestack.external/subscriptions/00000000-0000-0000-0000-000000000000/resourcegroups/cli_test_vm_with_specialized_unmanaged_disk/providers/Microsoft.Resources/deployments/mock-deployment/operationStatuses/08587106137625658727?api-version=2016-02-01
   response:
     body: {string: '{"status":"Running"}'}
     headers:
       Cache-Control: [no-cache]
       Content-Length: ['20']
       Content-Type: [application/json; charset=utf-8]
-      Date: ['Fri, 07 Apr 2017 03:57:59 GMT']
+      Date: ['Fri, 31 Mar 2017 20:48:57 GMT']
       Expires: ['-1']
       Pragma: [no-cache]
       Strict-Transport-Security: [max-age=31536000; includeSubDomains]
@@ -1307,16 +1281,16 @@ interactions:
           msrest_azure/0.4.7 resourcemanagementclient/0.40.0 Azure-SDK-For-Python
           AZURECLI/TEST/2.0.1+dev]
       accept-language: [en-US]
-      x-ms-client-request-id: [e5bb6514-1b45-11e7-bbcf-00155db0d302]
+      x-ms-client-request-id: [f5dffccc-1652-11e7-956a-00155db0d302]
     method: GET
-    uri: https://adminmanagement.local.azurestack.external/subscriptions/00000000-0000-0000-0000-000000000000/resourcegroups/cli_test_vm_with_specialized_unmanaged_disk/providers/Microsoft.Resources/deployments/mock-deployment/operationStatuses/08587100696173876124?api-version=2016-02-01
+    uri: https://adminmanagement.local.azurestack.external/subscriptions/00000000-0000-0000-0000-000000000000/resourcegroups/cli_test_vm_with_specialized_unmanaged_disk/providers/Microsoft.Resources/deployments/mock-deployment/operationStatuses/08587106137625658727?api-version=2016-02-01
   response:
     body: {string: '{"status":"Running"}'}
     headers:
       Cache-Control: [no-cache]
       Content-Length: ['20']
       Content-Type: [application/json; charset=utf-8]
-      Date: ['Fri, 07 Apr 2017 03:58:29 GMT']
+      Date: ['Fri, 31 Mar 2017 20:49:27 GMT']
       Expires: ['-1']
       Pragma: [no-cache]
       Strict-Transport-Security: [max-age=31536000; includeSubDomains]
@@ -1332,16 +1306,16 @@ interactions:
           msrest_azure/0.4.7 resourcemanagementclient/0.40.0 Azure-SDK-For-Python
           AZURECLI/TEST/2.0.1+dev]
       accept-language: [en-US]
-      x-ms-client-request-id: [e5bb6514-1b45-11e7-bbcf-00155db0d302]
+      x-ms-client-request-id: [f5dffccc-1652-11e7-956a-00155db0d302]
     method: GET
-    uri: https://adminmanagement.local.azurestack.external/subscriptions/00000000-0000-0000-0000-000000000000/resourcegroups/cli_test_vm_with_specialized_unmanaged_disk/providers/Microsoft.Resources/deployments/mock-deployment/operationStatuses/08587100696173876124?api-version=2016-02-01
+    uri: https://adminmanagement.local.azurestack.external/subscriptions/00000000-0000-0000-0000-000000000000/resourcegroups/cli_test_vm_with_specialized_unmanaged_disk/providers/Microsoft.Resources/deployments/mock-deployment/operationStatuses/08587106137625658727?api-version=2016-02-01
   response:
     body: {string: '{"status":"Succeeded"}'}
     headers:
       Cache-Control: [no-cache]
       Content-Length: ['22']
       Content-Type: [application/json; charset=utf-8]
-      Date: ['Fri, 07 Apr 2017 03:58:59 GMT']
+      Date: ['Fri, 31 Mar 2017 20:49:57 GMT']
       Expires: ['-1']
       Pragma: [no-cache]
       Strict-Transport-Security: [max-age=31536000; includeSubDomains]
@@ -1357,16 +1331,16 @@ interactions:
           msrest_azure/0.4.7 resourcemanagementclient/0.40.0 Azure-SDK-For-Python
           AZURECLI/TEST/2.0.1+dev]
       accept-language: [en-US]
-      x-ms-client-request-id: [e5bb6514-1b45-11e7-bbcf-00155db0d302]
+      x-ms-client-request-id: [f5dffccc-1652-11e7-956a-00155db0d302]
     method: GET
     uri: https://adminmanagement.local.azurestack.external/subscriptions/00000000-0000-0000-0000-000000000000/resourcegroups/cli_test_vm_with_specialized_unmanaged_disk/providers/Microsoft.Resources/deployments/mock-deployment?api-version=2016-02-01
   response:
-    body: {string: '{"id":"/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/cli_test_vm_with_specialized_unmanaged_disk/providers/Microsoft.Resources/deployments/vm_deploy_QPd5EMIMDs6HcEtXTxbUKsQQYNvLe6P7","name":"vm_deploy_QPd5EMIMDs6HcEtXTxbUKsQQYNvLe6P7","properties":{"templateHash":"2190396516835665944","parameters":{},"mode":"Incremental","provisioningState":"Succeeded","timestamp":"2017-04-07T03:58:49.0874789Z","duration":"PT4M20.9973323S","correlationId":"06171e39-f0df-401d-a830-1a1381f87443","providers":[{"namespace":"Microsoft.Network","resourceTypes":[{"resourceType":"networkSecurityGroups","locations":["local"]},{"resourceType":"publicIPAddresses","locations":["local"]},{"resourceType":"networkInterfaces","locations":["local"]}]},{"namespace":"Microsoft.Compute","resourceTypes":[{"resourceType":"virtualMachines","locations":["local"]}]}],"dependencies":[{"dependsOn":[{"id":"/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/cli_test_vm_with_specialized_unmanaged_disk/providers/Microsoft.Network/networkSecurityGroups/vm2NSG","resourceType":"Microsoft.Network/networkSecurityGroups","resourceName":"vm2NSG"},{"id":"/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/cli_test_vm_with_specialized_unmanaged_disk/providers/Microsoft.Network/publicIpAddresses/vm2PublicIP","resourceType":"Microsoft.Network/publicIpAddresses","resourceName":"vm2PublicIP"}],"id":"/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/cli_test_vm_with_specialized_unmanaged_disk/providers/Microsoft.Network/networkInterfaces/vm2VMNic","resourceType":"Microsoft.Network/networkInterfaces","resourceName":"vm2VMNic"},{"dependsOn":[{"id":"/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/cli_test_vm_with_specialized_unmanaged_disk/providers/Microsoft.Network/networkInterfaces/vm2VMNic","resourceType":"Microsoft.Network/networkInterfaces","resourceName":"vm2VMNic"}],"id":"/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/cli_test_vm_with_specialized_unmanaged_disk/providers/Microsoft.Compute/virtualMachines/vm2","resourceType":"Microsoft.Compute/virtualMachines","resourceName":"vm2"}],"outputs":{},"outputResources":[{"id":"Microsoft.Compute/virtualMachines/vm2"},{"id":"Microsoft.Network/networkInterfaces/vm2VMNic"},{"id":"Microsoft.Network/networkSecurityGroups/vm2NSG"},{"id":"Microsoft.Network/publicIPAddresses/vm2PublicIP"}]}}'}
+    body: {string: '{"id":"/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/cli_test_vm_with_specialized_unmanaged_disk/providers/Microsoft.Resources/deployments/vm_deploy_qAYVn1Ob5ez3lChVBsCddj9myQi3EnAN","name":"vm_deploy_qAYVn1Ob5ez3lChVBsCddj9myQi3EnAN","properties":{"templateHash":"2491175760199639181","parameters":{},"mode":"Incremental","provisioningState":"Succeeded","timestamp":"2017-03-31T20:49:28.4382308Z","duration":"PT4M5.5263628S","correlationId":"ab207bc8-a627-4e15-9b6c-f183d9327db4","providers":[{"namespace":"Microsoft.Network","resourceTypes":[{"resourceType":"networkSecurityGroups","locations":["local"]},{"resourceType":"publicIPAddresses","locations":["local"]},{"resourceType":"networkInterfaces","locations":["local"]}]},{"namespace":"Microsoft.Compute","resourceTypes":[{"resourceType":"virtualMachines","locations":["local"]}]}],"dependencies":[{"dependsOn":[{"id":"/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/cli_test_vm_with_specialized_unmanaged_disk/providers/Microsoft.Network/networkSecurityGroups/vm2NSG","resourceType":"Microsoft.Network/networkSecurityGroups","resourceName":"vm2NSG"},{"id":"/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/cli_test_vm_with_specialized_unmanaged_disk/providers/Microsoft.Network/publicIpAddresses/vm2PublicIP","resourceType":"Microsoft.Network/publicIpAddresses","resourceName":"vm2PublicIP"}],"id":"/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/cli_test_vm_with_specialized_unmanaged_disk/providers/Microsoft.Network/networkInterfaces/vm2VMNic","resourceType":"Microsoft.Network/networkInterfaces","resourceName":"vm2VMNic"},{"dependsOn":[{"id":"/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/cli_test_vm_with_specialized_unmanaged_disk/providers/Microsoft.Network/networkInterfaces/vm2VMNic","resourceType":"Microsoft.Network/networkInterfaces","resourceName":"vm2VMNic"}],"id":"/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/cli_test_vm_with_specialized_unmanaged_disk/providers/Microsoft.Compute/virtualMachines/vm2","resourceType":"Microsoft.Compute/virtualMachines","resourceName":"vm2"}],"outputs":{},"outputResources":[{"id":"Microsoft.Compute/virtualMachines/vm2"},{"id":"Microsoft.Network/networkInterfaces/vm2VMNic"},{"id":"Microsoft.Network/networkSecurityGroups/vm2NSG"},{"id":"Microsoft.Network/publicIPAddresses/vm2PublicIP"}]}}'}
     headers:
       Cache-Control: [no-cache]
-      Content-Length: ['2454']
+      Content-Length: ['2453']
       Content-Type: [application/json; charset=utf-8]
-      Date: ['Fri, 07 Apr 2017 03:58:59 GMT']
+      Date: ['Fri, 31 Mar 2017 20:49:57 GMT']
       Expires: ['-1']
       Pragma: [no-cache]
       Strict-Transport-Security: [max-age=31536000; includeSubDomains]
@@ -1381,15 +1355,15 @@ interactions:
       User-Agent: [python/3.5.2 (Windows-10-10.0.14393-SP0) requests/2.9.1 msrest/0.4.6
           msrest_azure/0.4.7 computemanagementclient/0.40.0 Azure-SDK-For-Python AZURECLI/TEST/2.0.1+dev]
       accept-language: [en-US]
-      x-ms-client-request-id: [888a0e46-1b46-11e7-95aa-00155db0d302]
+      x-ms-client-request-id: [9a88440a-1653-11e7-8bc3-00155db0d302]
     method: GET
-    uri: https://adminmanagement.local.azurestack.external/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/cli_test_vm_with_specialized_unmanaged_disk/providers/Microsoft.Compute/virtualMachines/vm2?api-version=2015-06-15&$expand=instanceView
+    uri: https://adminmanagement.local.azurestack.external/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/cli_test_vm_with_specialized_unmanaged_disk/providers/Microsoft.Compute/virtualMachines/vm2?$expand=instanceView&api-version=2015-06-15
   response:
-    body: {string: "{\r\n  \"properties\": {\r\n    \"vmId\": \"2624c6dd-ba8b-41a8-9023-d6c647dd374d\"\
+    body: {string: "{\r\n  \"properties\": {\r\n    \"vmId\": \"8a503dc7-174a-4776-9f77-53831c9ec82e\"\
         ,\r\n    \"hardwareProfile\": {\r\n      \"vmSize\": \"Standard_A1\"\r\n \
         \   },\r\n    \"storageProfile\": {\r\n      \"osDisk\": {\r\n        \"osType\"\
-        : \"Windows\",\r\n        \"name\": \"osdisk_K6n81K9Qt8\",\r\n        \"createOption\"\
-        : \"Attach\",\r\n        \"vhd\": {\r\n          \"uri\": \"https://vhdstoragen62tlktg1lfdb8.blob.local.azurestack.external/vhds/osdisk_K6n81K9Qt8.vhd\"\
+        : \"Windows\",\r\n        \"name\": \"osdisk_BUVaFRKtdd\",\r\n        \"createOption\"\
+        : \"Attach\",\r\n        \"vhd\": {\r\n          \"uri\": \"https://vhdstorageacf2tllseya0su.blob.local.azurestack.external/vhds/osdisk_BUVaFRKtdd.vhd\"\
         \r\n        },\r\n        \"caching\": \"ReadWrite\"\r\n      },\r\n     \
         \ \"dataDisks\": []\r\n    },\r\n    \"networkProfile\": {\"networkInterfaces\"\
         :[{\"id\":\"/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/cli_test_vm_with_specialized_unmanaged_disk/providers/Microsoft.Network/networkInterfaces/vm2VMNic\"\
@@ -1399,16 +1373,16 @@ interactions:
         \n            \"code\": \"ProvisioningState/Unavailable\",\r\n           \
         \ \"level\": \"Warning\",\r\n            \"displayStatus\": \"Not Ready\"\
         ,\r\n            \"message\": \"VM agent is not ready\",\r\n            \"\
-        time\": \"2017-04-07T03:59:01+00:00\"\r\n          }\r\n        ]\r\n    \
-        \  },\r\n      \"disks\": [\r\n        {\r\n          \"name\": \"osdisk_K6n81K9Qt8\"\
+        time\": \"2017-03-31T20:49:59+00:00\"\r\n          }\r\n        ]\r\n    \
+        \  },\r\n      \"disks\": [\r\n        {\r\n          \"name\": \"osdisk_BUVaFRKtdd\"\
         ,\r\n          \"statuses\": [\r\n            {\r\n              \"code\"\
         : \"ProvisioningState/Succeeded\",\r\n              \"level\": \"Info\",\r\
         \n              \"displayStatus\": \"Provisioning Succeeded\",\r\n       \
-        \       \"time\": \"2017-04-07T03:57:02.4553582+00:00\"\r\n            }\r\
+        \       \"time\": \"2017-03-31T20:47:40.5787553+00:00\"\r\n            }\r\
         \n          ]\r\n        }\r\n      ],\r\n      \"statuses\": [\r\n      \
         \  {\r\n          \"code\": \"ProvisioningState/Succeeded\",\r\n         \
         \ \"level\": \"Info\",\r\n          \"displayStatus\": \"Provisioning Succeeded\"\
-        ,\r\n          \"time\": \"2017-04-07T03:58:48.3192926+00:00\"\r\n       \
+        ,\r\n          \"time\": \"2017-03-31T20:49:25.4902299+00:00\"\r\n       \
         \ },\r\n        {\r\n          \"code\": \"PowerState/running\",\r\n     \
         \     \"level\": \"Info\",\r\n          \"displayStatus\": \"VM running\"\r\
         \n        }\r\n      ]\r\n    }\r\n  },\r\n  \"type\": \"Microsoft.Compute/virtualMachines\"\
@@ -1418,7 +1392,7 @@ interactions:
       Cache-Control: [no-cache]
       Content-Length: ['2204']
       Content-Type: [application/json; charset=utf-8]
-      Date: ['Fri, 07 Apr 2017 03:59:01 GMT']
+      Date: ['Fri, 31 Mar 2017 20:49:59 GMT']
       Expires: ['-1']
       Pragma: [no-cache]
       Server: [Microsoft-HTTPAPI/2.0, Microsoft-HTTPAPI/2.0]
@@ -1434,17 +1408,17 @@ interactions:
       User-Agent: [python/3.5.2 (Windows-10-10.0.14393-SP0) requests/2.9.1 msrest/0.4.6
           msrest_azure/0.4.7 networkmanagementclient/0.40.0 Azure-SDK-For-Python AZURECLI/TEST/2.0.1+dev]
       accept-language: [en-US]
-      x-ms-client-request-id: [88af166c-1b46-11e7-a0f6-00155db0d302]
+      x-ms-client-request-id: [9adc3d34-1653-11e7-91a5-00155db0d302]
     method: GET
     uri: https://adminmanagement.local.azurestack.external/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/cli_test_vm_with_specialized_unmanaged_disk/providers/Microsoft.Network/networkInterfaces/vm2VMNic?api-version=2015-06-15
   response:
     body: {string: "{\r\n  \"name\": \"vm2VMNic\",\r\n  \"id\": \"/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/cli_test_vm_with_specialized_unmanaged_disk/providers/Microsoft.Network/networkInterfaces/vm2VMNic\"\
-        ,\r\n  \"etag\": \"W/\\\"9c34d7de-76cd-42f9-a1aa-0952e4be7874\\\"\",\r\n \
+        ,\r\n  \"etag\": \"W/\\\"92530bff-1be2-4bb9-8056-20f139c996cb\\\"\",\r\n \
         \ \"location\": \"local\",\r\n  \"tags\": {},\r\n  \"properties\": {\r\n \
-        \   \"provisioningState\": \"Succeeded\",\r\n    \"resourceGuid\": \"1b7e6729-bade-41f5-8467-e73c8fbe4c6f\"\
+        \   \"provisioningState\": \"Succeeded\",\r\n    \"resourceGuid\": \"2c4243d3-14f5-4e09-a767-be6ee845c859\"\
         ,\r\n    \"ipConfigurations\": [\r\n      {\r\n        \"name\": \"ipconfigvm2\"\
         ,\r\n        \"id\": \"/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/cli_test_vm_with_specialized_unmanaged_disk/providers/Microsoft.Network/networkInterfaces/vm2VMNic/ipConfigurations/ipconfigvm2\"\
-        ,\r\n        \"etag\": \"W/\\\"9c34d7de-76cd-42f9-a1aa-0952e4be7874\\\"\"\
+        ,\r\n        \"etag\": \"W/\\\"92530bff-1be2-4bb9-8056-20f139c996cb\\\"\"\
         ,\r\n        \"properties\": {\r\n          \"provisioningState\": \"Succeeded\"\
         ,\r\n          \"privateIPAddress\": \"10.0.0.5\",\r\n          \"privateIPAllocationMethod\"\
         : \"Dynamic\",\r\n          \"publicIPAddress\": {\r\n            \"id\":\
@@ -1452,7 +1426,7 @@ interactions:
         \r\n          },\r\n          \"subnet\": {\r\n            \"id\": \"/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/cli_test_vm_with_specialized_unmanaged_disk/providers/Microsoft.Network/virtualNetworks/vm1VNET/subnets/vm1Subnet\"\
         \r\n          },\r\n          \"primary\": true\r\n        }\r\n      }\r\n\
         \    ],\r\n    \"dnsSettings\": {\r\n      \"dnsServers\": [],\r\n      \"\
-        appliedDnsServers\": []\r\n    },\r\n    \"macAddress\": \"001DD8B71C10\"\
+        appliedDnsServers\": []\r\n    },\r\n    \"macAddress\": \"001DD8B71C05\"\
         ,\r\n    \"enableIPForwarding\": false,\r\n    \"networkSecurityGroup\": {\r\
         \n      \"id\": \"/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/cli_test_vm_with_specialized_unmanaged_disk/providers/Microsoft.Network/networkSecurityGroups/vm2NSG\"\
         \r\n    },\r\n    \"primary\": true,\r\n    \"virtualMachine\": {\r\n    \
@@ -1463,8 +1437,8 @@ interactions:
       Cache-Control: [no-cache]
       Content-Length: ['2154']
       Content-Type: [application/json; charset=utf-8]
-      Date: ['Fri, 07 Apr 2017 03:59:01 GMT']
-      ETag: [W/"9c34d7de-76cd-42f9-a1aa-0952e4be7874"]
+      Date: ['Fri, 31 Mar 2017 20:49:59 GMT']
+      ETag: [W/"92530bff-1be2-4bb9-8056-20f139c996cb"]
       Expires: ['-1']
       Pragma: [no-cache]
       Server: [Microsoft-HTTPAPI/2.0, Microsoft-HTTPAPI/2.0]
@@ -1480,27 +1454,27 @@ interactions:
       User-Agent: [python/3.5.2 (Windows-10-10.0.14393-SP0) requests/2.9.1 msrest/0.4.6
           msrest_azure/0.4.7 networkmanagementclient/0.40.0 Azure-SDK-For-Python AZURECLI/TEST/2.0.1+dev]
       accept-language: [en-US]
-      x-ms-client-request-id: [88caf4b4-1b46-11e7-a0f4-00155db0d302]
+      x-ms-client-request-id: [9b298b8c-1653-11e7-bf6e-00155db0d302]
     method: GET
     uri: https://adminmanagement.local.azurestack.external/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/cli_test_vm_with_specialized_unmanaged_disk/providers/Microsoft.Network/publicIPAddresses/vm2PublicIP?api-version=2015-06-15
   response:
     body: {string: "{\r\n  \"name\": \"vm2PublicIP\",\r\n  \"id\": \"/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/cli_test_vm_with_specialized_unmanaged_disk/providers/Microsoft.Network/publicIPAddresses/vm2PublicIP\"\
-        ,\r\n  \"etag\": \"W/\\\"7c73cf15-6ced-45fa-9638-107181f6b31c\\\"\",\r\n \
+        ,\r\n  \"etag\": \"W/\\\"2ffb334e-bce2-4692-b646-36c1aba63514\\\"\",\r\n \
         \ \"type\": \"Microsoft.Network/publicIPAddresses\",\r\n  \"location\": \"\
         local\",\r\n  \"tags\": {},\r\n  \"properties\": {\r\n    \"provisioningState\"\
-        : \"Succeeded\",\r\n    \"resourceGuid\": \"7e1d6f3b-8359-4c4d-86b9-7496a56b27b3\"\
-        ,\r\n    \"ipAddress\": \"192.168.102.27\",\r\n    \"publicIPAllocationMethod\"\
+        : \"Succeeded\",\r\n    \"resourceGuid\": \"b50a7dea-a80f-4c12-b45a-9432654b1df5\"\
+        ,\r\n    \"ipAddress\": \"192.168.102.17\",\r\n    \"publicIPAllocationMethod\"\
         : \"Dynamic\",\r\n    \"idleTimeoutInMinutes\": 4,\r\n    \"ipConfiguration\"\
         : {\r\n      \"id\": \"/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/cli_test_vm_with_specialized_unmanaged_disk/providers/Microsoft.Network/networkInterfaces/vm2VMNic/ipConfigurations/ipconfigvm2\"\
         \r\n    },\r\n    \"allocatedTenants\": [\r\n      {\r\n        \"id\": \"\
-        /subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups//providers/Microsoft.Compute/tenants/2624c6dd-ba8b-41a8-9023-d6c647dd374d\"\
+        /subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups//providers/Microsoft.Compute/tenants/8a503dc7-174a-4776-9f77-53831c9ec82e\"\
         \r\n      }\r\n    ]\r\n  }\r\n}"}
     headers:
       Cache-Control: [no-cache]
       Content-Length: ['1059']
       Content-Type: [application/json; charset=utf-8]
-      Date: ['Fri, 07 Apr 2017 03:59:01 GMT']
-      ETag: [W/"7c73cf15-6ced-45fa-9638-107181f6b31c"]
+      Date: ['Fri, 31 Mar 2017 20:50:00 GMT']
+      ETag: [W/"2ffb334e-bce2-4692-b646-36c1aba63514"]
       Expires: ['-1']
       Pragma: [no-cache]
       Server: [Microsoft-HTTPAPI/2.0, Microsoft-HTTPAPI/2.0]

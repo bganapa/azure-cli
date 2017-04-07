@@ -18,11 +18,7 @@ except ImportError:
 from six.moves.urllib.request import urlopen  # noqa, pylint: disable=import-error,unused-import
 from azure.cli.command_modules.vm._validators import _get_resource_group_from_vault_name
 from azure.keyvault.key_vault_id import parse_secret_id
-from azure.mgmt.compute.models import (VirtualHardDisk,
-                                       VirtualMachineScaleSet,
-                                       VirtualMachineCaptureParameters,
-                                       VirtualMachineScaleSetExtension,
-                                       VirtualMachineScaleSetExtensionProfile)
+
 from azure.cli.core.commands import LongRunningOperation
 from azure.cli.core.commands.arm import parse_resource_id, resource_id, is_valid_resource_id
 from azure.cli.core.commands.client_factory import get_mgmt_service_client, get_data_service_client
@@ -40,6 +36,15 @@ from azure.cli.core.profiles import get_versioned_models
 
 logger = azlogging.get_az_logger(__name__)
 
+VirtualHardDisk, VirtualMachineScaleSet, \
+    VirtualMachineCaptureParameters, VirtualMachineScaleSetExtension, \
+    VirtualMachineScaleSetExtensionProfile = get_versioned_models(ResourceType.MGMT_COMPUTE,
+                                                                  'VirtualHardDisk',
+                                                                  'VirtualMachineScaleSet',
+                                                                  'VirtualMachineCaptureParameters',
+                                                                  'VirtualMachineScaleSetExtension',
+                                                                  'VirtualMachineScaleSetExtensionProfile'
+                                                                  )
 
 def get_resource_group_location(resource_group_name):
     from azure.mgmt.resource import ResourceManagementClient
@@ -665,8 +670,7 @@ def _reset_windows_admin(vm_instance, resource_group_name, username, password, n
     You can only change the password. Adding a new user is not supported.
     '''
     client = _compute_client_factory()
-
-    from azure.mgmt.compute.models import VirtualMachineExtension
+    VirtualMachineExtension = get_versioned_models(ResourceType.MGMT_COMPUTE,"VirtualMachineExtension")
 
     publisher, version, auto_upgrade = _get_access_extension_upgrade_info(
         vm_instance.resources, _WINDOWS_ACCESS_EXT)
@@ -698,7 +702,8 @@ def _update_linux_access_extension(vm_instance, resource_group_name, protected_s
                                    no_wait=False):
     client = _compute_client_factory()
 
-    from azure.mgmt.compute.models import VirtualMachineExtension
+    VirtualMachineExtension = get_versioned_models(ResourceType.MGMT_COMPUTE,"VirtualMachineExtension")
+
     # pylint: disable=no-member
     instance_name = _get_extension_instance_name(vm_instance.instance_view,
                                                  extension_mappings[_LINUX_ACCESS_EXT]['publisher'],
@@ -772,7 +777,10 @@ def enable_boot_diagnostics(resource_group_name, vm_name, storage):
             vm.diagnostics_profile.boot_diagnostics.storage_uri.lower() == storage_uri.lower()):
         return
 
-    from azure.mgmt.compute.models import DiagnosticsProfile, BootDiagnostics
+    DiagnosticsProfile, BootDiagnostics = get_versioned_models(ResourceType.MGMT_COMPUTE,
+                                                               "DiagnosticsProfile",
+                                                               "BootDiagnostics")
+
     boot_diag = BootDiagnostics(True, storage_uri)
     if vm.diagnostics_profile is None:
         vm.diagnostics_profile = DiagnosticsProfile(boot_diag)
@@ -870,7 +878,7 @@ def set_extension(
     vm = get_vm(resource_group_name, vm_name, 'instanceView')
     client = _compute_client_factory()
 
-    from azure.mgmt.compute.models import VirtualMachineExtension
+    VirtualMachineExtension = get_versioned_models(ResourceType.MGMT_COMPUTE,"VirtualMachineExtension")
 
     protected_settings = load_json(protected_settings) if protected_settings else {}
     settings = load_json(settings) if settings else None
@@ -1180,7 +1188,7 @@ def vm_open_port(resource_group_name, vm_name, port, priority=900, network_secur
         nsg = subnet.network_security_group
 
     if not nsg:
-        from azure.mgmt.network.models import NetworkSecurityGroup
+        NetworkSecurityGroup = get_versioned_models(ResourceType.MGMT_NETWORK,"NetworkSecurityGroup")
         nsg = LongRunningOperation('Creating network security group')(
             network.network_security_groups.create_or_update(
                 resource_group_name=resource_group_name,
@@ -1190,7 +1198,7 @@ def vm_open_port(resource_group_name, vm_name, port, priority=900, network_secur
         )
 
     # update the NSG with the new rule to allow inbound traffic
-    from azure.mgmt.network.models import SecurityRule
+    SecurityRule = get_versioned_models(ResourceType.MGMT_NETWORK,"SecurityRule")
     rule_name = 'open-port-all' if port == '*' else 'open-port-{}'.format(port)
     rule = SecurityRule(protocol='*', access='allow', direction='inbound', name=rule_name,
                         source_port_range='*', destination_port_range=port, priority=priority,
@@ -1222,7 +1230,7 @@ def vm_open_port(resource_group_name, vm_name, port, priority=900, network_secur
 
 def _build_nic_list(nic_ids):
     from azure.cli.core.profiles.shared import ResourceType
-    from azure.mgmt.compute.models import NetworkInterfaceReference
+    NetworkInterfaceReference = get_versioned_models(ResourceType.MGMT_COMPUTE,"NetworkInterfaceReference")
     nic_list = []
     if nic_ids:
         # pylint: disable=no-member
@@ -1243,7 +1251,7 @@ def _get_existing_nics(vm):
 
 
 def _update_vm_nics(vm, nics, primary_nic):
-    from azure.mgmt.compute.models import NetworkProfile
+    NetworkProfile = get_versioned_models(ResourceType.MGMT_COMPUTE,"NetworkProfile")
 
     if primary_nic:
         try:

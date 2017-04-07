@@ -545,7 +545,7 @@ class VMExtensionScenarioTest(ResourceGroupVCRTestBase):
 
     def set_up(self):
         super(VMExtensionScenarioTest, self).set_up()
-        self.cmd('vm create -n {} -g {} --image UbuntuLTS --authentication-type password --admin-username user11 --admin-password testPassword0'.format(self.vm_name, self.resource_group))
+        ###self.cmd('vm create -n {} -g {} --image Win2012R2Datacenter --use-unmanaged-disk --authentication-type password --admin-username user11 --admin-password testPassword0 --size Standard_A1'.format(self.vm_name, self.resource_group))
 
     def test_vm_extension(self):
         self.execute()

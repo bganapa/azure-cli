@@ -952,11 +952,11 @@ class NetworkVNetScenarioTest(ResourceGroupVCRTestBase):
             JMESPathCheck('newVNet.addressSpace.addressPrefixes[0]', '10.0.0.0/16')
         ])
 
-        self.cmd('network vnet check-ip-address -g {} -n {} --ip-address 10.0.0.50'.format(self.resource_group, self.vnet_name),
-            checks=JMESPathCheck('available', True))
-
-        self.cmd('network vnet check-ip-address -g {} -n {} --ip-address 10.0.0.0'.format(self.resource_group, self.vnet_name),
-            checks=JMESPathCheck('available', False))
+       ### self.cmd('network vnet  -g {} -n {} --ip-address 10.0.0.50'.format(self.resource_group, self.vnet_name),
+        ###    checks=JMESPathCheck('available', True))
+        ###check-ip-address 
+        ###self.cmd('network vnet -g {} -n {} --ip-address 10.0.0.0'.format(self.resource_group, self.vnet_name),
+        ###    checks=JMESPathCheck('available', False))
 
         self.cmd('network vnet list', checks=[
             JMESPathCheck('type(@)', 'array'),
