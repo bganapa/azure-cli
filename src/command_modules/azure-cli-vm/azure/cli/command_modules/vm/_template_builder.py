@@ -11,6 +11,8 @@ import json
 from enum import Enum
 
 from azure.cli.core.util import b64encode
+from azure.cli.core.profiles import get_api_version
+from azure.cli.core.profiles.shared import ResourceType
 
 
 class ArmTemplateBuilder(object):
@@ -376,8 +378,10 @@ def build_vm_resource(  # pylint: disable=too-many-locals
     if not attach_os_disk:
         vm_properties['osProfile'] = _build_os_profile()
 
+    vm_api_version = get_api_version(ResourceType.MGMT_COMPUTE)
+    
     vm = {
-        'apiVersion': '2016-04-30-preview',
+        'apiVersion': vm_api_version,
         'type': 'Microsoft.Compute/virtualMachines',
         'name': name,
         'location': location,
@@ -698,7 +702,6 @@ def build_vmss_resource(name, naming_prefix, location, tags, overprovision, upgr
     # Build VMSS
     vmss_properties = {
         'overprovision': overprovision,
-        'singlePlacementGroup': single_placement_group,
         'upgradePolicy': {
             'mode': upgrade_policy_mode
         },
@@ -716,12 +719,19 @@ def build_vmss_resource(name, naming_prefix, location, tags, overprovision, upgr
             }
         }
     }
+
+    vmss_api_version = '2016-04-30-preview'
+    if get_api_version(ResourceType.MGMT_COMPUTE) in ['2016-04-30-preview']:
+        vmss_properties.update({'singlePlacementGroup': single_placement_group})
+    else:
+        vmss_api_version='2016-03-30'
+
     vmss = {
         'type': 'Microsoft.Compute/virtualMachineScaleSets',
         'name': name,
         'location': location,
         'tags': tags,
-        'apiVersion': '2016-04-30-preview',
+        'apiVersion': vmss_api_version,
         'dependsOn': [],
         'sku': {
             'name': vm_sku,
@@ -735,12 +745,17 @@ def build_vmss_resource(name, naming_prefix, location, tags, overprovision, upgr
 
 def build_av_set_resource(name, location, tags,
                           platform_update_domain_count, platform_fault_domain_count, unmanaged):
+    
+    av_set_api_version = '2016-04-30-preview'
+    if get_api_version(ResourceType.MGMT_COMPUTE) not in ['2016-04-30-preview']:
+        av_set_api_version='2016-03-30'
+
     av_set = {
         'type': 'Microsoft.Compute/availabilitySets',
         'name': name,
         'location': location,
         'tags': tags,
-        'apiVersion': '2016-04-30-preview',
+        'apiVersion': av_set_api_version,
         'sku': {
             'name': 'Classic' if unmanaged else 'Aligned'
         },
