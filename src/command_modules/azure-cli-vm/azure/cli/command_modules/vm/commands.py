@@ -244,7 +244,6 @@ cli_command(__name__, 'vmss list-instance-connection-info', custom_path.format('
 cli_command(__name__, 'vm list-sizes', mgmt_path.format('virtual_machine_sizes_operations', 'VirtualMachineSizesOperations', 'list'), cf_vm_sizes)
 
 
-# Todo: add the list of api-versions instead of just one
 if get_api_version(ResourceType.MGMT_COMPUTE) in ['2016-04-30-preview']:
     # VM Disk
     op_var = 'disks_operations'

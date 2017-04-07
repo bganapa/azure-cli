@@ -7,8 +7,6 @@
 
 from codecs import open
 from setuptools import setup
-from azure.cli.core.profiles import get_api_version
-from azure.cli.core.profiles.shared import ResourceType
 
 VERSION = '2.0.2+dev'
 
@@ -26,19 +24,11 @@ CLASSIFIERS = [
     'License :: OSI Approved :: MIT License',
 ]
 
-# Todo: azure-storage package to be updated with cli specific multi versioned package
-if get_api_version(ResourceType.MGMT_STORAGE) in ['2016-12-01']:
-    storage_package = 'azure-storage==0.34.0'
-else:
-    storage_package = 'azure-storage==0.30.0'
-
 DEPENDENCIES = [
     'azure-multiapi-storage==0.1.0',
     'azure-mgmt-storage==0.40.0',
-    'azure-cli-core'
+    'azure-cli-core',
 ]
-
-DEPENDENCIES.append(storage_package)
 
 with open('README.rst', 'r', encoding='utf-8') as f:
     README = f.read()

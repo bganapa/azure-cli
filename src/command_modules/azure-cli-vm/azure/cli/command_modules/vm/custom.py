@@ -40,13 +40,14 @@ logger = azlogging.get_az_logger(__name__)
 
 VirtualHardDisk, VirtualMachineScaleSet, \
     VirtualMachineCaptureParameters, VirtualMachineScaleSetExtension, \
-    VirtualMachineScaleSetExtensionProfile = get_versioned_models(ResourceType.MGMT_COMPUTE,
-                                                                  'VirtualHardDisk',
-                                                                  'VirtualMachineScaleSet',
-                                                                  'VirtualMachineCaptureParameters',
-                                                                  'VirtualMachineScaleSetExtension',
-                                                                  'VirtualMachineScaleSetExtensionProfile'
-                                                                  )
+    VirtualMachineScaleSetExtensionProfile = get_versioned_models(
+        ResourceType.MGMT_COMPUTE,
+        'VirtualHardDisk',
+        'VirtualMachineScaleSet',
+        'VirtualMachineCaptureParameters',
+        'VirtualMachineScaleSetExtension',
+        'VirtualMachineScaleSetExtensionProfile')
+
 
 def get_resource_group_location(resource_group_name):
     from azure.mgmt.resource import ResourceManagementClient
@@ -132,7 +133,6 @@ def _get_access_extension_upgrade_info(extensions, name):
 
 
 def _get_storage_management_client():
-    from azure.cli.core.profiles.shared import ResourceType
     return get_mgmt_service_client(ResourceType.MGMT_STORAGE)
 
 
@@ -173,7 +173,6 @@ def show_vm(resource_group_name, vm_name, show_details=False):
 
 
 def get_vm_details(resource_group_name, vm_name):
-    from azure.cli.core.profiles.shared import ResourceType
     result = get_instance_view(resource_group_name, vm_name)
     network_client = get_mgmt_service_client(ResourceType.MGMT_NETWORK)
     public_ips = []
@@ -247,8 +246,6 @@ def list_ip_addresses(resource_group_name=None, vm_name=None):
     :param str resource_group_name:Name of resource group.
     :param str vm_name:Name of virtual machine.
     '''
-    from azure.cli.core.profiles.shared import ResourceType
-
     # We start by getting NICs as they are the smack in the middle of all data that we
     # want to collect for a VM (as long as we don't need any info on the VM than what
     # is available in the Id, we don't need to make any calls to the compute RP)
@@ -672,7 +669,8 @@ def _reset_windows_admin(vm_instance, resource_group_name, username, password, n
     You can only change the password. Adding a new user is not supported.
     '''
     client = _compute_client_factory()
-    VirtualMachineExtension = get_versioned_models(ResourceType.MGMT_COMPUTE,"VirtualMachineExtension")
+    VirtualMachineExtension = get_versioned_models(ResourceType.MGMT_COMPUTE,
+                                                   "VirtualMachineExtension")
 
     publisher, version, auto_upgrade = _get_access_extension_upgrade_info(
         vm_instance.resources, _WINDOWS_ACCESS_EXT)
@@ -704,7 +702,8 @@ def _update_linux_access_extension(vm_instance, resource_group_name, protected_s
                                    no_wait=False):
     client = _compute_client_factory()
 
-    VirtualMachineExtension = get_versioned_models(ResourceType.MGMT_COMPUTE,"VirtualMachineExtension")
+    VirtualMachineExtension = get_versioned_models(ResourceType.MGMT_COMPUTE,
+                                                   "VirtualMachineExtension")
 
     # pylint: disable=no-member
     instance_name = _get_extension_instance_name(vm_instance.instance_view,
@@ -880,7 +879,8 @@ def set_extension(
     vm = get_vm(resource_group_name, vm_name, 'instanceView')
     client = _compute_client_factory()
 
-    VirtualMachineExtension = get_versioned_models(ResourceType.MGMT_COMPUTE,"VirtualMachineExtension")
+    VirtualMachineExtension = get_versioned_models(ResourceType.MGMT_COMPUTE,
+                                                   "VirtualMachineExtension")
     # pylint: disable=no-member
     instance_name = _get_extension_instance_name(vm.instance_view, publisher, vm_extension_name)
     # pylint: disable=no-member
@@ -1092,7 +1092,6 @@ def vm_show_nic(resource_group_name, vm_name, nic):
         (n for n in vm.network_profile.network_interfaces if nic.lower() == n.id.lower()), None  # pylint: disable=no-member
     )
     if found:
-        from azure.cli.core.profiles.shared import ResourceType
         network_client = get_mgmt_service_client(ResourceType.MGMT_NETWORK)
         nic_name = parse_resource_id(found.id)['name']
         return network_client.network_interfaces.get(resource_group_name, nic_name)
@@ -1160,7 +1159,6 @@ def vm_open_port(resource_group_name, vm_name, port, priority=900, network_secur
     will overwrite an existing rule with this name. For multi-NIC VMs, or for more fine
     grained control, use the appropriate network commands directly (nsg rule create, etc).
     """
-    from azure.cli.core.profiles.shared import ResourceType
     network = get_mgmt_service_client(ResourceType.MGMT_NETWORK)
 
     vm = get_vm(resource_group_name, vm_name)
@@ -1225,7 +1223,6 @@ def vm_open_port(resource_group_name, vm_name, port, priority=900, network_secur
 
 
 def _build_nic_list(nic_ids):
-    from azure.cli.core.profiles.shared import ResourceType
     from azure.mgmt.compute.models import NetworkInterfaceReference
     nic_list = []
     if nic_ids:
@@ -1461,7 +1458,6 @@ def list_vmss_instance_connection_info(resource_group_name, vm_scale_set_name):
     lb_rg = lb_info['resource_group']
 
     # get public ip
-    from azure.cli.core.profiles.shared import ResourceType
     network_client = get_mgmt_service_client(ResourceType.MGMT_NETWORK)
     lb = network_client.load_balancers.get(lb_rg, lb_name)
     res_id = lb.frontend_ip_configurations[0].public_ip_address.id  # TODO: will this always work?
@@ -1650,7 +1646,8 @@ def create_vm(vm_name, resource_group_name, image=None,
     # deploy ARM template
     deployment_name = 'vm_deploy_' + random_string(32)
     client = get_mgmt_service_client(ResourceType.MGMT_RESOURCE_RESOURCES).deployments
-    DeploymentProperties = get_versioned_models(ResourceType.MGMT_RESOURCE_RESOURCES, 'DeploymentProperties')
+    DeploymentProperties = get_versioned_models(ResourceType.MGMT_RESOURCE_RESOURCES,
+                                                'DeploymentProperties')
     properties = DeploymentProperties(template=template, parameters={}, mode='incremental')
     if validate:
         from azure.cli.command_modules.vm._vm_utils import log_pprint_template
@@ -1884,7 +1881,8 @@ def create_vmss(vmss_name, resource_group_name, image,
     # deploy ARM template
     deployment_name = 'vmss_deploy_' + random_string(32)
     client = get_mgmt_service_client(ResourceType.MGMT_RESOURCE_RESOURCES).deployments
-    DeploymentProperties = get_versioned_models(ResourceType.MGMT_RESOURCE_RESOURCES, 'DeploymentProperties')
+    DeploymentProperties = get_versioned_models(ResourceType.MGMT_RESOURCE_RESOURCES,
+                                                'DeploymentProperties')
     properties = DeploymentProperties(template=template, parameters={}, mode='incremental')
     if validate:
         from azure.cli.command_modules.vm._vm_utils import log_pprint_template
@@ -1919,7 +1917,8 @@ def create_av_set(availability_set_name, resource_group_name,
     # deploy ARM template
     deployment_name = 'av_set_deploy_' + random_string(32)
     client = get_mgmt_service_client(ResourceType.MGMT_RESOURCE_RESOURCES).deployments
-    DeploymentProperties = get_versioned_models(ResourceType.MGMT_RESOURCE_RESOURCES, 'DeploymentProperties')
+    DeploymentProperties = get_versioned_models(ResourceType.MGMT_RESOURCE_RESOURCES,
+                                                'DeploymentProperties')
     properties = DeploymentProperties(template=template, parameters={}, mode='incremental')
     if validate:
         return client.validate(resource_group_name, deployment_name, properties)

@@ -8,6 +8,7 @@ import time
 import random
 from azure.cli.core.profiles.shared import ResourceType
 
+
 def validate_tags(ns):
     ''' Extracts multiple space-separated tags in key[=value] format '''
     if isinstance(ns.tags, list):

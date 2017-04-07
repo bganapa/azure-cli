@@ -379,7 +379,6 @@ def build_vm_resource(  # pylint: disable=too-many-locals
         vm_properties['osProfile'] = _build_os_profile()
 
     vm_api_version = get_api_version(ResourceType.MGMT_COMPUTE)
-    
     vm = {
         'apiVersion': vm_api_version,
         'type': 'Microsoft.Compute/virtualMachines',
@@ -720,12 +719,7 @@ def build_vmss_resource(name, naming_prefix, location, tags, overprovision, upgr
         }
     }
 
-    vmss_api_version = '2016-04-30-preview'
-    if get_api_version(ResourceType.MGMT_COMPUTE) in ['2016-04-30-preview']:
-        vmss_properties.update({'singlePlacementGroup': single_placement_group})
-    else:
-        vmss_api_version='2016-03-30'
-
+    vmss_api_version = get_api_version(ResourceType.MGMT_COMPUTE)
     vmss = {
         'type': 'Microsoft.Compute/virtualMachineScaleSets',
         'name': name,
@@ -745,11 +739,7 @@ def build_vmss_resource(name, naming_prefix, location, tags, overprovision, upgr
 
 def build_av_set_resource(name, location, tags,
                           platform_update_domain_count, platform_fault_domain_count, unmanaged):
-    
-    av_set_api_version = '2016-04-30-preview'
-    if get_api_version(ResourceType.MGMT_COMPUTE) not in ['2016-04-30-preview']:
-        av_set_api_version='2016-03-30'
-
+    av_set_api_version = get_api_version(ResourceType.MGMT_COMPUTE)
     av_set = {
         'type': 'Microsoft.Compute/availabilitySets',
         'name': name,

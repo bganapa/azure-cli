@@ -113,11 +113,11 @@ if get_api_version(ResourceType.MGMT_NETWORK) in ['2016-09-01']:
     cli_command(__name__, 'network express-route create', custom_path.format('create_express_route'), no_wait_param='no_wait')
     cli_command(__name__, 'network express-route list', custom_path.format('list_express_route_circuits'))
     cli_generic_update_command(__name__, 'network express-route update',
-                                'azure.mgmt.network.operations.express_route_circuits_operations#ExpressRouteCircuitsOperations.get',
-                                'azure.mgmt.network.operations.express_route_circuits_operations#ExpressRouteCircuitsOperations.create_or_update',
-                                cf_express_route_circuits,
-                                custom_function_op=custom_path.format('update_express_route'),
-                                no_wait_param='raw')
+                               'azure.mgmt.network.operations.express_route_circuits_operations#ExpressRouteCircuitsOperations.get',
+                               'azure.mgmt.network.operations.express_route_circuits_operations#ExpressRouteCircuitsOperations.create_or_update',
+                               cf_express_route_circuits,
+                               custom_function_op=custom_path.format('update_express_route'),
+                               no_wait_param='raw')
     cli_generic_wait_command(__name__, 'network express-route wait', 'azure.mgmt.network.operations.express_route_circuits_operations#ExpressRouteCircuitsOperations.get', cf_express_route_circuits)
 
     # ExpressRouteServiceProvidersOperations
@@ -356,10 +356,10 @@ if get_api_version(ResourceType.MGMT_NETWORK) in ['2016-09-01']:
     cli_command(__name__, 'network vnet peering list', 'azure.mgmt.network.operations.virtual_network_peerings_operations#VirtualNetworkPeeringsOperations.list', cf_virtual_network_peerings)
     cli_command(__name__, 'network vnet peering delete', 'azure.mgmt.network.operations.virtual_network_peerings_operations#VirtualNetworkPeeringsOperations.delete', cf_virtual_network_peerings)
     cli_generic_update_command(__name__, 'network vnet peering update',
-                                'azure.mgmt.network.operations.virtual_network_peerings_operations#VirtualNetworkPeeringsOperations.get',
-                                'azure.mgmt.network.operations.virtual_network_peerings_operations#VirtualNetworkPeeringsOperations.create_or_update',
-                                cf_virtual_network_peerings,
-                                setter_arg_name='virtual_network_peering_parameters')
+                               'azure.mgmt.network.operations.virtual_network_peerings_operations#VirtualNetworkPeeringsOperations.get',
+                               'azure.mgmt.network.operations.virtual_network_peerings_operations#VirtualNetworkPeeringsOperations.create_or_update',
+                               cf_virtual_network_peerings,
+                               setter_arg_name='virtual_network_peering_parameters')
 
 # Traffic Manager ProfileOperations
 cli_command(__name__, 'network traffic-manager profile check-dns', 'azure.mgmt.trafficmanager.operations.profiles_operations#ProfilesOperations.check_traffic_manager_relative_dns_name_availability', cf_traffic_manager_mgmt_profiles)

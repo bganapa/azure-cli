@@ -11,7 +11,6 @@ import os
 import re
 import uuid
 
-from azure.mgmt.resource import ResourceManagementClient
 from azure.mgmt.resource.resources.models import GenericResource
 
 from azure.mgmt.resource.locks.models import ManagementLockObject
