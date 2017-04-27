@@ -15,6 +15,7 @@ from azure.cli.core.commands._introspection import \
     (extract_full_summary_from_signature, extract_args_from_signature)
 
 from azure.cli.core.util import CLIError
+from azure.cli.core.commands.client_factory import configure_common_settings
 
 def _encode_hex(item):
     """ Recursively crawls the object structure and converts bytes or bytearrays to base64
@@ -71,8 +72,11 @@ def _create_key_vault_command(module_name, name, operation, transform_result, ta
             # correct client version
             if 'generated' in op.__module__:
                 client = BaseKeyVaultClient(KeyVaultAuthentication(get_token))
+                configure_common_settings(client.keyvault)
             else:
                 client = KeyVaultClient(KeyVaultAuthentication(get_token)) # pylint: disable=redefined-variable-type
+                configure_common_settings(client.keyvault)
+
             result = op(client, **kwargs)
 
             # apply results transform if specified

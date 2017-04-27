@@ -65,7 +65,7 @@ def _mock_get_mgmt_service_client(client_type, subscription_bound=True, subscrip
     # version of _get_mgmt_service_client to use when recording or playing tests
     profile = Profile()
     cred, subscription_id, _ = profile.get_login_credentials(subscription_id=subscription_id)
-    client_kwargs = {}
+    client_kwargs = {'base_url': CLOUD.endpoints.resource_manager}
 
     if base_url_bound:
         client_kwargs = {'base_url': CLOUD.endpoints.resource_manager}
@@ -498,7 +498,7 @@ class ResourceGroupVCRTestBase(VCRTestBase):
         random_tag = (random_tag_format or '_{}_').format(
             ''.join((choice(ascii_lowercase + digits) for _ in range(4))))
         self.resource_group = '{}{}'.format(resource_group, '' if self.playback else random_tag)
-        self.location = 'westus'
+        self.location = 'local'
 
     def set_up(self):
         self.cmd('group create --location {} --name {} --tags use=az-test'.format(

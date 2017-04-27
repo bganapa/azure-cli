@@ -27,7 +27,7 @@ TEST_DIR = os.path.abspath(os.path.join(os.path.abspath(__file__), '..'))
 
 def _create_keyvault(test, vault_name, resource_group, location, retry_wait=30, max_retries=10): # pylint: disable=too-many-arguments
     # need premium KeyVault to store keys in HSM
-    test.cmd('keyvault create -g {} -n {} -l {} --sku premium'.format(resource_group, vault_name, location))
+    test.cmd('keyvault create -g {} -n {} -l {} --sku standard'.format(resource_group, vault_name, location))
 
     retries = 0
     while True:
@@ -290,8 +290,8 @@ class KeyVaultCertificateScenarioTest(ResourceGroupVCRTestBase):
 
     def __init__(self, test_method):
         super(KeyVaultCertificateScenarioTest, self).__init__(__file__, test_method, resource_group='cli-test-keyvault-cert')
-        self.keyvault_name = 'cli-test-keyvault-cert1'
-        self.location = 'westus'
+        self.keyvault_name = 'cli-test-keyvault-cert2'
+        self.location = 'local'
 
     def test_keyvault_certificate(self):
         self.execute()

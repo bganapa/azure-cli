@@ -132,7 +132,7 @@ class _DateAPIFormat(object):
                     yyyy, mm, dd, _ = api_version_str.split('-')
                     self.preview = True
                 else:
-                    yyyy, mm, dd = api_version_str.split('-')
+                    yyyy, mm, dd, _ = api_version_str.split('-')
                 self.yyyy = int(yyyy)
                 self.mm = int(mm)
                 self.dd = int(dd)
