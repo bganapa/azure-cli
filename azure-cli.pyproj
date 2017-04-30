@@ -74,6 +74,7 @@
     <Compile Include="azure-cli-core\azure\__init__.py" />
     <Compile Include="azure-cli-core\setup.py" />
     <Compile Include="azure-cli-core\tests\test_add_resourcegroup_transform.py" />
+    <Compile Include="azure-cli-core\tests\test_api_profiles.py" />
     <Compile Include="azure-cli-core\tests\test_application.py" />
     <Compile Include="azure-cli-core\tests\test_cloud.py" />
     <Compile Include="azure-cli-core\tests\test_command_registration.py" />
@@ -909,8 +910,6 @@
     <Content Include="command_modules\azure-cli-storage\tests\scripts\purge_test_sample.sh" />
     <Content Include="command_modules\azure-cli-storage\tests\scripts\run_integration.sh" />
     <Content Include="command_modules\azure-cli-storage\tests\scripts\set_test_env.sh" />
-    <Content Include="command_modules\azure-cli-storage\tests\testfile.rst" />
-    <Content Include="command_modules\azure-cli-storage\tests\testpage.rst" />
     <Content Include="command_modules\azure-cli-taskhelp\HISTORY.rst" />
     <Content Include="command_modules\azure-cli-vm\HISTORY.rst" />
     <Content Include="command_modules\azure-cli-vm\tests\aliases.json" />
