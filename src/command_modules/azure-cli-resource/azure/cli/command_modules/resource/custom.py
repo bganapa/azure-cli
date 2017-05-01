@@ -11,7 +11,6 @@ import os
 import uuid
 
 from azure.mgmt.resource import ResourceManagementClient
-from azure.mgmt.resource.resources.models import GenericResource
 
 from azure.mgmt.resource.policy.models import (PolicyAssignment, PolicyDefinition)
 from azure.mgmt.resource.locks.models import ManagementLockObject
@@ -25,6 +24,7 @@ from azure.cli.core.commands.client_factory import get_mgmt_service_client
 from azure.cli.core.commands.arm import is_valid_resource_id, parse_resource_id
 from azure.cli.core.profiles import get_versioned_models
 from azure.cli.core.profiles.shared import ResourceType
+from azure.cli.core.profiles import get_versioned_models
 
 from ._client_factory import (_resource_client_factory,
                               _resource_policy_client_factory,

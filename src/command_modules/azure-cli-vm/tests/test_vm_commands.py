@@ -314,7 +314,7 @@ class VMCreateWithSpecializedUnmanagedDiskTest(ResourceGroupVCRTestBase):
 
     def body(self):
         # create a vm with unmanaged os disk
-        self.cmd('vm create -g {} -n vm1 --image Win2012R2Datacenter --use-unmanaged-disk --admin-username ubuntu --admin-password testPassword0 --authentication-type password --size Standard_A1'.format(
+        self.cmd('vm create -g {} -n vm1 --image Win2012R2Datacenter --use-unmanaged-disk --admin-username ubuntu --admin-password testPassword0 --authentication-type password --size Standard_A1 --storage-sku Standard_LRS'.format(
             self.resource_group))
         vm1_info = self.cmd('vm show -g {} -n vm1'.format(self.resource_group))
         disk_uri = vm1_info['storageProfile']['osDisk']['vhd']['uri']
