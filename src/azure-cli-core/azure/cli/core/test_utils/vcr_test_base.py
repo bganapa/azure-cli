@@ -498,7 +498,7 @@ class ResourceGroupVCRTestBase(VCRTestBase):
         random_tag = (random_tag_format or '_{}_').format(
             ''.join((choice(ascii_lowercase + digits) for _ in range(4))))
         self.resource_group = '{}{}'.format(resource_group, '' if self.playback else random_tag)
-        self.location = 'local'
+        self.location = 'westus'
 
     def set_up(self):
         self.cmd('group create --location {} --name {} --tags use=az-test'.format(

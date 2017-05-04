@@ -1291,10 +1291,10 @@ class NetworkVpnGatewayScenarioTest(ResourceGroupVCRTestBase): # pylint: disable
         # test network watcher troubleshooting commands
         storage_account = 'clitestnwstorage2'
         container_name = 'troubleshooting-results'
-        self.cmd('storage account create -g {} -l westus --sku Standard_LRS -n {}'.format(rg, storage_account))
+        self.cmd('storage account create -g {} -l hpemas --sku Standard_LRS -n {}'.format(rg, storage_account))
         self.cmd('storage container create --account-name {} -n {}'.format(storage_account, container_name))
         storage_path = 'https://{}.blob.core.windows.net/{}'.format(storage_account, container_name)
-        self.cmd('network watcher configure -g {} --locations westus --enabled'.format(rg))
+        self.cmd('network watcher configure -g {} --locations hpemas --enabled'.format(rg))
         self.cmd('network watcher troubleshooting start -g {} --resource {} --resource-type vpnConnection --storage-account {} --storage-path {}'.format(rg, conn12, storage_account, storage_path))
         self.cmd('network watcher troubleshooting show -g {} --resource {} --resource-type vpnConnection'.format(rg, conn12))
 
@@ -1460,14 +1460,14 @@ class NetworkWatcherScenarioTest(ResourceGroupVCRTestBase):
         resource_group = self.resource_group
         storage_account = 'clitestnwstorage1'
 
-        self.cmd('network watcher configure -g {} --locations westus westus2 --enabled'.format(resource_group))
-        self.cmd('network watcher configure --locations westus westus2 --tags foo=doo')
+        self.cmd('network watcher configure -g {} --locations hpemas westus2 --enabled'.format(resource_group))
+        self.cmd('network watcher configure --locations hpemas westus2 --tags foo=doo')
         self.cmd('network watcher configure -l westus2 --enabled false')
         self.cmd('network watcher list')
 
         vm = 'vm1'
         # create VM with NetworkWatcher extension
-        self.cmd('storage account create -g {} -l westus --sku Standard_LRS -n {}'.format(resource_group, storage_account))
+        self.cmd('storage account create -g {} -l hpemas --sku Standard_LRS -n {}'.format(resource_group, storage_account))
         self.cmd('vm create -g {} -n {} --image UbuntuLTS --authentication-type password --admin-password PassPass10!)'.format(resource_group, vm))
         self.cmd('vm extension set -g {} --vm-name {} -n NetworkWatcherAgentLinux --publisher Microsoft.Azure.NetworkWatcher'.format(resource_group, vm))
 

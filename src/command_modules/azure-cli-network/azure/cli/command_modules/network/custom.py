@@ -557,7 +557,11 @@ def delete_ag_url_path_map_rule(resource_group_name, application_gateway_name, u
         resource_group_name, application_gateway_name, ag)
 
 def set_ag_waf_config(resource_group_name, application_gateway_name, enabled,
-                      firewall_mode=ApplicationGatewayFirewallMode.detection.value, no_wait=False):
+                      firewall_mode=None, no_wait=False):
+    if supported_api_version(ResourceType.MGMT_NETWORK, min_api='2016-09-01'):
+        if firewall_mode is None:
+            firewall_mode = ApplicationGatewayFirewallMode.detection.value
+
     ApplicationGatewayWebApplicationFirewallConfiguration = get_sdk(
         ResourceType.MGMT_NETWORK,
         'ApplicationGatewayWebApplicationFirewallConfiguration', mod='models')
@@ -843,7 +847,7 @@ def create_nic(resource_group_name, network_interface_name, subnet, location=Non
                load_balancer_backend_address_pool_ids=None,
                load_balancer_inbound_nat_rule_ids=None,
                load_balancer_name=None, network_security_group=None,
-               private_ip_address=None, private_ip_address_version=IPVersion.ipv4.value,
+               private_ip_address=None, private_ip_address_version=None,
                public_ip_address=None, virtual_network_name=None):
     client = _network_client_factory().network_interfaces
     NetworkInterface = get_sdk(ResourceType.MGMT_NETWORK, 'NetworkInterface', mod='models')
@@ -866,6 +870,8 @@ def create_nic(resource_group_name, network_interface_name, subnet, location=Non
         'subnet': Subnet(id=subnet)
     }
     if supported_api_version(ResourceType.MGMT_NETWORK, min_api='2016-09-01'):
+        if private_ip_address_version is None:
+            private_ip_address_version = IPVersion.ipv4.value
         ip_config_args['private_ip_address_version'] = private_ip_address_version
     ip_config = NetworkInterfaceIPConfiguration(**ip_config_args)
 
@@ -900,12 +906,14 @@ def create_nic_ip_config(resource_group_name, network_interface_name, ip_config_
                          load_balancer_inbound_nat_rule_ids=None,
                          private_ip_address=None,
                          private_ip_address_allocation=IPAllocationMethod.dynamic.value,
-                         private_ip_address_version=IPVersion.ipv4.value,
+                         private_ip_address_version=None,
                          make_primary=False):
     ncf = _network_client_factory()
     nic = ncf.network_interfaces.get(resource_group_name, network_interface_name)
 
     if supported_api_version(ResourceType.MGMT_NETWORK, min_api='2016-09-01'):
+        if private_ip_address_version is None:
+            private_ip_address_version = IPVersion.ipv4.value
         if private_ip_address_version == IPVersion.ipv4.value and not subnet:
             primary_config = next(x for x in nic.ip_configurations if x.primary)
             subnet = primary_config.subnet.id
@@ -1088,7 +1096,7 @@ update_nsg_rule.__doc__ = SecurityRule.__doc__
 
 def create_public_ip(resource_group_name, public_ip_address_name, location=None, tags=None,
                      allocation_method=IPAllocationMethod.dynamic.value, dns_name=None,
-                     idle_timeout=4, reverse_fqdn=None, version=IPVersion.ipv4.value):
+                     idle_timeout=4, reverse_fqdn=None, version=None):
     client = _network_client_factory().public_ip_addresses
 
     public_ip_args = {
@@ -1099,6 +1107,8 @@ def create_public_ip(resource_group_name, public_ip_address_name, location=None,
         'dns_settings': None
     }
     if supported_api_version(ResourceType.MGMT_NETWORK, min_api='2016-09-01'):
+        if version is None:
+            version = IPVersion.ipv4.value
         public_ip_args['public_ip_address_version'] = version
     public_ip = PublicIPAddress(**public_ip_args)
 
