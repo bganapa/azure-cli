@@ -252,4 +252,3 @@ class StorageAccountTests(StorageScenarioMixin, ScenarioTest):
                  '--encryption-key-vault {vtn} '
                  '--encryption-key-name testkey '
                  '--encryption-key-version {ver} ')
-
