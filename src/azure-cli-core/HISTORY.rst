@@ -31,7 +31,7 @@ Release History
 
 2.0.36
 ++++++
-* Minor fixes
+* Add Authorization Resource into the stack profile
 
 2.0.35
 ++++++
