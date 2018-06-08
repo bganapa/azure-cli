@@ -20,8 +20,13 @@ from azure.cli.core import AzCommandsLoader, EXCLUDED_PARAMS
 from azure.cli.core.commands import LongRunningOperation, _is_poller
 from azure.cli.core.commands.client_factory import get_mgmt_service_client
 from azure.cli.core.commands.validators import IterateValue
+<<<<<<< HEAD
 from azure.cli.core.util import shell_safe_json_parse, augment_no_wait_handler_args, get_command_type_kwarg
+from azure.cli.core.profiles import ResourceType
+=======
+from azure.cli.core.util import shell_safe_json_parse, augment_no_wait_handler_args
 from azure.cli.core.profiles import ResourceType, get_sdk
+>>>>>>> 53b9d9f... fix lint error
 
 logger = get_logger(__name__)
 EXCLUDED_NON_CLIENT_PARAMS = list(set(EXCLUDED_PARAMS) - set(['self', 'client']))
