@@ -78,7 +78,7 @@ def _create_update_role_definition(cli_ctx, role_definition, for_update):
             raise CLIError('Please provide the unique logic name of an existing role')
         role_definition['name'] = matched[0].name
         # ensure correct logical name and guid name. For update we accept both
-        role_name = matched[0].role_name
+        role_name = matched[0].properties.role_name
         role_id = matched[0].name
     else:
         role_id = _gen_guid()
@@ -195,13 +195,13 @@ def list_role_assignments(cmd, assignee=None, role=None, resource_group_name=Non
     # 2. fill in role names
     role_defs = list(definitions_client.list(
         scope=scope or ('/subscriptions/' + definitions_client.config.subscription_id)))
-    role_dics = {i.id: i.role_name for i in role_defs}
+    role_dics = {i.id: i.properties.role_name for i in role_defs}
     for i in results:
-        if role_dics.get(i['roleDefinitionId']):
-            i['roleDefinitionName'] = role_dics[i['roleDefinitionId']]
+        if role_dics.get(i['properties']['roleDefinitionId']):
+            i['properties']['roleDefinitionName'] = role_dics[i['properties']['roleDefinitionId']]
 
     # fill in principal names
-    principal_ids = set(i['principalId'] for i in results if i['principalId'])
+    principal_ids = set(i['properties']['principalId'] for i in results if i['properties']['principalId'])
     if principal_ids:
         try:
             principals = _get_object_stubs(graph_client, principal_ids)
@@ -209,8 +209,8 @@ def list_role_assignments(cmd, assignee=None, role=None, resource_group_name=Non
 
             for i in [r for r in results if not r.get('principalName')]:
                 i['principalName'] = ''
-                if principal_dics.get(i['principalId']):
-                    i['principalName'] = principal_dics[i['principalId']]
+                if principal_dics.get(i['properties']['principalId']):
+                    i['principalName'] = principal_dics[i['properties']['principalId']]
         except (CloudError, GraphErrorException) as ex:
             # failure on resolving principal due to graph permission should not fail the whole thing
             logger.info("Failed to resolve graph object information per error '%s'", ex)
@@ -266,7 +266,7 @@ def list_role_assignment_change_logs(cmd, start_time=None, end_time=None):
     # pylint: disable=too-many-nested-blocks, too-many-statements
     result = []
     start_events, end_events, offline_events, client = _get_assignment_events(cmd.cli_ctx, start_time, end_time)
-    role_defs = {d.id: [d.role_name, d.id.split('/')[-1]] for d in list_role_definitions(cmd)}
+    role_defs = {d.id: [d.properties.role_name, d.id.split('/')[-1]] for d in list_role_definitions(cmd)}
 
     for op_id in start_events:
         e = end_events.get(op_id, None)
@@ -444,8 +444,8 @@ def _search_role_assignments(cli_ctx, assignments_client, definitions_client,
     if assignments:
         assignments = [a for a in assignments if (
             not scope or
-            include_inherited and re.match(a.scope, scope, re.I) or
-            a.scope.lower() == scope.lower()
+            include_inherited and re.match(a.properties.scope, scope, re.I) or
+            a.properties.scope.lower() == scope.lower()
         )]
 
         if role:
