@@ -11,11 +11,12 @@
     <OutputPath>.</OutputPath>
     <ProjectTypeGuids>{888888a0-9f3d-457c-b088-3a5042f75d52}</ProjectTypeGuids>
     <LaunchProvider>Standard Python launcher</LaunchProvider>
-    <InterpreterId>MSBuild|{54f4b6dc-0859-46dc-99bb-b275c9d0aca3}|$(MSBuildProjectFullPath)</InterpreterId>
+    <InterpreterId>{54f4b6dc-0859-46dc-99bb-b275c9d0aca3}</InterpreterId>
     <EnableNativeCodeDebugging>False</EnableNativeCodeDebugging>
     <CommandLineArguments>
     </CommandLineArguments>
     <IsWindowsApplication>False</IsWindowsApplication>
+    <InterpreterVersion>3.5</InterpreterVersion>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)' == 'Debug'" />
   <PropertyGroup Condition="'$(Configuration)' == 'Release'" />
@@ -496,9 +497,10 @@
     <Compile Include="command_modules\azure-cli-monitor\azure\cli\command_modules\monitor\__init__.py" />
     <Compile Include="command_modules\azure-cli-monitor\azure_bdist_wheel.py" />
     <Compile Include="command_modules\azure-cli-monitor\setup.py" />
-    <Compile Include="command_modules\azure-cli-network\azure\cli\command_modules\network\tests\latest\test_dns_commands.py" />
-    <Compile Include="command_modules\azure-cli-network\azure\cli\command_modules\network\tests\latest\test_network_commands.py" />
-    <Compile Include="command_modules\azure-cli-network\azure\cli\command_modules\network\tests\latest\test_network_unit_tests.py" />
+    <Compile Include="command_modules\azure-cli-network\azure\cli\command_modules\network\tests\2018-03-01-hybrid\test_dns_commands.py" />
+    <Compile Include="command_modules\azure-cli-network\azure\cli\command_modules\network\tests\2018-03-01-hybrid\test_network_commands.py" />
+    <Compile Include="command_modules\azure-cli-network\azure\cli\command_modules\network\tests\2018-03-01-hybrid\test_network_unit_tests.py" />
+    <Compile Include="command_modules\azure-cli-network\azure\cli\command_modules\network\tests\2018-03-01-hybrid\__init__.py" />
     <Compile Include="command_modules\azure-cli-network\azure\cli\command_modules\network\zone_file\configs.py" />
     <Compile Include="command_modules\azure-cli-network\azure\cli\command_modules\network\zone_file\exceptions.py" />
     <Compile Include="command_modules\azure-cli-network\azure\cli\command_modules\network\zone_file\make_zone_file.py" />
@@ -950,8 +952,9 @@
     <Folder Include="command_modules\azure-cli-monitor\azure\cli\command_modules\monitor\tests\" />
     <Folder Include="command_modules\azure-cli-monitor\azure\cli\command_modules\monitor\tests\latest\" />
     <Folder Include="command_modules\azure-cli-network\azure\cli\command_modules\network\tests\" />
-    <Folder Include="command_modules\azure-cli-network\azure\cli\command_modules\network\tests\latest\" />
-    <Folder Include="command_modules\azure-cli-network\azure\cli\command_modules\network\tests\latest\zone_files\" />
+    <Folder Include="command_modules\azure-cli-network\azure\cli\command_modules\network\tests\2018-03-01-hybrid\" />
+    <Folder Include="command_modules\azure-cli-network\azure\cli\command_modules\network\tests\2018-03-01-hybrid\recordings\" />
+    <Folder Include="command_modules\azure-cli-network\azure\cli\command_modules\network\tests\2018-03-01-hybrid\zone_files\" />
     <Folder Include="command_modules\azure-cli-network\azure\cli\command_modules\network\zone_file\" />
     <Folder Include="command_modules\azure-cli-profile\azure\cli\command_modules\profile\tests\" />
     <Folder Include="command_modules\azure-cli-profile\azure\cli\command_modules\profile\tests\latest\" />
@@ -1199,17 +1202,91 @@
     <Content Include="command_modules\azure-cli-monitor\MANIFEST.in" />
     <Content Include="command_modules\azure-cli-monitor\README.rst" />
     <Content Include="command_modules\azure-cli-monitor\setup.cfg" />
-    <Content Include="command_modules\azure-cli-network\azure\cli\command_modules\network\tests\latest\zone_files\fail1.txt" />
-    <Content Include="command_modules\azure-cli-network\azure\cli\command_modules\network\tests\latest\zone_files\fail2.txt" />
-    <Content Include="command_modules\azure-cli-network\azure\cli\command_modules\network\tests\latest\zone_files\fail3.txt" />
-    <Content Include="command_modules\azure-cli-network\azure\cli\command_modules\network\tests\latest\zone_files\fail4.txt" />
-    <Content Include="command_modules\azure-cli-network\azure\cli\command_modules\network\tests\latest\zone_files\fail5.txt" />
-    <Content Include="command_modules\azure-cli-network\azure\cli\command_modules\network\tests\latest\zone_files\zone1.txt" />
-    <Content Include="command_modules\azure-cli-network\azure\cli\command_modules\network\tests\latest\zone_files\zone2.txt" />
-    <Content Include="command_modules\azure-cli-network\azure\cli\command_modules\network\tests\latest\zone_files\zone3.txt" />
-    <Content Include="command_modules\azure-cli-network\azure\cli\command_modules\network\tests\latest\zone_files\zone4.txt" />
-    <Content Include="command_modules\azure-cli-network\azure\cli\command_modules\network\tests\latest\zone_files\zone5.txt" />
-    <Content Include="command_modules\azure-cli-network\azure\cli\command_modules\network\tests\latest\zone_files\zone6.txt" />
+    <Content Include="command_modules\azure-cli-network\azure\cli\command_modules\network\tests\2018-03-01-hybrid\AuthCert.pfx" />
+    <Content Include="command_modules\azure-cli-network\azure\cli\command_modules\network\tests\2018-03-01-hybrid\AuthCert2.pfx" />
+    <Content Include="command_modules\azure-cli-network\azure\cli\command_modules\network\tests\2018-03-01-hybrid\recordings\test_dns.yaml" />
+    <Content Include="command_modules\azure-cli-network\azure\cli\command_modules\network\tests\2018-03-01-hybrid\recordings\test_dns_zone1_import.yaml" />
+    <Content Include="command_modules\azure-cli-network\azure\cli\command_modules\network\tests\2018-03-01-hybrid\recordings\test_dns_zone2_import.yaml" />
+    <Content Include="command_modules\azure-cli-network\azure\cli\command_modules\network\tests\2018-03-01-hybrid\recordings\test_dns_zone3_import.yaml" />
+    <Content Include="command_modules\azure-cli-network\azure\cli\command_modules\network\tests\2018-03-01-hybrid\recordings\test_dns_zone4_import.yaml" />
+    <Content Include="command_modules\azure-cli-network\azure\cli\command_modules\network\tests\2018-03-01-hybrid\recordings\test_dns_zone5_import.yaml" />
+    <Content Include="command_modules\azure-cli-network\azure\cli\command_modules\network\tests\2018-03-01-hybrid\recordings\test_dns_zone6_import.yaml" />
+    <Content Include="command_modules\azure-cli-network\azure\cli\command_modules\network\tests\2018-03-01-hybrid\recordings\test_network_active_active_cross_premise_connection.yaml" />
+    <Content Include="command_modules\azure-cli-network\azure\cli\command_modules\network\tests\2018-03-01-hybrid\recordings\test_network_active_active_vnet_connection.yaml" />
+    <Content Include="command_modules\azure-cli-network\azure\cli\command_modules\network\tests\2018-03-01-hybrid\recordings\test_network_ag_address_pool.yaml" />
+    <Content Include="command_modules\azure-cli-network\azure\cli\command_modules\network\tests\2018-03-01-hybrid\recordings\test_network_ag_auth_cert.yaml" />
+    <Content Include="command_modules\azure-cli-network\azure\cli\command_modules\network\tests\2018-03-01-hybrid\recordings\test_network_ag_frontend_ip_private.yaml" />
+    <Content Include="command_modules\azure-cli-network\azure\cli\command_modules\network\tests\2018-03-01-hybrid\recordings\test_network_ag_frontend_ip_public.yaml" />
+    <Content Include="command_modules\azure-cli-network\azure\cli\command_modules\network\tests\2018-03-01-hybrid\recordings\test_network_ag_frontend_port.yaml" />
+    <Content Include="command_modules\azure-cli-network\azure\cli\command_modules\network\tests\2018-03-01-hybrid\recordings\test_network_ag_http_listener.yaml" />
+    <Content Include="command_modules\azure-cli-network\azure\cli\command_modules\network\tests\2018-03-01-hybrid\recordings\test_network_ag_http_settings.yaml" />
+    <Content Include="command_modules\azure-cli-network\azure\cli\command_modules\network\tests\2018-03-01-hybrid\recordings\test_network_ag_probe.yaml" />
+    <Content Include="command_modules\azure-cli-network\azure\cli\command_modules\network\tests\2018-03-01-hybrid\recordings\test_network_ag_rule.yaml" />
+    <Content Include="command_modules\azure-cli-network\azure\cli\command_modules\network\tests\2018-03-01-hybrid\recordings\test_network_app_gateway_no_wait.yaml" />
+    <Content Include="command_modules\azure-cli-network\azure\cli\command_modules\network\tests\2018-03-01-hybrid\recordings\test_network_app_gateway_redirect_config.yaml" />
+    <Content Include="command_modules\azure-cli-network\azure\cli\command_modules\network\tests\2018-03-01-hybrid\recordings\test_network_app_gateway_waf_config.yaml" />
+    <Content Include="command_modules\azure-cli-network\azure\cli\command_modules\network\tests\2018-03-01-hybrid\recordings\test_network_app_gateway_with_defaults.yaml" />
+    <Content Include="command_modules\azure-cli-network\azure\cli\command_modules\network\tests\2018-03-01-hybrid\recordings\test_network_app_gateway_with_existing_subnet.yaml" />
+    <Content Include="command_modules\azure-cli-network\azure\cli\command_modules\network\tests\2018-03-01-hybrid\recordings\test_network_app_gateway_with_private_ip.yaml" />
+    <Content Include="command_modules\azure-cli-network\azure\cli\command_modules\network\tests\2018-03-01-hybrid\recordings\test_network_app_gateway_with_public_ip.yaml" />
+    <Content Include="command_modules\azure-cli-network\azure\cli\command_modules\network\tests\2018-03-01-hybrid\recordings\test_network_asg.yaml" />
+    <Content Include="command_modules\azure-cli-network\azure\cli\command_modules\network\tests\2018-03-01-hybrid\recordings\test_network_ddos_protection_plan.yaml" />
+    <Content Include="command_modules\azure-cli-network\azure\cli\command_modules\network\tests\2018-03-01-hybrid\recordings\test_network_express_route.yaml" />
+    <Content Include="command_modules\azure-cli-network\azure\cli\command_modules\network\tests\2018-03-01-hybrid\recordings\test_network_express_route_ipv6_peering.yaml" />
+    <Content Include="command_modules\azure-cli-network\azure\cli\command_modules\network\tests\2018-03-01-hybrid\recordings\test_network_extended_nsg.yaml" />
+    <Content Include="command_modules\azure-cli-network\azure\cli\command_modules\network\tests\2018-03-01-hybrid\recordings\test_network_lb.yaml" />
+    <Content Include="command_modules\azure-cli-network\azure\cli\command_modules\network\tests\2018-03-01-hybrid\recordings\test_network_lb_address_pool.yaml" />
+    <Content Include="command_modules\azure-cli-network\azure\cli\command_modules\network\tests\2018-03-01-hybrid\recordings\test_network_lb_nat_pools.yaml" />
+    <Content Include="command_modules\azure-cli-network\azure\cli\command_modules\network\tests\2018-03-01-hybrid\recordings\test_network_lb_nat_rules.yaml" />
+    <Content Include="command_modules\azure-cli-network\azure\cli\command_modules\network\tests\2018-03-01-hybrid\recordings\test_network_lb_probes.yaml" />
+    <Content Include="command_modules\azure-cli-network\azure\cli\command_modules\network\tests\2018-03-01-hybrid\recordings\test_network_lb_rules.yaml" />
+    <Content Include="command_modules\azure-cli-network\azure\cli\command_modules\network\tests\2018-03-01-hybrid\recordings\test_network_lb_sku.yaml" />
+    <Content Include="command_modules\azure-cli-network\azure\cli\command_modules\network\tests\2018-03-01-hybrid\recordings\test_network_lb_zone.yaml" />
+    <Content Include="command_modules\azure-cli-network\azure\cli\command_modules\network\tests\2018-03-01-hybrid\recordings\test_network_load_balancer_ip_config.yaml" />
+    <Content Include="command_modules\azure-cli-network\azure\cli\command_modules\network\tests\2018-03-01-hybrid\recordings\test_network_local_gateway.yaml" />
+    <Content Include="command_modules\azure-cli-network\azure\cli\command_modules\network\tests\2018-03-01-hybrid\recordings\test_network_multi_id_show.yaml" />
+    <Content Include="command_modules\azure-cli-network\azure\cli\command_modules\network\tests\2018-03-01-hybrid\recordings\test_network_nic.yaml" />
+    <Content Include="command_modules\azure-cli-network\azure\cli\command_modules\network\tests\2018-03-01-hybrid\recordings\test_network_nic_convenience_commands.yaml" />
+    <Content Include="command_modules\azure-cli-network\azure\cli\command_modules\network\tests\2018-03-01-hybrid\recordings\test_network_nic_subresources.yaml" />
+    <Content Include="command_modules\azure-cli-network\azure\cli\command_modules\network\tests\2018-03-01-hybrid\recordings\test_network_nsg.yaml" />
+    <Content Include="command_modules\azure-cli-network\azure\cli\command_modules\network\tests\2018-03-01-hybrid\recordings\test_network_public_ip.yaml" />
+    <Content Include="command_modules\azure-cli-network\azure\cli\command_modules\network\tests\2018-03-01-hybrid\recordings\test_network_public_ip_sku.yaml" />
+    <Content Include="command_modules\azure-cli-network\azure\cli\command_modules\network\tests\2018-03-01-hybrid\recordings\test_network_route_filter.yaml" />
+    <Content Include="command_modules\azure-cli-network\azure\cli\command_modules\network\tests\2018-03-01-hybrid\recordings\test_network_route_table_operation.yaml" />
+    <Content Include="command_modules\azure-cli-network\azure\cli\command_modules\network\tests\2018-03-01-hybrid\recordings\test_network_subnet_endpoint_service.yaml" />
+    <Content Include="command_modules\azure-cli-network\azure\cli\command_modules\network\tests\2018-03-01-hybrid\recordings\test_network_subnet_set.yaml" />
+    <Content Include="command_modules\azure-cli-network\azure\cli\command_modules\network\tests\2018-03-01-hybrid\recordings\test_network_traffic_manager.yaml" />
+    <Content Include="command_modules\azure-cli-network\azure\cli\command_modules\network\tests\2018-03-01-hybrid\recordings\test_network_usage_list.yaml" />
+    <Content Include="command_modules\azure-cli-network\azure\cli\command_modules\network\tests\2018-03-01-hybrid\recordings\test_network_vnet.yaml" />
+    <Content Include="command_modules\azure-cli-network\azure\cli\command_modules\network\tests\2018-03-01-hybrid\recordings\test_network_vnet_ids_query.yaml" />
+    <Content Include="command_modules\azure-cli-network\azure\cli\command_modules\network\tests\2018-03-01-hybrid\recordings\test_network_vnet_peering.yaml" />
+    <Content Include="command_modules\azure-cli-network\azure\cli\command_modules\network\tests\2018-03-01-hybrid\recordings\test_network_vpn_connection_ipsec.yaml" />
+    <Content Include="command_modules\azure-cli-network\azure\cli\command_modules\network\tests\2018-03-01-hybrid\recordings\test_network_vpn_gateway.yaml" />
+    <Content Include="command_modules\azure-cli-network\azure\cli\command_modules\network\tests\2018-03-01-hybrid\recordings\test_network_watcher.yaml" />
+    <Content Include="command_modules\azure-cli-network\azure\cli\command_modules\network\tests\2018-03-01-hybrid\recordings\test_network_zoned_public_ip.yaml" />
+    <Content Include="command_modules\azure-cli-network\azure\cli\command_modules\network\tests\2018-03-01-hybrid\recordings\test_private_dns.yaml" />
+    <Content Include="command_modules\azure-cli-network\azure\cli\command_modules\network\tests\2018-03-01-hybrid\recordings\test_vpn_client_package.yaml" />
+    <Content Include="command_modules\azure-cli-network\azure\cli\command_modules\network\tests\2018-03-01-hybrid\test-root-cert.cer" />
+    <Content Include="command_modules\azure-cli-network\azure\cli\command_modules\network\tests\2018-03-01-hybrid\TestCert.pfx" />
+    <Content Include="command_modules\azure-cli-network\azure\cli\command_modules\network\tests\2018-03-01-hybrid\TestCert2.pfx" />
+    <Content Include="command_modules\azure-cli-network\azure\cli\command_modules\network\tests\2018-03-01-hybrid\zone_files\fail1.txt" />
+    <Content Include="command_modules\azure-cli-network\azure\cli\command_modules\network\tests\2018-03-01-hybrid\zone_files\fail2.txt" />
+    <Content Include="command_modules\azure-cli-network\azure\cli\command_modules\network\tests\2018-03-01-hybrid\zone_files\fail3.txt" />
+    <Content Include="command_modules\azure-cli-network\azure\cli\command_modules\network\tests\2018-03-01-hybrid\zone_files\fail4.txt" />
+    <Content Include="command_modules\azure-cli-network\azure\cli\command_modules\network\tests\2018-03-01-hybrid\zone_files\fail5.txt" />
+    <Content Include="command_modules\azure-cli-network\azure\cli\command_modules\network\tests\2018-03-01-hybrid\zone_files\zone1.txt" />
+    <Content Include="command_modules\azure-cli-network\azure\cli\command_modules\network\tests\2018-03-01-hybrid\zone_files\zone1.txt_export.txt" />
+    <Content Include="command_modules\azure-cli-network\azure\cli\command_modules\network\tests\2018-03-01-hybrid\zone_files\zone2.txt" />
+    <Content Include="command_modules\azure-cli-network\azure\cli\command_modules\network\tests\2018-03-01-hybrid\zone_files\zone2.txt_export.txt" />
+    <Content Include="command_modules\azure-cli-network\azure\cli\command_modules\network\tests\2018-03-01-hybrid\zone_files\zone3.txt" />
+    <Content Include="command_modules\azure-cli-network\azure\cli\command_modules\network\tests\2018-03-01-hybrid\zone_files\zone3.txt_export.txt" />
+    <Content Include="command_modules\azure-cli-network\azure\cli\command_modules\network\tests\2018-03-01-hybrid\zone_files\zone4.txt" />
+    <Content Include="command_modules\azure-cli-network\azure\cli\command_modules\network\tests\2018-03-01-hybrid\zone_files\zone4.txt_export.txt" />
+    <Content Include="command_modules\azure-cli-network\azure\cli\command_modules\network\tests\2018-03-01-hybrid\zone_files\zone5.txt" />
+    <Content Include="command_modules\azure-cli-network\azure\cli\command_modules\network\tests\2018-03-01-hybrid\zone_files\zone5.txt_export.txt" />
+    <Content Include="command_modules\azure-cli-network\azure\cli\command_modules\network\tests\2018-03-01-hybrid\zone_files\zone6.txt" />
+    <Content Include="command_modules\azure-cli-network\azure\cli\command_modules\network\tests\2018-03-01-hybrid\zone_files\zone6.txt_export.txt" />
+    <Content Include="command_modules\azure-cli-network\azure\cli\command_modules\network\tests\2018-03-01-hybrid\zone_files\zone7.txt" />
     <Content Include="command_modules\azure-cli-network\HISTORY.rst" />
     <Content Include="command_modules\azure-cli-network\linter_exclusions.yml" />
     <Content Include="command_modules\azure-cli-profile\HISTORY.rst" />
