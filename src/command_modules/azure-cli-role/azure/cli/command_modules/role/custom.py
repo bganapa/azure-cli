@@ -51,6 +51,34 @@ def create_role_definition(cmd, role_definition):
 def update_role_definition(cmd, role_definition):
     return _create_update_role_definition(cmd.cli_ctx, role_definition, for_update=True)
 
+# if cmd.supported_api_version(min_api='2018-01-01-preview'):
+
+def _get_role_definition_property(obj, property_name):
+    if type(obj) is dict:
+        if 'properties' in obj:
+            #print('dict')
+            #print(obj['properties'][property_name])
+            return obj['properties'][property_name]
+        else:
+            return obj[property_name]
+
+    if hasattr(obj, 'properties'):
+        return getattr(obj.properties, property_name)
+    else:
+        return getattr(obj, property_name)
+
+def _set_role_definition_property(obj, property_name, property_value):
+    if type(obj) is dict:
+        if 'properties' in obj:
+            obj['properties'][property_name] = property_value
+        else:
+            obj[property_name] = property_value
+    else:
+        if hasattr(obj, 'properties'):
+            setattr(obj.properties, property_name, property_value)
+        else:
+            setattr(obj, property_name, property_value)
+
 
 def _create_update_role_definition(cli_ctx, role_definition, for_update):
     from azure.cli.core.profiles import ResourceType, get_sdk
@@ -78,7 +106,7 @@ def _create_update_role_definition(cli_ctx, role_definition, for_update):
             raise CLIError('Please provide the unique logic name of an existing role')
         role_definition['name'] = matched[0].name
         # ensure correct logical name and guid name. For update we accept both
-        role_name = matched[0].properties.role_name
+        role_name = _get_role_definition_property(matched[0], 'role_name')
         role_id = matched[0].name
     else:
         role_id = _gen_guid()
@@ -122,9 +150,9 @@ def delete_role_definition(cmd, name, resource_group_name=None, scope=None,
 def _search_role_definitions(definitions_client, name, scope, custom_role_only=False):
     roles = list(definitions_client.list(scope))
     if name:
-        roles = [r for r in roles if r.name == name or r.role_name == name]
+        roles = [r for r in roles if r.name == name or _get_role_definition_property(r, role_name) == name]
     if custom_role_only:
-        roles = [r for r in roles if r.role_type == _CUSTOM_RULE]
+        roles = [r for r in roles if _get_role_definition_property(r, role_type) == _CUSTOM_RULE]
     return roles
 
 
@@ -195,13 +223,14 @@ def list_role_assignments(cmd, assignee=None, role=None, resource_group_name=Non
     # 2. fill in role names
     role_defs = list(definitions_client.list(
         scope=scope or ('/subscriptions/' + definitions_client.config.subscription_id)))
-    role_dics = {i.id: i.properties.role_name for i in role_defs}
+    role_dics = {i.id: _get_role_definition_property(i, 'role_name') for i in role_defs}
     for i in results:
-        if role_dics.get(i['properties']['roleDefinitionId']):
-            i['properties']['roleDefinitionName'] = role_dics[i['properties']['roleDefinitionId']]
-
+        if role_dics.get(_get_role_definition_property(i, 'roleDefinitionId')):
+            _set_role_definition_property(i, 'roleDefinitionName', _get_role_definition_property(i, 'roleDefinitionId'))
     # fill in principal names
-    principal_ids = set(i['properties']['principalId'] for i in results if i['properties']['principalId'])
+    principal_ids = set(_get_role_definition_property(i, 'principalId') for i in results if _get_role_definition_property(i, 'principalId'))
+    #principal_ids = set(i['properties']['principalId'] for i in results if i['properties']['principalId'])
+
     if principal_ids:
         try:
             principals = _get_object_stubs(graph_client, principal_ids)
@@ -209,8 +238,8 @@ def list_role_assignments(cmd, assignee=None, role=None, resource_group_name=Non
 
             for i in [r for r in results if not r.get('principalName')]:
                 i['principalName'] = ''
-                if principal_dics.get(i['properties']['principalId']):
-                    i['principalName'] = principal_dics[i['properties']['principalId']]
+                if principal_dics.get(_get_role_definition_property(i, 'principalId')):
+                    _set_role_definition_property(i, 'principalName', _get_role_definition_property(i, 'principalId'))
         except (CloudError, GraphErrorException) as ex:
             # failure on resolving principal due to graph permission should not fail the whole thing
             logger.info("Failed to resolve graph object information per error '%s'", ex)
@@ -266,7 +295,7 @@ def list_role_assignment_change_logs(cmd, start_time=None, end_time=None):
     # pylint: disable=too-many-nested-blocks, too-many-statements
     result = []
     start_events, end_events, offline_events, client = _get_assignment_events(cmd.cli_ctx, start_time, end_time)
-    role_defs = {d.id: [d.properties.role_name, d.id.split('/')[-1]] for d in list_role_definitions(cmd)}
+    role_defs = {d.id: [_get_role_definition_property(d, 'role_name'), d.id.split('/')[-1]] for d in list_role_definitions(cmd)}
 
     for op_id in start_events:
         e = end_events.get(op_id, None)
@@ -352,7 +381,7 @@ def list_role_assignment_change_logs(cmd, start_time=None, end_time=None):
 
 def _backfill_assignments_for_co_admins(cli_ctx, auth_client, assignee=None):
     co_admins = auth_client.classic_administrators.list()  # known swagger bug on api-version handling
-    co_admins = [x for x in co_admins if x.email_address]
+    co_admins = [x for x in co_admins if _get_role_definition_property(x, email_address)]
     graph_client = _graph_client_factory(cli_ctx)
     if assignee:  # apply assignee filter if applicable
         if _is_guid(assignee):
@@ -363,26 +392,26 @@ def _backfill_assignments_for_co_admins(cli_ctx, auth_client, assignee=None):
                 assignee = _get_displayable_name(result[0]).lower()
             except ValueError:
                 pass
-        co_admins = [x for x in co_admins if assignee == x.email_address.lower()]
+        co_admins = [x for x in co_admins if assignee == _get_role_definition_property(x, email_address).lower()]
 
     if not co_admins:
         return []
 
     result, users = [], []
     for i in range(0, len(co_admins), 10):  # graph allows up to 10 query filters, so split into chunks here
-        upn_queries = ["userPrincipalName eq '{}'".format(x.email_address) for x in co_admins[i:i + 10]]
+        upn_queries = ["userPrincipalName eq '{}'".format(_get_role_definition_property(x, email_address)) for x in co_admins[i:i + 10]]
         temp = list(list_users(graph_client.users, query_filter=' or '.join(upn_queries)))
         users += temp
     upns = {u.user_principal_name: u.object_id for u in users}
     for admin in co_admins:
         na_text = 'NA(classic admins)'
-        email = admin.email_address
+        email = _get_role_definition_property(admin, email_address)
         result.append({
             'id': na_text,
             'name': na_text,
             'principalId': upns.get(email),
             'principalName': email,
-            'roleDefinitionName': admin.role,
+            'roleDefinitionName': _get_role_definition_property(admin, role),
             'roleDefinitionId': 'NA(classic admin role)',
             'scope': '/subscriptions/' + auth_client.config.subscription_id
         })
@@ -444,13 +473,13 @@ def _search_role_assignments(cli_ctx, assignments_client, definitions_client,
     if assignments:
         assignments = [a for a in assignments if (
             not scope or
-            include_inherited and re.match(a.properties.scope, scope, re.I) or
-            a.properties.scope.lower() == scope.lower()
+            include_inherited and re.match(_get_role_definition_property(a, scope), scope, re.I) or
+            _get_role_definition_property(a, scope).lower() == scope.lower()
         )]
 
         if role:
             role_id = _resolve_role_id(role, scope, definitions_client)
-            assignments = [i for i in assignments if i.role_definition_id == role_id]
+            assignments = [i for i in assignments if _get_role_definition_property(i, role_definition_id) == role_id]
 
     return assignments
 
@@ -1280,3 +1309,4 @@ def _get_object_stubs(graph_client, assignees):
 # for injecting test seams to produce predicatable role assignment id for playback
 def _gen_guid():
     return uuid.uuid4()
+
